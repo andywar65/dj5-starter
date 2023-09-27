@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     "django_htmx",
     "debug_toolbar",
     # local
-    # "users.apps.UsersConfig",
+    "users.apps.UsersConfig",
 ]
 
 MIDDLEWARE = [
@@ -161,7 +161,7 @@ LANGUAGES = [
     ("en", _("English")),
 ]
 
-# MODELTRANSLATION_TRANSLATION_FILES = ("users.translation",)
+MODELTRANSLATION_TRANSLATION_FILES = ("users.translation",)
 
 
 # Static files (CSS, JavaScript, Images)
@@ -210,6 +210,6 @@ EMAIL_RECIPIENT = env.str("EMAIL_RECIPIENT", default="me@example.com")
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-# AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "users.User"
 
 SITE_ID = 1

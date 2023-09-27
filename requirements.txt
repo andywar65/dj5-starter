@@ -61,6 +61,8 @@ oauthlib==3.2.2
     # via requests-oauthlib
 packaging==23.1
     # via marshmallow
+pillow==10.0.1
+    # via -r requirements.in
 psycopg[binary,pool]==3.1.11
     # via -r requirements.in
 psycopg-binary==3.1.11

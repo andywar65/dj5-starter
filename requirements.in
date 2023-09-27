@@ -9,3 +9,4 @@ coverage
 django-debug-toolbar
 factory_boy
 django-tinymce
+pillow
