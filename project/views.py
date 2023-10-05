@@ -51,7 +51,14 @@ def search_results(request):
         q = SearchQuery(request.GET["q"])
         v = SearchVector("url", "title", "content", "sites")
         # search in flatpages
-        flatpages = FlatPage.objects.annotate(rank=SearchRank(v, q))
+        if request.GET["lang"] == "it":
+            flatpages = FlatPage.objects.filter(url__startswith="/it/").annotate(
+                rank=SearchRank(v, q)
+            )
+        else:
+            flatpages = FlatPage.objects.filter(url__startswith="/en/").annotate(
+                rank=SearchRank(v, q)
+            )
         flatpages = flatpages.filter(rank__gt=0.01)
         if flatpages:
             flatpages = flatpages.order_by("-rank")
