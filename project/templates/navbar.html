@@ -37,7 +37,12 @@
               {% translate 'Docs' %}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              {% get_flatpages as flatpages %}
+              {% get_current_language as LANG %}
+              {% if LANG == "it" %}
+                {% get_flatpages "/it/" as flatpages %}
+              {% else %}
+                {% get_flatpages "/en/" as flatpages %}
+              {% endif %}
               {% for page in flatpages %}
                 <a class="dropdown-item" href="/docs{{ page.url }}">{{ page.title }}</a>
               {% endfor %}
