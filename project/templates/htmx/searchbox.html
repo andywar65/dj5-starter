@@ -1,0 +1,14 @@
+{% load i18n %}
+
+<form class="d-flex">
+  {% get_current_language as LANG %}
+  <input class="form-control me-2"
+         name="q"
+         type="search"
+         placeholder="{% translate 'Write to search' %}"
+         hx-get="{% url 'search_results' %}?lang={{ LANG }}"
+         hx-target="#content"
+         hx-trigger="keyup changed delay:500ms, search"
+         hx-push-url="true"
+         aria-label="Search">
+</form>

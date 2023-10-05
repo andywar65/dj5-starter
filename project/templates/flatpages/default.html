@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+  <div class="card mx-auto" style="max-width: 960px;">
+    <div class="card-header">
+      <h3>{{ flatpage.title }}</h3>
+    </div>
+    <div class="card-body">
+      {{ flatpage.content }}
+    </div>
+  </div>
+{% endblock %}

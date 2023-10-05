@@ -1,0 +1,8 @@
+{% load i18n %}
+
+<a class="btn btn-outline-secondary me-2"
+   title="{% trans 'Set language' %}"
+   hx-get="{% url 'select_language' %}"
+   hx-target="#selectlanguage">
+  <i class="fa fa-language fa-lg"></i>
+</a>

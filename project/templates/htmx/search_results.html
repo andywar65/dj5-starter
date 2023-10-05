@@ -1,0 +1,39 @@
+{% load i18n %}
+
+<div class="card mx-auto"
+     style="max-width: 960px;"
+     script="on click send refreshSearch">
+  {% if success %}
+    <div class="card-header">
+      <h3>{% translate 'Search' %}: "{{ search }}"</h3>
+    </div>
+    <div class="card-body">
+      {% if flatpages %}
+        <table class="table">
+          <tbody>
+            {% for page in flatpages %}
+              <tr>
+                <td>
+                  <div class="row">
+                    <div class="col col-xl-4 col-lg-4 col-md-4 col-12">
+                      <a class="link-primary" href="/docs{{ page.url }}">
+                        <h4>{{ page.title }}</h4>
+                      </a>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% endif %}
+    </div>
+  {% else %}
+    <div class="card-header">
+      <h3>{% translate 'Null search' %}</h3>
+    </div>
+    <div class="card-body">
+      <p>{% trans "We didn't find elements that satisfy your search" %}</p>
+    </div>
+  {% endif %}
+</div>
