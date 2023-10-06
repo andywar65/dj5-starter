@@ -6,7 +6,7 @@ from .models import UserMessage
 
 
 class ProfileChangeForm(forms.Form):
-    avatar = forms.FileField(required=False, widget=forms.FileInput())
+    avatar = forms.FileField(required=False, widget=forms.ClearableFileInput())
     first_name = forms.CharField(
         label=_("First name"), required=False, widget=forms.TextInput()
     )
@@ -28,16 +28,6 @@ class ProfileChangeForm(forms.Form):
     anonymize = forms.BooleanField(
         label=_("Check to show only username"),
         required=False,
-    )
-
-
-class ProfileChangeDelAvatarForm(ProfileChangeForm):
-    del_avatar = forms.BooleanField(
-        label=_("Check to delete Avatar"),
-        required=False,
-    )
-    avatar = forms.FileField(
-        label=_("Change Avatar"), required=False, widget=forms.FileInput()
     )
 
 

@@ -44,9 +44,8 @@ class User(AbstractUser):
     def get_avatar(self):
         if self.profile.anonymize:
             return
-        # elif self.profile.fb_image:
-        # thumb = self.profile.fb_image.version_generate("thumbnail")
-        # return thumb.url
+        elif self.profile.avatar:
+            return self.profile.avatar.url
         # attempts to retrieve avatar from social account
         try:
             s = SocialAccount.objects.get(user_id=self.uuid)

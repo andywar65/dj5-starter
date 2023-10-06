@@ -17,12 +17,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 
-from .forms import (
-    ContactForm,
-    ProfileChangeDelAvatarForm,
-    ProfileChangeForm,
-    ProfileDeleteForm,
-)
+from .forms import ContactForm, ProfileChangeForm, ProfileDeleteForm
 from .models import UserMessage
 
 
@@ -93,17 +88,12 @@ class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
         self.user = request.user
         super(ProfileChangeView, self).setup(request, *args, **kwargs)
 
-    def get_form_class(self):
-        if self.user.profile.avatar:
-            self.form_class = ProfileChangeDelAvatarForm
-        return self.form_class
-
     def get_initial(self):
         initial = super(ProfileChangeView, self).get_initial()
 
         initial.update(
             {
-                "del_avatar": False,
+                "avatar": self.user.profile.avatar,
                 "first_name": self.user.first_name,
                 "last_name": self.user.last_name,
                 "email": self.user.email,
@@ -122,9 +112,7 @@ class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
         # assign profile form fields
         profile = self.user.profile
         profile.bio = form.cleaned_data["bio"]
-        profile.temp_image = form.cleaned_data["avatar"]
-        if "del_avatar" in form.cleaned_data and form.cleaned_data["del_avatar"]:
-            profile.fb_image = None
+        profile.avatar = form.cleaned_data["avatar"]
         profile.anonymize = form.cleaned_data["anonymize"]
         profile.save()
 
@@ -161,7 +149,7 @@ class ProfileDeleteView(PermissionRequiredMixin, HxTemplateMixin, FormView):
         self.user.email = ""
         self.user.save()
         profile = self.user.profile
-        profile.fb_image = None
+        profile.avatar = None
         profile.bio = ""
         profile.save()
         EmailAddress.objects.filter(user_id=self.user.uuid).delete()
