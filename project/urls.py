@@ -18,9 +18,10 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.flatpages import views as fp_views
 from django.contrib.flatpages.sitemaps import FlatPageSitemap
 from django.contrib.sitemaps.views import sitemap
-from django.urls import include, path
+from django.urls import include, path, re_path
 from django.utils.translation import gettext_lazy as _
 
 from users.views import (
@@ -71,7 +72,7 @@ urlpatterns = [
     ),
     path("accounts/email/", TestedEmailView.as_view(), name="account_email"),
     path("accounts/", include("allauth.urls")),
-    path("docs/", include("django.contrib.flatpages.urls")),
+    # path("docs/", include("django.contrib.flatpages.urls")),
     path("__debug__/", include("debug_toolbar.urls")),
     path(
         "sitemap.xml",
@@ -92,6 +93,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
     path("", home, name="home"),
+    re_path(r"^(?P<url>.*/)$", fp_views.flatpage),
 )
 
 if settings.DEBUG:

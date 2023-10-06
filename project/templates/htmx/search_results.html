@@ -16,12 +16,12 @@
                 <td>
                   <div class="row">
                     <div class="col col-xl-4 col-lg-4 col-md-4 col-12">
-                      <a class="link-primary" href="/docs{{ page.url }}">
+                      <a class="link-primary" href="{{ page.url }}">
                         <h4>{{ page.title }}</h4>
                       </a>
                     </div>
                     <div class="col">
-                      <p>{{ page.content|truncatewords:10 }}</p>
+                      <p>{{ page.content|truncatewords:10|safe }}</p>
                     </div>
                   </div>
                 </td>
