@@ -94,7 +94,7 @@ class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
         super(ProfileChangeView, self).setup(request, *args, **kwargs)
 
     def get_form_class(self):
-        if self.user.profile.fb_image:
+        if self.user.profile.avatar:
             self.form_class = ProfileChangeDelAvatarForm
         return self.form_class
 

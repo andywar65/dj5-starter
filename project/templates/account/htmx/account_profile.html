@@ -1,5 +1,4 @@
 {% load i18n %}
-{% load fb_versions %}
 {% load bootstrap5 %}
 
 
@@ -14,10 +13,10 @@
       </p>
     {% endif %}
     <form>
-      {% if user.profile.fb_image %}
-        <a href="{{ user.profile.fb_image.url }}">
+      {% if user.profile.avatar %}
+        <a href="{{ user.profile.avatar }}">
           <img class="rounded-circle"
-               src="{% version user.profile.fb_image 'thumbnail' %}"
+               src="{{ user.profile.avatar }}"
                alt="">
         </a>
       {% endif %}
