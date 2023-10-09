@@ -29,12 +29,12 @@ from users.views import (
     HTMXLoginView,
     HTMXLogoutView,
     HTMXSignupView,
+    ProfileChangeView,
     ProfileDeleteView,
     TestedEmailView,
     TestedPasswordChangeView,
     TestedPasswordResetView,
     TestedPasswordSetView,
-    profile_update_delete,
 )
 
 from .views import home, nav_bar, search_box, search_results, select_language
@@ -53,7 +53,7 @@ urlpatterns = [
     path("accounts/logout/", HTMXLogoutView.as_view(), name="account_logout"),
     path("accounts/signup/", HTMXSignupView.as_view(), name="account_signup"),
     path("accounts/contact/", ContactFormView.as_view(), name="account_contact"),
-    path("accounts/profile/", profile_update_delete, name="account_profile"),
+    path("accounts/profile/", ProfileChangeView.as_view(), name="account_profile"),
     path(
         "accounts/profile/delete/", ProfileDeleteView.as_view(), name="account_delete"
     ),

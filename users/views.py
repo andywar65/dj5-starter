@@ -116,7 +116,7 @@ def profile_update_delete(request):
             template_name = "account/htmx/account_profile.html"
         else:
             template_name = "account/account_profile.html"
-        form = ProfileChangeForm(request.POST)
+        form = ProfileChangeForm(request.POST, request.FILES)
         if form.is_valid():
             # assign user form fields
             user.first_name = form.cleaned_data["first_name"]
