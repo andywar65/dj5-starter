@@ -14,6 +14,7 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMessage
+from django.http import HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import gettext as _
@@ -101,8 +102,36 @@ def profile_update_delete(request):
         )
         context = {"form": form}
         if "submitted" in request.GET:
-            context["submitted"] = request.GET["submitted"]
-        return TemplateResponse(request, template_name, context)
+            context["submitted"] = True
+            return TemplateResponse(
+                request,
+                template_name,
+                context,
+                headers={"HX-Trigger": "refreshNavbar"},
+            )
+        else:
+            return TemplateResponse(request, template_name, context)
+    elif request.method == "POST":
+        if request.htmx:
+            template_name = "account/htmx/account_profile.html"
+        else:
+            template_name = "account/account_profile.html"
+        form = ProfileChangeForm(request.POST)
+        if form.is_valid():
+            # assign user form fields
+            user.first_name = form.cleaned_data["first_name"]
+            user.last_name = form.cleaned_data["last_name"]
+            user.email = form.cleaned_data["email"]
+            user.save()
+            # assign profile form fields
+            profile = user.profile
+            profile.bio = form.cleaned_data["bio"]
+            profile.avatar = form.cleaned_data["avatar"]
+            profile.anonymize = form.cleaned_data["anonymize"]
+            profile.save()
+            return HttpResponseRedirect(
+                reverse("account_profile") + "?submitted=True",
+            )
 
 
 class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
