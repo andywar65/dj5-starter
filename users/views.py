@@ -10,9 +10,11 @@ from allauth.account.views import (
 )
 from allauth.socialaccount.models import SocialAccount
 from django.conf import settings
+from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMessage
+from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
@@ -77,6 +79,30 @@ class HTMXLogoutView(HxTemplateMixin, LogoutView):
 
 class HTMXSignupView(HxTemplateMixin, SignupView):
     template_name = "account/htmx/signup.html"
+
+
+@permission_required("users.change_profile")
+def profile_update_delete(request):
+    user = request.user
+    if request.method == "GET":
+        if request.htmx:
+            template_name = "account/htmx/account_profile.html"
+        else:
+            template_name = "account/account_profile.html"
+        form = ProfileChangeForm(
+            initial={
+                "avatar": user.profile.avatar,
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "bio": user.profile.bio,
+                "anonymize": user.profile.anonymize,
+            }
+        )
+        context = {"form": form}
+        if "submitted" in request.GET:
+            context["submitted"] = request.GET["submitted"]
+        return TemplateResponse(request, template_name, context)
 
 
 class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
