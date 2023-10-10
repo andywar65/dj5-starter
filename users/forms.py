@@ -2,11 +2,18 @@ from django import forms
 from django.forms import ModelForm
 from django.utils.translation import gettext_lazy as _
 
-from .models import UserMessage
+from .models import Profile, UserMessage
+
+
+class AvatarChangeForm(ModelForm):
+    model = Profile
+    fields = [
+        "avatar",
+    ]
 
 
 class ProfileChangeForm(forms.Form):
-    avatar = forms.FileField(required=False, widget=forms.ClearableFileInput())
+    # avatar = forms.FileField(required=False, widget=forms.ClearableFileInput())
     first_name = forms.CharField(
         label=_("First name"), required=False, widget=forms.TextInput()
     )

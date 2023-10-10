@@ -92,7 +92,7 @@ def profile_update_delete(request):
             template_name = "account/account_profile.html"
         form = ProfileChangeForm(
             initial={
-                "avatar": user.profile.avatar,
+                # "avatar": user.profile.avatar,
                 "first_name": user.first_name,
                 "last_name": user.last_name,
                 "email": user.email,
@@ -126,7 +126,7 @@ def profile_update_delete(request):
             # assign profile form fields
             profile = user.profile
             profile.bio = form.cleaned_data["bio"]
-            profile.avatar = form.cleaned_data["avatar"]
+            # profile.avatar = form.cleaned_data["avatar"]
             profile.anonymize = form.cleaned_data["anonymize"]
             profile.save()
             return HttpResponseRedirect(
