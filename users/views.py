@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMessage
-from django.http import HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import gettext as _
@@ -146,6 +146,28 @@ def profile_update_delete(request):
             return HttpResponseRedirect(
                 reverse("account_profile") + "?submitted=True",
             )
+    elif request.method == "DELETE":
+        if not request.htmx:
+            raise Http404
+        user.is_active = False
+        user.first_name = ""
+        user.last_name = ""
+        user.email = ""
+        user.save()
+        profile = user.profile
+        profile.avatar = None
+        profile.bio = ""
+        profile.save()
+        EmailAddress.objects.filter(user_id=user.uuid).delete()
+        SocialAccount.objects.filter(user_id=user.uuid).delete()
+        template_name = "account/htmx/account_delete.html"
+        context = {}
+        return TemplateResponse(
+            request,
+            template_name,
+            context,
+            headers={"HX-Trigger": "refreshNavbar"},
+        )
 
 
 class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
