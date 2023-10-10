@@ -116,12 +116,22 @@ def profile_update_delete(request):
             )
         else:
             return TemplateResponse(request, template_name, context)
+    elif request.method == "POST" and "avatar" in request.POST:
+        form = AvatarChangeForm(request.POST, request.FILES)
+        if form.is_valid():
+            # assign profile form fields
+            profile = user.profile
+            # if cleared, field is False, we turn it into None
+            if not form.cleaned_data["avatar"]:
+                profile.avatar = None
+            else:
+                profile.avatar = form.cleaned_data["avatar"]
+            profile.save()
+            return HttpResponseRedirect(
+                reverse("account_profile") + "?submitted=True",
+            )
     elif request.method == "POST":
-        if request.htmx:
-            template_name = "account/htmx/account_profile.html"
-        else:
-            template_name = "account/account_profile.html"
-        form = ProfileChangeForm(request.POST, request.FILES)
+        form = ProfileChangeForm(request.POST)
         if form.is_valid():
             # assign user form fields
             user.first_name = form.cleaned_data["first_name"]
@@ -131,7 +141,6 @@ def profile_update_delete(request):
             # assign profile form fields
             profile = user.profile
             profile.bio = form.cleaned_data["bio"]
-            # profile.avatar = form.cleaned_data["avatar"]
             profile.anonymize = form.cleaned_data["anonymize"]
             profile.save()
             return HttpResponseRedirect(

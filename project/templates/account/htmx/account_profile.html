@@ -23,7 +23,8 @@
       {% bootstrap_form av_form %}
       <button class="btn btn-primary"
               type="submit"
-              hx-put="{% url 'account_profile' %}"
+              name = "avatar"
+              hx-post="{% url 'account_profile' %}"
               hx-target="#content"
               hx-encoding="multipart/form-data">
         {% trans "Change Avatar" %}
