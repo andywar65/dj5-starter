@@ -6,10 +6,11 @@ from .models import Profile, UserMessage
 
 
 class AvatarChangeForm(ModelForm):
-    model = Profile
-    fields = [
-        "avatar",
-    ]
+    class Meta:
+        model = Profile
+        fields = [
+            "avatar",
+        ]
 
 
 class ProfileChangeForm(forms.Form):

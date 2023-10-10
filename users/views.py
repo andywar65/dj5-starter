@@ -20,7 +20,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 
-from .forms import ContactForm, ProfileChangeForm, ProfileDeleteForm
+from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm, ProfileDeleteForm
 from .models import UserMessage
 
 
@@ -100,7 +100,12 @@ def profile_update_delete(request):
                 "anonymize": user.profile.anonymize,
             }
         )
-        context = {"form": form}
+        av_form = AvatarChangeForm(
+            initial={
+                "avatar": user.profile.avatar,
+            }
+        )
+        context = {"form": form, "av_form": av_form}
         if "submitted" in request.GET:
             context["submitted"] = True
             return TemplateResponse(

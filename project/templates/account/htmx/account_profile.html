@@ -20,12 +20,22 @@
              src="{{ user.profile.avatar.url }}"
              alt="">
       {% endif %}
+      {% bootstrap_form av_form %}
+      <button class="btn btn-primary"
+              type="submit"
+              hx-put="{% url 'account_profile' %}"
+              hx-target="#content"
+              hx-encoding="multipart/form-data">
+        {% trans "Change Avatar" %}
+      </button>
+    </form>
+    <hr>
+    <form>
       {% bootstrap_form form %}
       <button class="btn btn-primary"
               type="submit"
               hx-post="{% url 'account_profile' %}"
-              hx-target="#content"
-              hx-encoding="multipart/form-data">
+              hx-target="#content">
         {% trans "Change Profile" %}
       </button>
       <a class="btn btn-secondary"
