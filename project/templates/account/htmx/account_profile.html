@@ -52,10 +52,7 @@
     <a class="btn btn-danger"
        hx-delete="{% url 'account_profile' %}"
        hx-target="#content"
-       hx-confirm="{% blocktrans with request.site.name as site_name %}
-                     CAUTION! Account will not be deleted, but set to 'inactive'.
-                     All user info except username will be completely deleted.
-                     Contact {{ site_name}} if you want to recover your original account{% endblocktrans %}."
+       hx-confirm="{% blocktrans with request.site.name as site_name %}CAUTION! Account will not be deleted, but set to 'inactive'. All user info except username will be completely deleted. Contact {{ site_name}} if you want to recover your original account{% endblocktrans %}."
     >{% trans "Delete Account" %}
     </a>
   </div>
