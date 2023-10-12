@@ -43,15 +43,6 @@ class UserViewsTest(TestCase):
         )
         print("\n--Test Account Profile redirect")
 
-        response = self.client.get(reverse("account_delete"))
-        self.assertRedirects(
-            response,
-            reverse("account_login") + "?next=/accounts/profile/delete/",
-            status_code=302,
-            target_status_code=200,
-        )
-        print("\n--Test Account Delete redirect")
-
         response = self.client.get(reverse("account_contact"))
         self.assertRedirects(
             response,
@@ -69,10 +60,6 @@ class UserViewsTest(TestCase):
         self.assertEqual(response.status_code, 403)
         print("\n--Test Immutable Account Profile forbidden")
 
-        response = self.client.get(reverse("account_delete"))
-        self.assertEqual(response.status_code, 403)
-        print("\n--Test Immutable Account Delete forbidden")
-
         response = self.client.get(reverse("account_contact"))
         self.assertEqual(response.status_code, 403)
         print("\n--Test Immutable Account Contact success")
@@ -84,10 +71,6 @@ class UserViewsTest(TestCase):
         response = self.client.get(reverse("account_profile"))
         self.assertEqual(response.status_code, 200)
         print("\n--Test Account Profile success")
-
-        response = self.client.get(reverse("account_delete"))
-        self.assertEqual(response.status_code, 200)
-        print("\n--Test Account Delete success")
 
         response = self.client.get(reverse("account_contact"))
         self.assertEqual(response.status_code, 200)
@@ -103,12 +86,8 @@ class UserViewsTest(TestCase):
         response = self.client.post(
             reverse("account_profile"),
             {
-                "first_name": "",
-                "last_name": "",
-                "email": "boss@example.com",
                 "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
-                "bio": "",
-                "anonymize": False,
+                "name": "avatar",
             },
             follow=True,
         )
@@ -123,13 +102,8 @@ class UserViewsTest(TestCase):
         response = self.client.post(
             reverse("account_profile"),
             {
-                "first_name": "",
-                "last_name": "",
-                "email": "boss@example.com",
-                "avatar": "",
-                "del_avatar": True,
-                "bio": "",
-                "anonymize": False,
+                "avatar": False,
+                "name": "avatar",
             },
             headers={"HX-REQUEST": True},  # not working
             follow=True,

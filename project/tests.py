@@ -32,11 +32,13 @@ class ProjectViewTest(TestCase):
         # Set up non-modified objects used by all test methods
 
     def test_select_language_view(self):
-        response = self.client.get(reverse("select_language"))
+        response = self.client.get(
+            reverse("select_language"), headers={"HX-Request": "true"}
+        )
         self.assertEqual(response.status_code, 200)
         print("\n-Test select language status 200")
 
-        self.assertTemplateUsed(response, "language_selector.html")
+        self.assertTemplateUsed(response, "htmx/language_selector.html")
         print("\n-Test select language template")
 
 
@@ -48,8 +50,8 @@ class SearchTest(TestCase):
         FlatPage.objects.create(
             id=1,
             title="Flat Page",
-            url="/flat-page/",
-            content="Foo",
+            url="/docs/flat-page/",
+            content="foo",
         )
 
     def test_search_results_view_status_code(self):
@@ -73,7 +75,7 @@ class SearchTest(TestCase):
 
     def test_search_results_view_context_posts(self):
         page = FlatPage.objects.filter(title="Flat Page")
-        response = self.client.get(reverse("search_results") + "?lang=en&=foo")
+        response = self.client.get(reverse("search_results") + "?lang=en&q=foo")
         # workaround found in
         # https://stackoverflow.com/questions/17685023/
         # how-do-i-test-django-querysets-are-equal
