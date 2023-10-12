@@ -1,9 +1,9 @@
 from io import StringIO
 
+from django.contrib.flatpages.models import FlatPage
 from django.core.management import call_command
 from django.test import TestCase, override_settings
 from django.urls import reverse
-from pages.models import Article
 
 
 class PendingMigrationsTests(TestCase):
@@ -45,15 +45,15 @@ class SearchTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         print("\nTest search views")
-        Article.objects.create(
+        FlatPage.objects.create(
             id=1,
-            title="Article 4",
-            date="2020-05-10",
-            body="Foo",
+            title="Flat Page",
+            url="/flat-page/",
+            content="Foo",
         )
 
     def test_search_results_view_status_code(self):
-        response = self.client.get(reverse("search_results") + "?q=foo")
+        response = self.client.get(reverse("search_results") + "?lang=en&q=foo")
         self.assertEqual(response.status_code, 200)
         print("\n-Test search status 200")
 
@@ -63,21 +63,21 @@ class SearchTest(TestCase):
         self.assertTrue(response.context["success"])
         print("\n-Test search success")
 
-        response = self.client.get(reverse("search_results") + "?q=")
+        response = self.client.get(reverse("search_results") + "?lang=en&q=")
         self.assertFalse(response.context["success"])
         print("\n-Test search not validating")
 
-        response = self.client.get(reverse("search_results") + "?q=false")
+        response = self.client.get(reverse("search_results") + "?lang=en&q=false")
         self.assertFalse(response.context["success"])
         print("\n-Test search no success")
 
     def test_search_results_view_context_posts(self):
-        article = Article.objects.filter(slug="article-4-1")
-        response = self.client.get(reverse("search_results") + "?q=foo")
+        page = FlatPage.objects.filter(title="Flat Page")
+        response = self.client.get(reverse("search_results") + "?lang=en&=foo")
         # workaround found in
         # https://stackoverflow.com/questions/17685023/
         # how-do-i-test-django-querysets-are-equal
         self.assertQuerySetEqual(
-            response.context["articles"], article, transform=lambda x: x
+            response.context["flatpages"], page, transform=lambda x: x
         )
         print("\n-Test search equal querysets")

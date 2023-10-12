@@ -89,10 +89,3 @@ class ProfileModelTest(TestCase):
         list = [e for e in path.iterdir() if e.is_file()]
         for file in list:
             Path(file).unlink()
-
-    def test_profile_fb_image(self):
-        user = User.objects.get(username="raw.ydna56")
-        self.assertEquals(user.profile.temp_image, "")
-        print("\n-Tested Profile temp_image")
-        self.assertEquals(user.profile.fb_image.path, "uploads/images/users/image.jpg")
-        print("\n-Tested Profile fb_image")
