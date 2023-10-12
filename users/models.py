@@ -45,7 +45,7 @@ class User(AbstractUser):
         if self.profile.anonymize:
             return
         elif self.profile.avatar:
-            return self.profile.avatar.url
+            return True
         # attempts to retrieve avatar from social account
         try:
             s = SocialAccount.objects.get(user_id=self.uuid)
