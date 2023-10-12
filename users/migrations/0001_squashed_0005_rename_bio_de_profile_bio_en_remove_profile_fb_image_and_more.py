@@ -11,14 +11,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    replaces = [
-        ("users", "0001_initial"),
-        ("users", "0002_alter_user_options_alter_profile_fb_image"),
-        ("users", "0003_profile_anonymize"),
-        ("users", "0004_rename_bio_en_profile_bio_de"),
-        ("users", "0005_rename_bio_de_profile_bio_en_remove_profile_fb_image_and_more"),
-    ]
-
     initial = True
 
     dependencies = [
