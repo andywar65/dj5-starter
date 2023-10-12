@@ -10,3 +10,4 @@ django-debug-toolbar
 factory_boy
 django-tinymce
 pillow
+easy-thumbnails
