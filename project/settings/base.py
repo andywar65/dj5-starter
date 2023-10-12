@@ -43,6 +43,7 @@ INTERNAL_IPS = [
 INSTALLED_APPS = [
     "modeltranslation",
     "tinymce",
+    "easy_thumbnails",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

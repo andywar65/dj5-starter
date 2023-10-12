@@ -1,5 +1,6 @@
 {% load i18n %}
 {% load bootstrap5 %}
+{% load thumbnail %}
 
 
 <div class="card mx-auto" style="max-width: 480px;">
@@ -15,9 +16,7 @@
     <form>
       {% if user.profile.avatar %}
         <img class="rounded-circle"
-             heigth="64px"
-             width="64px"
-             src="{{ user.profile.avatar.url }}"
+             src="{% thumbnail user.profile.avatar 64x64 crop %}"
              alt="">
       {% endif %}
       {% bootstrap_form av_form %}
