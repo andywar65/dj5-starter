@@ -11,3 +11,4 @@ factory_boy
 django-tinymce
 pillow
 easy-thumbnails
+django-filer

@@ -18,6 +18,8 @@ coverage==7.3.1
     # via -r requirements.in
 cryptography==41.0.4
     # via pyjwt
+cssselect2==0.7.0
+    # via svglib
 defusedxml==0.7.1
     # via python3-openid
 dj-database-url==2.1.0
@@ -31,8 +33,10 @@ django==4.2.5
     #   django-allauth
     #   django-bootstrap-v5
     #   django-debug-toolbar
+    #   django-filer
     #   django-htmx
     #   django-modeltranslation
+    #   django-polymorphic
     #   easy-thumbnails
 django-allauth==0.57.0
     # via -r requirements.in
@@ -42,14 +46,20 @@ django-cache-url==3.4.4
     # via environs
 django-debug-toolbar==4.2.0
     # via -r requirements.in
+django-filer==3.1.0
+    # via -r requirements.in
 django-htmx==1.16.0
     # via -r requirements.in
 django-modeltranslation==0.18.11
     # via -r requirements.in
+django-polymorphic==3.1.0
+    # via django-filer
 django-tinymce==3.6.1
     # via -r requirements.in
-easy-thumbnails==2.8.5
-    # via -r requirements.in
+easy-thumbnails[svg]==2.8.5
+    # via
+    #   -r requirements.in
+    #   django-filer
 environs[django]==9.5.0
     # via -r requirements.in
 factory-boy==3.3.0
@@ -58,6 +68,8 @@ faker==19.6.2
     # via factory-boy
 idna==3.4
     # via requests
+lxml==4.9.3
+    # via svglib
 marshmallow==3.20.1
     # via environs
 oauthlib==3.2.2
@@ -68,6 +80,7 @@ pillow==10.0.1
     # via
     #   -r requirements.in
     #   easy-thumbnails
+    #   reportlab
 psycopg[binary,pool]==3.1.11
     # via -r requirements.in
 psycopg-binary==3.1.11
@@ -84,6 +97,10 @@ python-dotenv==1.0.0
     # via environs
 python3-openid==3.2.0
     # via django-allauth
+reportlab==4.0.6
+    # via
+    #   easy-thumbnails
+    #   svglib
 requests==2.31.0
     # via
     #   django-allauth
@@ -98,6 +115,12 @@ sqlparse==0.4.4
     # via
     #   django
     #   django-debug-toolbar
+svglib==1.5.1
+    # via easy-thumbnails
+tinycss2==1.2.1
+    # via
+    #   cssselect2
+    #   svglib
 typing-extensions==4.8.0
     # via
     #   asgiref
@@ -111,3 +134,7 @@ tzdata==2023.3
     #   psycopg
 urllib3==2.0.5
     # via requests
+webencodings==0.5.1
+    # via
+    #   cssselect2
+    #   tinycss2

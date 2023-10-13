@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from allauth.socialaccount.models import SocialAccount
+from allauth.socialaccount.models import SocialAccount, SocialApp
 from django.conf import settings
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase, override_settings
@@ -23,6 +23,7 @@ class UserModelTest(TestCase):
         )
         # next save is just for coverage purposes
         user.save()
+        SocialApp.objects.create()
         SocialAccount.objects.create(
             user_id=user.uuid, provider="google", extra_data={"picture": "foo"}
         )
