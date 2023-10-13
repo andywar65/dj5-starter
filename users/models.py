@@ -5,9 +5,7 @@ from django.contrib.auth.models import AbstractUser, Permission
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-
-# from filebrowser.base import FileObject
-# from filebrowser.fields import FileBrowseField
+from filer.fields.image import FilerImageField
 
 
 class User(AbstractUser):
@@ -130,3 +128,17 @@ class UserMessage(models.Model):
     class Meta:
         verbose_name = _("Message")
         verbose_name_plural = _("Messages")
+
+
+class Logo(models.Model):
+    name = models.CharField(_("Name"), max_length=255)
+    image = FilerImageField(
+        null=True, blank=True, related_name="logo_image", on_delete=models.SET_NULL
+    )
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Logo")
+        verbose_name_plural = _("Logos")
