@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "modeltranslation",
     "tinymce",
     "easy_thumbnails",
+    "filer",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
