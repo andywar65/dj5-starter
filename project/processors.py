@@ -1,4 +1,7 @@
+from users.models import Logo
+
+
 def get_navbar_footer_data(request):
-    logo = "/static/tests/image.jpg"
+    logo = Logo.objects.first()
     links = "Bar"
     return {"logo": logo, "f_links": links}
