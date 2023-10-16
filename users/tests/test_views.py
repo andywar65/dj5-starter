@@ -90,7 +90,7 @@ class UserViewsTest(TestCase):
             reverse("account_profile"),
             {
                 "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
-                "name": "avatar",
+                "avatar_submit": True,
             },
             follow=True,
         )

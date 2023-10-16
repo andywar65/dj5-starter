@@ -116,7 +116,7 @@ def profile_update_delete(request):
             )
         else:
             return TemplateResponse(request, template_name, context)
-    elif request.method == "POST" and "avatar" in request.POST:
+    elif request.method == "POST" and "avatar_submit" in request.POST:
         form = AvatarChangeForm(request.POST, request.FILES)
         if form.is_valid():
             # assign profile form fields
