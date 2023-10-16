@@ -26,10 +26,13 @@ class UserViewsTest(TestCase):
 
     def tearDown(self):
         """Checks existing files, then removes them"""
-        path = Path(settings.MEDIA_ROOT).joinpath("uploads/images/users/")
-        list = [e for e in path.iterdir() if e.is_file()]
-        for file in list:
-            Path(file).unlink()
+        try:
+            path = Path(settings.MEDIA_ROOT).joinpath("uploads/images/users/")
+            list = [e for e in path.iterdir() if e.is_file()]
+            for file in list:
+                Path(file).unlink()
+        except FileNotFoundError:
+            pass
 
     def test_user_views_status_code_302(self):
         print("\n-Test User Views not logged")
@@ -61,7 +64,7 @@ class UserViewsTest(TestCase):
         print("\n--Test Immutable Account Profile forbidden")
 
         response = self.client.get(reverse("account_contact"))
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 403)
         print("\n--Test Immutable Account Contact success")
 
     def test_user_views_status_code_200(self):
@@ -79,7 +82,7 @@ class UserViewsTest(TestCase):
     def test_change_account_profile(self):
         print("\n-Test Change account profile")
         self.client.login(username="boss", password="P4s5W0r6")
-        img_path = Path(settings.STATIC_ROOT).joinpath("tests/image.jpg")
+        img_path = Path(settings.PROJECT_DIR).joinpath("static/tests/image.jpg")
         with open(img_path, "rb") as f:
             content = f.read()
 
