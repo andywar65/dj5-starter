@@ -31,6 +31,12 @@ class ProjectViewTest(TestCase):
         print("\nTest project views")
         # Set up non-modified objects used by all test methods
 
+    def test_select_language_view_no_htmx(self):
+        response = self.client.get(reverse("select_language"))
+        # response is unexpected, as it redirects to looks for a flatpage
+        self.assertEqual(response.status_code, 302)
+        print("\n-Test select language no htmx status 404")
+
     def test_select_language_view(self):
         response = self.client.get(
             reverse("select_language"), headers={"HX-Request": "true"}
@@ -71,9 +77,18 @@ class SearchTest(TestCase):
             url="/docs/flat-page/",
             content="foo",
         )
+        FlatPage.objects.create(
+            id=2,
+            title="Pagina piatta",
+            url="/documenti/pagina-piatta/",
+            content="bar",
+        )
 
     def test_search_results_view_status_code(self):
         response = self.client.get(reverse("search_results") + "?lang=en&q=foo")
+        self.assertEqual(response.status_code, 200)
+        # just for coverage
+        response = self.client.get(reverse("search_results") + "?lang=it&q=bar")
         self.assertEqual(response.status_code, 200)
         print("\n-Test search status 200")
 
