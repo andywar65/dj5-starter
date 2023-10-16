@@ -41,6 +41,24 @@ class ProjectViewTest(TestCase):
         self.assertTemplateUsed(response, "htmx/language_selector.html")
         print("\n-Test select language template")
 
+    def test_navbar_view(self):
+        response = self.client.get(reverse("nav_bar"), headers={"HX-Request": "true"})
+        self.assertEqual(response.status_code, 200)
+        print("\n-Test navbar status 200")
+
+        self.assertTemplateUsed(response, "navbar.html")
+        print("\n-Test navbar template")
+
+    def test_searchbox_view(self):
+        response = self.client.get(
+            reverse("search_box"), headers={"HX-Request": "true"}
+        )
+        self.assertEqual(response.status_code, 200)
+        print("\n-Test searchbox status 200")
+
+        self.assertTemplateUsed(response, "htmx/searchbox.html")
+        print("\n-Test searchbox template")
+
 
 @override_settings(USE_I18N=False)
 class SearchTest(TestCase):
