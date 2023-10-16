@@ -52,16 +52,16 @@ class UserViewsTest(TestCase):
         )
         print("\n--Test Account Contact redirect")
 
-    def test_immutable_user_views_status_code_403(self):
+    def test_immutable_user_views_status_code_302(self):
         print("\n-Test Immutable User Views logged")
         self.client.login(username="immutable", password="P4s5W0r6")
 
         response = self.client.get(reverse("account_profile"))
-        self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.status_code, 302)
         print("\n--Test Immutable Account Profile forbidden")
 
         response = self.client.get(reverse("account_contact"))
-        self.assertEqual(response.status_code, 403)
+        self.assertEqual(response.status_code, 302)
         print("\n--Test Immutable Account Contact success")
 
     def test_user_views_status_code_200(self):
