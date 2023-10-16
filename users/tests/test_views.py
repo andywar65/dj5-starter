@@ -106,9 +106,8 @@ class UserViewsTest(TestCase):
             reverse("account_profile"),
             {
                 "avatar": False,
-                "name": "avatar",
+                "avatar_submit": True,
             },
-            headers={"HX-REQUEST": True},  # not working
             follow=True,
         )
         self.assertRedirects(
