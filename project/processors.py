@@ -1,11 +1,11 @@
 from django.utils.timezone import now
 
-from users.models import Logo
+from users.models import FooterLink, Logo
 
 
 def get_navbar_footer_data(request):
     logo = Logo.objects.first()
-    links = "Bar"
+    links = FooterLink.objects.all()
     this_year = now().date().year
     return {
         "logo": logo,

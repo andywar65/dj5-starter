@@ -4,6 +4,9 @@
       <span class="text-muted">{{ request.site.name }} / {{this_year}} </span>
     {% else %}
       <span class="text-muted">{{ request.site.name }} / 2023-{{this_year}} </span>
-    {% endif %}
+    {% endif %}:
+    {% for link in f_links %}
+      <a class="link-secondary me-1" href="{{ link.link }}" title="{{ link.title }}">{{ link.title }}</a>
+    {% endfor %}
   </div>
 </footer>
