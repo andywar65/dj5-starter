@@ -118,6 +118,25 @@ class UserViewsTest(TestCase):
         )
         print("\n--Test Delete Avatar redirect")
 
+        response = self.client.post(
+            reverse("account_profile"),
+            {
+                "first_name": "Gonzo",
+                "last_name": "Bilal",
+                "email": "gonzo@bilal.com",
+                "bio": "My biography",
+                "anonymize": False,
+            },
+            follow=True,
+        )
+        self.assertRedirects(
+            response,
+            reverse("account_profile") + "?submitted=True",
+            status_code=302,
+            target_status_code=200,
+        )
+        print("\n--Test Info redirect")
+
     def test_send_account_contact(self):
         print("\n-Test send account contact")
         self.client.login(username="boss", password="P4s5W0r6")
