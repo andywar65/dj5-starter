@@ -5,6 +5,8 @@ from django.core.management import call_command
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
+from users.models import User
+
 
 class PendingMigrationsTests(TestCase):
     """Copy/paste from 'Boost your Django DX', by Adam Johnson"""
@@ -29,7 +31,6 @@ class ProjectViewTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         print("\nTest project views")
-        # Set up non-modified objects used by all test methods
 
     def test_select_language_view_no_htmx(self):
         response = self.client.get(reverse("select_language"))
@@ -83,6 +84,7 @@ class SearchTest(TestCase):
             url="/documenti/pagina-piatta/",
             content="bar",
         )
+        User.objects.create_superuser("boss", "boss@example.com", "P4s5W0r6")
 
     def test_search_results_view_status_code(self):
         response = self.client.get(reverse("search_results") + "?lang=en&q=foo")
@@ -116,3 +118,10 @@ class SearchTest(TestCase):
             response.context["flatpages"], page, transform=lambda x: x
         )
         print("\n-Test search equal querysets")
+
+    def test_super_user_change_flatpage(self):
+        self.client.login(username="boss", password="P4s5W0r6")
+        # just for coverage
+        response = self.client.get("/admin/flatpages/flatpage/1/change/")
+        self.assertEqual(response.status_code, 200)
+        print("\n-Super can change FlatPage")
