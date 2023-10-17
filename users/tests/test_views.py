@@ -139,10 +139,11 @@ class UserViewsTest(TestCase):
         print("\n-Test delete account profile")
         self.client.login(username="boss", password="P4s5W0r6")
 
-        response = self.client.post(
-            reverse("account_delete"), {"delete": True}, follow=True
+        response = self.client.delete(
+            reverse("account_profile"),
+            headers={"HX-Request": "true"},
         )
-        self.assertRedirects(
-            response, reverse("home"), status_code=302, target_status_code=200
-        )
-        print("\n--Test delete account profile redirect")
+        self.assertEqual(response.status_code, 200)
+        print("\n--Test delete account profile success")
+        self.assertTemplateUsed(response, "account/htmx/account_delete.html")
+        print("\n-Test delete account template")
