@@ -1,8 +1,4 @@
-from pathlib import Path
-
 from allauth.socialaccount.models import SocialAccount
-from django.conf import settings
-from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase, override_settings
 
 from users.models import User, UserMessage
@@ -83,27 +79,3 @@ class UserModelTest(TestCase):
         message = UserMessage.objects.get(subject="Foo")
         self.assertEquals(message.__str__(), "Message - " + str(message.id))
         print("\n-Tested UserMessage __str__")
-
-
-@override_settings(MEDIA_ROOT=Path(settings.MEDIA_ROOT).joinpath("temp"))
-class ProfileModelTest(TestCase):
-    @classmethod
-    def setUpTestData(cls):
-        print("\nTest profile models")
-        # Set up non-modified objects used by all test methods
-        user = User.objects.create(
-            username="raw.ydna56", password="P4s5W0r6", email="ydna@raw.com"
-        )
-        profile = user.profile
-        img_path = Path(settings.STATIC_ROOT).joinpath("tests/image.jpg")
-        with open(img_path, "rb") as f:
-            content = f.read()
-        profile.temp_image = SimpleUploadedFile("image.jpg", content, "image/jpg")
-        profile.save()
-
-    def tearDown(self):
-        """Checks existing files, then removes them"""
-        path = Path(settings.MEDIA_ROOT).joinpath("uploads/images/users/")
-        list = [e for e in path.iterdir() if e.is_file()]
-        for file in list:
-            Path(file).unlink()

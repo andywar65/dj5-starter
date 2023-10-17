@@ -67,6 +67,10 @@ class UserViewsTest(TestCase):
         self.assertEqual(response.status_code, 403)
         print("\n--Test Immutable Account Contact success")
 
+        response = self.client.get(reverse("password_reset"))
+        self.assertEqual(response.status_code, 403)
+        print("\n--Test Immutable Account can't reset password")
+
     def test_user_views_status_code_200(self):
         print("\n-Test User Views logged in")
         self.client.login(username="boss", password="P4s5W0r6")
