@@ -20,7 +20,7 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 
-from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm, ProfileDeleteForm
+from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm
 from .models import UserMessage
 
 
@@ -168,87 +168,6 @@ def profile_update_delete(request):
             context,
             headers={"HX-Trigger": "refreshNavbar"},
         )
-
-
-class ProfileChangeView(PermissionRequiredMixin, HxTemplateMixin, FormView):
-    form_class = ProfileChangeForm
-    template_name = "account/htmx/account_profile.html"
-    permission_required = "users.change_profile"
-
-    def setup(self, request, *args, **kwargs):
-        self.user = request.user
-        super(ProfileChangeView, self).setup(request, *args, **kwargs)
-
-    def get_initial(self):
-        initial = super(ProfileChangeView, self).get_initial()
-
-        initial.update(
-            {
-                "avatar": self.user.profile.avatar,
-                "first_name": self.user.first_name,
-                "last_name": self.user.last_name,
-                "email": self.user.email,
-                "bio": self.user.profile.bio,
-                "anonymize": self.user.profile.anonymize,
-            }
-        )
-        return initial
-
-    def form_valid(self, form):
-        # assign user form fields
-        self.user.first_name = form.cleaned_data["first_name"]
-        self.user.last_name = form.cleaned_data["last_name"]
-        self.user.email = form.cleaned_data["email"]
-        self.user.save()
-        # assign profile form fields
-        profile = self.user.profile
-        profile.bio = form.cleaned_data["bio"]
-        profile.avatar = form.cleaned_data["avatar"]
-        profile.anonymize = form.cleaned_data["anonymize"]
-        profile.save()
-
-        return super(ProfileChangeView, self).form_valid(form)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        if "submitted" in self.request.GET:
-            context["submitted"] = self.request.GET["submitted"]
-        return context
-
-    def get_success_url(self):
-        return reverse("account_profile") + "?submitted=True"
-
-    def dispatch(self, request, *args, **kwargs):
-        response = super().dispatch(request, *args, **kwargs)
-        response["HX-Trigger"] = "refreshNavbar"
-        return response
-
-
-class ProfileDeleteView(PermissionRequiredMixin, HxTemplateMixin, FormView):
-    form_class = ProfileDeleteForm
-    template_name = "account/htmx/account_delete.html"
-    permission_required = "users.change_profile"
-
-    def setup(self, request, *args, **kwargs):
-        self.user = request.user
-        super(ProfileDeleteView, self).setup(request, *args, **kwargs)
-
-    def form_valid(self, form):
-        self.user.is_active = False
-        self.user.first_name = ""
-        self.user.last_name = ""
-        self.user.email = ""
-        self.user.save()
-        profile = self.user.profile
-        profile.avatar = None
-        profile.bio = ""
-        profile.save()
-        EmailAddress.objects.filter(user_id=self.user.uuid).delete()
-        SocialAccount.objects.filter(user_id=self.user.uuid).delete()
-        return super(ProfileDeleteView, self).form_valid(form)
-
-    def get_success_url(self):
-        return reverse("home")
 
 
 class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):

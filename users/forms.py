@@ -39,13 +39,6 @@ class ProfileChangeForm(forms.Form):
     )
 
 
-class ProfileDeleteForm(forms.Form):
-    delete = forms.BooleanField(
-        label=_("Check and Confirm to delete* the profile"),
-        required=True,
-    )
-
-
 class ContactForm(ModelForm):
     class Meta:
         model = UserMessage
