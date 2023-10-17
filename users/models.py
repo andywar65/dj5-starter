@@ -142,3 +142,18 @@ class Logo(models.Model):
     class Meta:
         verbose_name = _("Logo")
         verbose_name_plural = _("Logos")
+
+
+class FooterLink(models.Model):
+    title = models.CharField(
+        _("Title"),
+        max_length=50,
+    )
+    link = models.URLField(
+        _("Link"),
+        max_length=200,
+    )
+
+    class Meta:
+        verbose_name = _("Footer link")
+        verbose_name_plural = _("Footer links")

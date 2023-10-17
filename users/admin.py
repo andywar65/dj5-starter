@@ -6,7 +6,7 @@ from django.utils.translation import gettext as _
 from modeltranslation.admin import TranslationTabularInline
 from tinymce.widgets import TinyMCE
 
-from .models import Logo, Profile, User, UserMessage
+from .models import FooterLink, Logo, Profile, User, UserMessage
 
 
 class TinyMCEFlatPageAdmin(FlatPageAdmin):
@@ -65,3 +65,8 @@ class UserMessageAdmin(admin.ModelAdmin):
 @admin.register(Logo)
 class LogoAdmin(admin.ModelAdmin):
     list_display = ("name",)
+
+
+@admin.register(FooterLink)
+class FooterLinkAdmin(admin.ModelAdmin):
+    list_display = ("title",)
