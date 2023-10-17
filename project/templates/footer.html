@@ -1,5 +1,9 @@
 <footer class="footer mt-auto py-3 bg-light">
   <div class="container">
-    <span class="text-muted">{{ request.site.name }} - {% now 'Y' %} </span>
+    {% if this_year == 2023 %}
+      <span class="text-muted">{{ request.site.name }} / {{this_year}} </span>
+    {% else %}
+      <span class="text-muted">{{ request.site.name }} / 2023-{{this_year}} </span>
+    {% endif %}
   </div>
 </footer>
