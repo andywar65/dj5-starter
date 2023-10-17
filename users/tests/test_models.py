@@ -33,6 +33,15 @@ class UserModelTest(TestCase):
             username="nonames", password="P4s5W0r6", email="nonames@war.com"
         )
         UserMessage.objects.create(user_id=user.uuid, subject="Foo", body="Bar")
+        anonim = User.objects.create(
+            username="anonim",
+            password="P4s5W0r6",
+            first_name="Anonimous",
+            last_name="War",
+            email="anonim@war.com",
+        )
+        anonim.profile.anonymize = True
+        anonim.profile.save()
 
     def test_user_get_avatar(self):
         user = User.objects.get(username="andy.war65")
@@ -60,6 +69,15 @@ class UserModelTest(TestCase):
         print("\n-Tested User no full name")
         self.assertEquals(user.get_short_name(), "nonames")
         print("\n-Tested User no short name")
+
+    def test_profile_get_anonimized(self):
+        user = User.objects.get(username="anonim")
+        self.assertEquals(user.get_full_name(), "anonim")
+        print("\n-Tested User anonymous full name")
+        self.assertEquals(user.get_short_name(), "anonim")
+        print("\n-Tested User anonymous short name")
+        self.assertEquals(user.get_avatar(), None)
+        print("\n-Tested User no avatar")
 
     def test_usermessage_get_str(self):
         message = UserMessage.objects.get(subject="Foo")
