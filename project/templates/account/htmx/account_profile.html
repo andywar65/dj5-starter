@@ -15,14 +15,19 @@
     {% endif %}
     <form>
       {% if user.profile.avatar %}
-        <a href="{{ user.profile.avatar.url }}" 
-            target="_blank">
+        <a href="{{ user.profile.avatar.url }}" target="_blank">
           <img class="rounded-circle"
           src="{% thumbnail user.profile.avatar 64x64 crop %}"
           alt="">
         </a>
       {% endif %}
       {% bootstrap_form av_form %}
+      <div class="mb-3">
+        <div class="form-check">
+          <input type="checkbox" name="avatar-clear" class="form-check-input" id="avatar-clear_id">
+          <label class="form-check-label" for="avatar-clear_id">{% trans "Delete" %}</label>
+        </div>
+      </div>
       <button class="btn btn-primary"
               type="submit"
               name = "avatar_submit"
