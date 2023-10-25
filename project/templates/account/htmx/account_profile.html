@@ -15,9 +15,12 @@
     {% endif %}
     <form>
       {% if user.profile.avatar %}
-        <img class="rounded-circle"
-             src="{% thumbnail user.profile.avatar 64x64 crop %}"
-             alt="">
+        <a href="{{ user.profile.avatar.url }}" 
+            target="_blank">
+          <img class="rounded-circle"
+          src="{% thumbnail user.profile.avatar 64x64 crop %}"
+          alt="">
+        </a>
       {% endif %}
       {% bootstrap_form av_form %}
       <button class="btn btn-primary"

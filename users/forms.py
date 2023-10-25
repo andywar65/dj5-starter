@@ -6,6 +6,7 @@ from .models import Profile, UserMessage
 
 
 class AvatarChangeForm(ModelForm):
+    avatar = forms.FileField(required=False, widget=forms.FileInput())
     class Meta:
         model = Profile
         fields = [
@@ -14,7 +15,6 @@ class AvatarChangeForm(ModelForm):
 
 
 class ProfileChangeForm(forms.Form):
-    # avatar = forms.FileField(required=False, widget=forms.ClearableFileInput())
     first_name = forms.CharField(
         label=_("First name"), required=False, widget=forms.TextInput()
     )
