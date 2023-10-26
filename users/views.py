@@ -121,11 +121,7 @@ def profile_update_delete(request):
         if form.is_valid():
             # assign profile form fields
             profile = user.profile
-            # if cleared, field is False, we turn it into None
-            if not form.cleaned_data["avatar"]:
-                profile.avatar = None
-            else:
-                profile.avatar = form.cleaned_data["avatar"]
+            profile.avatar = form.cleaned_data["avatar"]
             profile.save()
             return HttpResponseRedirect(
                 reverse("account_profile") + "?submitted=True",
