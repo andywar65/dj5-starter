@@ -11,6 +11,7 @@ class AvatarChangeForm(ModelForm):
         fields = [
             "avatar",
         ]
+        widgets = {"avatar": forms.FileInput()}
 
 
 class ProfileChangeForm(forms.Form):
