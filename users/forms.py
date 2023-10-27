@@ -13,7 +13,7 @@ class AvatarChangeForm(ModelForm):
         fields = [
             "avatar",
         ]
-        widgets = {"avatar": forms.FileInput()}
+        widgets = {"avatar": forms.FileInput(attrs={"class": "form-control"})}
         help_texts = {"avatar": _("Leave empty and submit to delete Avatar")}
 
 
