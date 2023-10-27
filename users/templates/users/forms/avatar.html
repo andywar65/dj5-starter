@@ -1,9 +1,11 @@
 {% for field in form %}
   <div class="mb-3">
-    <label class="form-label" for="id_avatar">
+    <label class="form-label" for="{{ field.id_for_label }}">
       {{ field.label }}
     </label><br>
-    <input type="file" name="avatar" accept="image/*" class="form-control" title="" id="id_avatar">
-    <small class="form-text text-muted">{{ field.help_text }}</small>
+    {{ field }}
+    {% if field.help_text %}
+      <small class="form-text text-muted">{{ field.help_text }}</small>
+    {% endif %}
   </div>
 {% endfor %}
