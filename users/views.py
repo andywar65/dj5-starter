@@ -85,37 +85,28 @@ class HTMXSignupView(HxTemplateMixin, SignupView):
 @permission_required("users.change_profile")
 def profile_update_delete(request):
     user = request.user
-    if request.method == "GET":
-        if request.htmx:
-            template_name = "account/htmx/account_profile.html"
-        else:
-            template_name = "account/account_profile.html"
-        form = ProfileChangeForm(
-            initial={
-                # "avatar": user.profile.avatar,
-                "first_name": user.first_name,
-                "last_name": user.last_name,
-                "email": user.email,
-                "bio": user.profile.bio,
-                "anonymize": user.profile.anonymize,
-            }
+    if request.method == "DELETE":
+        if not request.htmx:
+            raise Http404
+        user.is_active = False
+        user.first_name = ""
+        user.last_name = ""
+        user.email = ""
+        user.save()
+        profile = user.profile
+        profile.avatar = None
+        profile.bio = ""
+        profile.save()
+        EmailAddress.objects.filter(user_id=user.uuid).delete()
+        SocialAccount.objects.filter(user_id=user.uuid).delete()
+        template_name = "account/htmx/account_delete.html"
+        context = {}
+        return TemplateResponse(
+            request,
+            template_name,
+            context,
+            headers={"HX-Trigger": "refreshNavbar"},
         )
-        av_form = AvatarChangeForm(
-            initial={
-                "avatar": user.profile.avatar,
-            }
-        )
-        context = {"form": form, "av_form": av_form}
-        if "submitted" in request.GET:
-            context["submitted"] = True
-            return TemplateResponse(
-                request,
-                template_name,
-                context,
-                headers={"HX-Trigger": "refreshNavbar"},
-            )
-        else:
-            return TemplateResponse(request, template_name, context)
     elif request.method == "POST" and "avatar_submit" in request.POST:
         form = AvatarChangeForm(request.POST, request.FILES)
         if form.is_valid():
@@ -142,28 +133,40 @@ def profile_update_delete(request):
             return HttpResponseRedirect(
                 reverse("account_profile") + "?submitted=True",
             )
-    elif request.method == "DELETE":
-        if not request.htmx:
-            raise Http404
-        user.is_active = False
-        user.first_name = ""
-        user.last_name = ""
-        user.email = ""
-        user.save()
-        profile = user.profile
-        profile.avatar = None
-        profile.bio = ""
-        profile.save()
-        EmailAddress.objects.filter(user_id=user.uuid).delete()
-        SocialAccount.objects.filter(user_id=user.uuid).delete()
-        template_name = "account/htmx/account_delete.html"
-        context = {}
+    if request.htmx:
+        template_name = "account/htmx/account_profile.html"
+    else:
+        template_name = "account/account_profile.html"
+    try:
+        form
+    except NameError:
+        form = ProfileChangeForm(
+            initial={
+                "first_name": user.first_name,
+                "last_name": user.last_name,
+                "email": user.email,
+                "bio": user.profile.bio,
+                "anonymize": user.profile.anonymize,
+            }
+        )
+    try:
+        av_form
+    except NameError:
+        av_form = AvatarChangeForm(
+            initial={
+                "avatar": user.profile.avatar,
+            }
+        )
+    context = {"form": form, "av_form": av_form}
+    if request.method == "GET" and "submitted" in request.GET:
+        context["submitted"] = True
         return TemplateResponse(
             request,
             template_name,
             context,
             headers={"HX-Trigger": "refreshNavbar"},
         )
+    return TemplateResponse(request, template_name, context)
 
 
 class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):
