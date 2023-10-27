@@ -4,5 +4,6 @@
       {{ field.label }}
     </label><br>
     <input type="file" name="avatar" accept="image/*" class="form-control" title="" id="id_avatar">
+    <small class="form-text text-muted">{{ field.help_text }}</small>
   </div>
 {% endfor %}
