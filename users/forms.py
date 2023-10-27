@@ -6,6 +6,8 @@ from .models import Profile, UserMessage
 
 
 class AvatarChangeForm(ModelForm):
+    template_name = "users/forms/avatar.html"
+
     class Meta:
         model = Profile
         fields = [

@@ -1,0 +1,8 @@
+{% for field in form %}
+  <div class="mb-3">
+    <label class="form-label" for="id_avatar">
+      {{ field.label }}
+    </label><br>
+    <input type="file" name="avatar" accept="image/*" class="form-control" title="" id="id_avatar">
+  </div>
+{% endfor %}
