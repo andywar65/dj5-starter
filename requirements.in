@@ -12,3 +12,5 @@ django-tinymce
 pillow
 easy-thumbnails
 django-filer
+django-crispy-forms
+crispy-bootstrap5
