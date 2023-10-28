@@ -1,7 +1,6 @@
 django>=4.2.5,<5.0
 psycopg[binary,pool]
 django-allauth
-django-bootstrap-v5
 django-htmx
 django-modeltranslation
 environs[django]
