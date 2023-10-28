@@ -60,7 +60,6 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
-    "bootstrap5",
     "crispy_forms",
     "crispy_bootstrap5",
     "django_htmx",
