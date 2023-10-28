@@ -6,14 +6,12 @@ from .models import Profile, UserMessage
 
 
 class AvatarChangeForm(ModelForm):
-    template_name = "users/forms/avatar.html"
-
     class Meta:
         model = Profile
         fields = [
             "avatar",
         ]
-        widgets = {"avatar": forms.FileInput(attrs={"class": "form-control"})}
+        widgets = {"avatar": forms.FileInput()}
         help_texts = {"avatar": _("Leave empty and submit to delete Avatar")}
 
 

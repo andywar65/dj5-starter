@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load bootstrap5 %}
+{% load crispy_forms_tags %}
 {% load thumbnail %}
 
 
@@ -21,7 +21,7 @@
                alt="">
         </a>
       {% endif %}
-      {{ av_form }}
+      {{ av_form|crispy }}
       <button class="btn btn-primary"
               type="submit"
               name = "avatar_submit"
@@ -33,7 +33,7 @@
     </form>
     <hr>
     <form>
-      {% bootstrap_form form %}
+      {{ form|crispy }}
       <button class="btn btn-primary"
               type="submit"
               hx-post="{% url 'account_profile' %}"
