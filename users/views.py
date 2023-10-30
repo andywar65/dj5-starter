@@ -14,15 +14,16 @@ from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMessage
-from django.http import Http404, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 
+from project.views import check_htmx_request
+
 from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm
 from .models import UserMessage
-from project.views import check_htmx_request
 
 
 class HxTemplateMixin:
@@ -88,7 +89,7 @@ def avatar_display_create(request):
     check_htmx_request()
     user = request.user
     context = {"user": user}
-    template_name = "account/htmx/avatar_display.html"   
+    template_name = "account/htmx/avatar_display.html"
     if request.method == "PUT":
         template_name = "account/htmx/avatar_create.html"
         form = AvatarChangeForm()
@@ -111,11 +112,10 @@ def avatar_display_create(request):
             headers={"HX-Trigger": "refreshNavbar"},
         )
     return TemplateResponse(
-            request,
-            template_name,
-            context,
-        )
-    
+        request,
+        template_name,
+        context,
+    )
 
 
 @permission_required("users.change_profile")

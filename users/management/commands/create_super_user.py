@@ -20,7 +20,7 @@ class Command(BaseCommand):
             "Remember that this is a dummy installation, it works on a Sqlite database."
         )
         self.stdout.write(
-            "Create a Postgres database, update dotenv file (db.url and media/static roots)"
+            "Create a Postgres database, update dotenv file (db.url and media/static roots)"  # noqa E501
         )
         self.stdout.write("then migrate and create a super user again.")
 
