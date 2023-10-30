@@ -1,6 +1,7 @@
 from django.conf import settings
-from users.models import User
 from django.core.management.base import BaseCommand, CommandError
+
+from users.models import User
 
 
 class Command(BaseCommand):
@@ -21,9 +22,7 @@ class Command(BaseCommand):
         self.stdout.write(
             "Create a Postgres database, update dotenv file (db.url and media/static roots)"
         )
-        self.stdout.write(
-            "then migrate and create a super user again."
-        )
+        self.stdout.write("then migrate and create a super user again.")
 
 
 def create_item():
