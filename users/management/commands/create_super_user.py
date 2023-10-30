@@ -15,14 +15,13 @@ class Command(BaseCommand):
 
         create_item()
 
-        self.stdout.write("Done, you can log in as 'andywar65', pw='P4s5W0r6'.")
         self.stdout.write(
-            "Remember that this is a dummy installation, it works on a Sqlite database."
+            """Done, you can log in as 'andywar65' with pw='P4s5W0r6'.\n
+            Remember that this is a dummy installation, it works on a Sqlite database.\n
+            Create a Postgres database, update dotenv file (db.url and media/static roots)\n
+            then migrate and create a new super user.
+            """
         )
-        self.stdout.write(
-            "Create a Postgres database, update dotenv file (db.url and media/static roots)"  # noqa E501
-        )
-        self.stdout.write("then migrate and create a super user again.")
 
 
 def create_item():
