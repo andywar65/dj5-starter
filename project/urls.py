@@ -33,6 +33,7 @@ from users.views import (
     TestedPasswordChangeView,
     TestedPasswordResetView,
     TestedPasswordSetView,
+    avatar_display_create,
     profile_update_delete,
 )
 
@@ -67,8 +68,8 @@ urlpatterns = [
         name="password_reset",
     ),
     path("accounts/email/", TestedEmailView.as_view(), name="account_email"),
+    path("accounts/avatar/", avatar_display_create, name="avatar_display"),
     path("accounts/", include("allauth.urls")),
-    # path("docs/", include("django.contrib.flatpages.urls")),
     path("__debug__/", include("debug_toolbar.urls")),
     path(
         "sitemap.xml",
