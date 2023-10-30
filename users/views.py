@@ -22,6 +22,7 @@ from django.views.generic.edit import FormView
 
 from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm
 from .models import UserMessage
+from project.views import check_htmx_request
 
 
 class HxTemplateMixin:
@@ -83,11 +84,45 @@ class HTMXSignupView(HxTemplateMixin, SignupView):
 
 
 @permission_required("users.change_profile")
+def avatar_display_create(request):
+    check_htmx_request()
+    user = request.user
+    context = {"user": user}
+    template_name = "account/htmx/avatar_display.html"   
+    if request.method == "PUT":
+        template_name = "account/htmx/avatar_create.html"
+        form = AvatarChangeForm()
+        context = {"form": form}
+    elif request.method == "POST":
+        form = AvatarChangeForm(request.POST, request.FILES)
+        if form.is_valid():
+            # assign profile form fields
+            profile = user.profile
+            profile.avatar = form.cleaned_data["avatar"]
+            profile.save()
+            return HttpResponseRedirect(
+                reverse("avatar_display") + "?submitted=True",
+            )
+    elif request.method == "GET" and "submitted" in request.GET:
+        return TemplateResponse(
+            request,
+            template_name,
+            context,
+            headers={"HX-Trigger": "refreshNavbar"},
+        )
+    return TemplateResponse(
+            request,
+            template_name,
+            context,
+        )
+    
+
+
+@permission_required("users.change_profile")
 def profile_update_delete(request):
     user = request.user
     if request.method == "DELETE":
-        if not request.htmx:
-            raise Http404
+        check_htmx_request()
         user.is_active = False
         user.first_name = ""
         user.last_name = ""
