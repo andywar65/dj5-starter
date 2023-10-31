@@ -86,7 +86,7 @@ class HTMXSignupView(HxTemplateMixin, SignupView):
 
 @permission_required("users.change_profile")
 def avatar_display_create(request):
-    check_htmx_request()
+    check_htmx_request(request)
     user = request.user
     context = {"user": user}
     template_name = "account/htmx/avatar_display.html"
@@ -104,6 +104,8 @@ def avatar_display_create(request):
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?submitted=True",
             )
+        context = {"form": form}
+        template_name = "account/htmx/avatar_create.html"
     elif request.method == "GET" and "submitted" in request.GET:
         return TemplateResponse(
             request,
@@ -122,7 +124,7 @@ def avatar_display_create(request):
 def profile_update_delete(request):
     user = request.user
     if request.method == "DELETE":
-        check_htmx_request()
+        check_htmx_request(request)
         user.is_active = False
         user.first_name = ""
         user.last_name = ""

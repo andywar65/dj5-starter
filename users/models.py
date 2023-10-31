@@ -72,17 +72,8 @@ class Profile(models.Model):
         _("Avatar"),
         max_length=200,
         null=True,
-        blank=True,
         upload_to="uploads/images/users/",
     )
-    # fb_image = FileBrowseField(
-    # _("Image"),
-    # max_length=200,
-    # extensions=[".jpg", ".png", ".jpeg", ".gif", ".tif", ".tiff"],
-    # null=True,
-    # blank=True,
-    # directory="images/users/",
-    # )
     bio = models.TextField(_("Short bio"), null=True, blank=True)
     anonymize = models.BooleanField(
         _("Anonymize"),
