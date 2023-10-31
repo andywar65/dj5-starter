@@ -1,0 +1,17 @@
+{% load i18n %}
+
+<form>
+    {{ form|crispy }}
+    <button class="btn btn-primary"
+            type="submit"
+            hx-post="{% url 'avatar_display' %}"
+            hx-target="#avatar_display"
+            hx-encoding="multipart/form-data">
+      {% trans "Add Avatar" %}
+    </button>
+    <button class="btn-close"
+              title="{% trans 'Dismiss' %}"
+              hx-get="{% url 'avatar_display' %}"
+              hx-target="#avatar_display">
+      </button>
+  </form>
