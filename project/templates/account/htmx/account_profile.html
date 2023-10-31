@@ -13,24 +13,9 @@
         {% trans 'Profile has been successfully modified!' %}
       </p>
     {% endif %}
-    <form>
-      {% if user.profile.avatar %}
-        <a href="{{ user.profile.avatar.url }}" target="_blank">
-          <img class="rounded-circle"
-               src="{% thumbnail user.profile.avatar 64x64 crop %}"
-               alt="">
-        </a>
-      {% endif %}
-      {{ av_form|crispy }}
-      <button class="btn btn-primary"
-              type="submit"
-              name = "avatar_submit"
-              hx-post="{% url 'account_profile' %}"
-              hx-target="#content"
-              hx-encoding="multipart/form-data">
-        {% trans "Change Avatar" %}
-      </button>
-    </form>
+    <div id="avatar_display">
+      {% include "account/htmx/avatar_display.html" %}
+    </div>
     <hr>
     <form>
       {{ form|crispy }}
