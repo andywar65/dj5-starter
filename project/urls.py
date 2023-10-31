@@ -34,6 +34,7 @@ from users.views import (
     TestedPasswordResetView,
     TestedPasswordSetView,
     avatar_display_create,
+    avatar_update_delete,
     profile_update_delete,
 )
 
@@ -69,6 +70,7 @@ urlpatterns = [
     ),
     path("accounts/email/", TestedEmailView.as_view(), name="account_email"),
     path("accounts/avatar/", avatar_display_create, name="avatar_display"),
+    path("accounts/avatar/update/", avatar_update_delete, name="avatar_update"),
     path("accounts/", include("allauth.urls")),
     path("__debug__/", include("debug_toolbar.urls")),
     path(

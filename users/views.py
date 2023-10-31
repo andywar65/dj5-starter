@@ -121,6 +121,50 @@ def avatar_display_create(request):
 
 
 @permission_required("users.change_profile")
+def avatar_update_delete(request):
+    check_htmx_request(request)
+    user = request.user
+    context = {"user": user}
+    template_name = "account/htmx/avatar_update.html"
+    if request.method == "DELETE":
+        profile = user.profile
+        profile.avatar = None
+        profile.save()
+        template_name = "account/htmx/avatar_display.html"
+        # SocialAccount.objects.filter(user_id=user.uuid).delete()
+        return TemplateResponse(
+            request,
+            template_name,
+            context,
+            headers={"HX-Trigger": "refreshNavbar"},
+        )
+    elif request.method == "PUT":
+        template_name = "account/htmx/avatar_display.html"
+    elif request.method == "POST":
+        form = AvatarChangeForm(request.POST, request.FILES)
+        if form.is_valid():
+            # assign profile form fields
+            profile = user.profile
+            profile.avatar = form.cleaned_data["avatar"]
+            profile.save()
+            return HttpResponseRedirect(
+                reverse("avatar_display") + "?submitted=True",
+            )
+    else:
+        form = AvatarChangeForm(
+            initial={
+                "avatar": user.profile.avatar,
+            }
+        )
+    context["form"] = form
+    return TemplateResponse(
+        request,
+        template_name,
+        context,
+    )
+
+
+@permission_required("users.change_profile")
 def profile_update_delete(request):
     user = request.user
     if request.method == "DELETE":
@@ -144,16 +188,6 @@ def profile_update_delete(request):
             context,
             headers={"HX-Trigger": "refreshNavbar"},
         )
-    elif request.method == "POST" and "avatar_submit" in request.POST:
-        form = AvatarChangeForm(request.POST, request.FILES)
-        if form.is_valid():
-            # assign profile form fields
-            profile = user.profile
-            profile.avatar = form.cleaned_data["avatar"]
-            profile.save()
-            return HttpResponseRedirect(
-                reverse("account_profile") + "?submitted=True",
-            )
     elif request.method == "POST":
         form = ProfileChangeForm(request.POST)
         if form.is_valid():
@@ -170,13 +204,7 @@ def profile_update_delete(request):
             return HttpResponseRedirect(
                 reverse("account_profile") + "?submitted=True",
             )
-    if request.htmx:
-        template_name = "account/htmx/account_profile.html"
     else:
-        template_name = "account/account_profile.html"
-    try:
-        form
-    except NameError:
         form = ProfileChangeForm(
             initial={
                 "first_name": user.first_name,
@@ -186,15 +214,11 @@ def profile_update_delete(request):
                 "anonymize": user.profile.anonymize,
             }
         )
-    try:
-        av_form
-    except NameError:
-        av_form = AvatarChangeForm(
-            initial={
-                "avatar": user.profile.avatar,
-            }
-        )
-    context = {"form": form, "av_form": av_form}
+    if request.htmx:
+        template_name = "account/htmx/account_profile.html"
+    else:
+        template_name = "account/account_profile.html"
+    context = {"form": form}
     if request.method == "GET" and "submitted" in request.GET:
         context["submitted"] = True
         return TemplateResponse(

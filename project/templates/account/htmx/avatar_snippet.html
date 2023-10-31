@@ -1,0 +1,15 @@
+{% load thumbnail %}
+
+{% if user.profile.avatar %}
+  <a href="{{ user.profile.avatar.url }}" target="_blank">
+    <img class="rounded-circle"
+         src="{% thumbnail user.profile.avatar 64x64 crop %}"
+         alt="">
+  </a>
+{% else %}
+  <img class="rounded-circle"
+       heigth="64px"
+       width="64px"
+       src="{{ user.get_avatar }}"
+       alt="">
+{% endif %}
