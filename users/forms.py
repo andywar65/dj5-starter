@@ -12,7 +12,6 @@ class AvatarChangeForm(ModelForm):
             "avatar",
         ]
         widgets = {"avatar": forms.FileInput()}
-        help_texts = {"avatar": _("Leave empty and submit to delete Avatar")}
 
 
 class ProfileChangeForm(forms.Form):
