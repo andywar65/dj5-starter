@@ -2,32 +2,36 @@
 {% load crispy_forms_tags %}
 
 {% include "account/htmx/avatar_snippet.html" %}
-<form>
-  {{ form|crispy }}
-  <div class="row">
-    <div class="col">
-      <button class="btn btn-primary"
-              type="submit"
-              hx-post="{% url 'avatar_update' %}"
-              hx-target="#avatar_display"
-              hx-encoding="multipart/form-data">
-        {% trans "Change Image" %}
-      </button>
-      <button class="btn-close"
-              title="{% trans 'Dismiss' %}"
-              hx-get="{% url 'avatar_display' %}"
-              hx-target="#avatar_display">
-      </button>
-    </div>
-    <div class="col text-end">
-      {% if user.profile.avatar %}
-        <button class="btn btn-danger"
-                hx-delete="{% url 'avatar_update' %}"
-                hx-target="#avatar_display"
-                hx-confirm="{% trans 'Are you sure you want to delete your Avatar?' %}">
-          {% trans 'Delete' %}
-        </button>
-      {% endif %}
-    </div>
+<div class="card mt-2">
+  <div class="card-body">
+    <form>
+      {{ form|crispy }}
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-primary"
+                  type="submit"
+                  hx-post="{% url 'avatar_update' %}"
+                  hx-target="#avatar_display"
+                  hx-encoding="multipart/form-data">
+            {% trans "Change Image" %}
+          </button>
+          <button class="btn-close"
+                  title="{% trans 'Dismiss' %}"
+                  hx-get="{% url 'avatar_display' %}"
+                  hx-target="#avatar_display">
+          </button>
+        </div>
+        <div class="col text-end">
+          {% if user.profile.avatar %}
+            <button class="btn btn-danger"
+                    hx-delete="{% url 'avatar_update' %}"
+                    hx-target="#avatar_display"
+                    hx-confirm="{% trans 'Are you sure you want to delete your Avatar?' %}">
+              {% trans 'Delete' %}
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    </form>
   </div>
-</form>
+</div>

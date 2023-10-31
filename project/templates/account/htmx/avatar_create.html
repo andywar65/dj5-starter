@@ -1,18 +1,22 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-<form>
-  {{ form|crispy }}
-  <button class="btn btn-primary"
-          type="submit"
-          hx-post="{% url 'avatar_display' %}"
-          hx-target="#avatar_display"
-          hx-encoding="multipart/form-data">
-    {% trans "Add Avatar" %}
-  </button>
-  <button class="btn-close"
-          title="{% trans 'Dismiss' %}"
-          hx-get="{% url 'avatar_display' %}"
-          hx-target="#avatar_display">
-  </button>
-</form>
+<div class="card">
+  <div class="card-body">
+    <form>
+      {{ form|crispy }}
+      <button class="btn btn-primary"
+              type="submit"
+              hx-post="{% url 'avatar_display' %}"
+              hx-target="#avatar_display"
+              hx-encoding="multipart/form-data">
+        {% trans "Add Avatar" %}
+      </button>
+      <button class="btn-close"
+              title="{% trans 'Dismiss' %}"
+              hx-get="{% url 'avatar_display' %}"
+              hx-target="#avatar_display">
+      </button>
+    </form>
+  </div>
+</div>
