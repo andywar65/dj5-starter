@@ -138,8 +138,6 @@ def avatar_update_delete(request):
             context,
             headers={"HX-Trigger": "refreshNavbar"},
         )
-    elif request.method == "PUT":
-        template_name = "account/htmx/avatar_display.html"
     elif request.method == "POST":
         form = AvatarChangeForm(request.POST, request.FILES)
         if form.is_valid():
