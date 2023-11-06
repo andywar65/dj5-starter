@@ -10,7 +10,7 @@
     </a>
   {% else %}
     <button class="btn btn-bg btn-success"
-            hx-put="{% url 'avatar_display' %}"
+            hx-get="{% url 'avatar_display' %}?create=true"
             hx-target="#avatar_display">
       {% trans "Add Avatar" %}
     </button>
