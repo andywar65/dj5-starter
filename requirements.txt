@@ -7,7 +7,9 @@
 asgiref==3.7.2
     # via django
 certifi==2023.7.22
-    # via requests
+    # via
+    #   django-tailwind-cli
+    #   requests
 cffi==1.15.1
     # via cryptography
 charset-normalizer==3.2.0
@@ -15,6 +17,8 @@ charset-normalizer==3.2.0
 coverage==7.3.1
     # via -r requirements.in
 crispy-bootstrap5==0.7
+    # via -r requirements.in
+crispy-tailwind==0.5.0
     # via -r requirements.in
 cryptography==41.0.4
     # via pyjwt
@@ -38,6 +42,7 @@ django==4.2.5
     #   django-htmx
     #   django-modeltranslation
     #   django-polymorphic
+    #   django-tailwind-cli
     #   easy-thumbnails
 django-allauth==0.57.0
     # via -r requirements.in
@@ -47,6 +52,7 @@ django-crispy-forms==2.1
     # via
     #   -r requirements.in
     #   crispy-bootstrap5
+    #   crispy-tailwind
 django-debug-toolbar==4.2.0
     # via -r requirements.in
 django-filer==3.1.0
@@ -57,6 +63,8 @@ django-modeltranslation==0.18.11
     # via -r requirements.in
 django-polymorphic==3.1.0
     # via django-filer
+django-tailwind-cli==2.6.0
+    # via -r requirements.in
 django-tinymce==3.6.1
     # via -r requirements.in
 easy-thumbnails[svg]==2.8.5
@@ -93,9 +101,7 @@ psycopg-pool==3.1.8
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via
-    #   django-allauth
-    #   pyjwt
+    # via django-allauth
 python-dateutil==2.8.2
     # via faker
 python-dotenv==1.0.0
