@@ -90,7 +90,7 @@ def avatar_display_create(request):
     user = request.user
     context = {"user": user}
     template_name = "account/htmx/avatar_display.html"
-    if request.method == "PUT":
+    if request.method == "GET" and "create" in request.GET:
         template_name = "account/htmx/avatar_create.html"
         form = AvatarChangeForm()
         context = {"form": form}

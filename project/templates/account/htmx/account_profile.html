@@ -38,12 +38,13 @@
        hx-delete="{% url 'account_profile' %}"
        hx-target="#content"
        hx-confirm="{% trans 'Are you sure you want to delete your account?' %}"
-    >{% trans "Delete* Account" %}
+    >{% trans "Delete** Account" %}
     </a>
+    <p class="mt-2"><small>{% trans "*Required fields" %}</small></p>
     <p class="mt-2">
       <small>
         {% blocktrans with request.site.name as site_name %}
-          *WARNING! Account will not be deleted, but set to 'inactive'.
+          **WARNING! Account will not be deleted, but set to 'inactive'.
           All user info except username will be completely deleted.
           Contact {{ site_name}} if you want to recover your original account.
         {% endblocktrans %}
