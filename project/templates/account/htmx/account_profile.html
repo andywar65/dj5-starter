@@ -2,14 +2,13 @@
 {% load crispy_forms_tags %}
 {% load thumbnail %}
 
-
-<div class="card mx-auto" style="max-width: 480px;">
-  <div class="card-header">
+<div class="relative flex flex-col min-w-0 rounded break-words border bg-white border-1 border-gray-300 mx-auto" style="max-width: 480px;">
+  <div class="py-3 px-6 mb-0 bg-gray-200 border-b-1 border-gray-300 text-gray-900">
     <h3>{% trans "Change Profile" %}</h3>
   </div>
-  <div class="card-body">
+  <div class="flex-auto p-6">
     {% if submitted %}
-      <p class="alert alert-success" role="alert">
+      <p class="relative px-3 py-3 mb-4 border rounded bg-green-200 border-green-300 text-green-800" role="alert">
         {% trans 'Profile has been successfully modified!' %}
       </p>
     {% endif %}
@@ -18,23 +17,23 @@
     </div>
     <form>
       {{ form|crispy }}
-      <button class="btn btn-primary"
+      <button class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600"
               type="submit"
               hx-post="{% url 'account_profile' %}"
               hx-target="#content">
         {% trans "Change Profile" %}
       </button>
-      <a class="btn btn-secondary"
+      <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-gray-600 text-white hover:bg-gray-700"
          hx-get="{% url 'password_change' %}"
          hx-target="#content"
          hx-push-url="true">{% trans "Change Password?" %}
       </a>
     </form>
     <hr>
-    <a class="btn btn-success"
+    <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-500 text-white hover:green-600"
        href="{% url 'socialaccount_connections' %}">{% trans "Connect social" %}
     </a>
-    <a class="btn btn-danger"
+    <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
        hx-delete="{% url 'account_profile' %}"
        hx-target="#content"
        hx-confirm="{% trans 'Are you sure you want to delete your account?' %}"
