@@ -9,9 +9,14 @@
   </div>
   <div class="card-body">
     {% if submitted %}
-      <p class="alert alert-success" role="alert">
-        {% trans 'Profile has been successfully modified!' %}
-      </p>
+      <div class="row alert alert-success" role="alert" id="success_box">
+        <div class="col col-10">
+          <p>{% trans 'Profile has been successfully modified!' %}</p>
+        </div>
+        <div class="col text-end">
+          <button aria-label="Close" class="btn-close" script="on click hide #success_box"></button>
+        </div>
+      </div>
     {% endif %}
     <div id="avatar_display">
       {% include "account/htmx/avatar_display.html" %}
