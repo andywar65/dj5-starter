@@ -103,11 +103,11 @@ def avatar_display_create(request):
             profile.avatar = form.cleaned_data["avatar"]
             profile.save()
             return HttpResponseRedirect(
-                reverse("avatar_display") + "?submitted=True",
+                reverse("avatar_display") + "?refresh=True",
             )
         context = {"form": form}
         template_name = "account/htmx/avatar_create.html"
-    elif request.method == "GET" and "submitted" in request.GET:
+    elif request.method == "GET" and "refresh" in request.GET:
         return TemplateResponse(
             request,
             template_name,
@@ -147,7 +147,7 @@ def avatar_update_delete(request):
             profile.avatar = form.cleaned_data["avatar"]
             profile.save()
             return HttpResponseRedirect(
-                reverse("avatar_display") + "?submitted=True",
+                reverse("avatar_display") + "?refresh=True",
             )
     else:
         form = AvatarChangeForm(
@@ -202,7 +202,7 @@ def profile_update_delete(request):
             profile.save()
             messages.success(request, _("Profile has been successfully modified!"))
             return HttpResponseRedirect(
-                reverse("account_profile") + "?submitted=True",
+                reverse("account_profile") + "?refresh=True",
             )
     else:
         form = ProfileChangeForm(
@@ -219,8 +219,7 @@ def profile_update_delete(request):
     else:
         template_name = "account/account_profile.html"
     context = {"form": form}
-    if request.method == "GET" and "submitted" in request.GET:
-        context["submitted"] = True
+    if request.method == "GET" and "refresh" in request.GET:
         return TemplateResponse(
             request,
             template_name,
