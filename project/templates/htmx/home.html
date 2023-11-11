@@ -1,12 +1,22 @@
 {% load i18n %}
 
-<div class="card mx-auto" style="max-width: 960px;">
-  <div class="card-header">
-    <h1>{% trans "Welcome to dj5-starter" %}</h1>
+<div class="flex flex-col max-w-lg bg-white rounded border-1 border-black mx-auto">
+  <div class="py-3 px-6 bg-black text-white text-xl">
+    {% trans "Welcome to dj5-starter" %}
   </div>
-  <div class="card-body">
+  <div class="p-6">
     {% blocktrans %}
-      dj5-starter is a Django 5.0 starter kit.
+      Se di recente avete frequentato i social media,
+      probabilmente vi sarete imbattuti nella tendenza virale che va sotto l'eloquente nome di "everything shower",
+      o “doccia totale”. Si tratta esattamente di ciò che l'espressione suggerisce:
+      una doccia in cui si indulge a ogni singolo aspetto della body routine,
+      dalla detersione all'esfoliazione, dalla depilazione all'idratazione.
+      In pratica, l'equivalente di qualche ora di relax in una spa, ma senza uscire dal proprio bagno.
+      Va detto che, sebbene la tendenza abbia accumulato oltre 400 milioni di visualizzazioni su TikTok,
+      non si tratta, a ben vedere, di un concetto poi così nuovo:
+      il rituale del bagno come momento di piacere è popolare almeno dai tempi dell'antica Roma,
+      e molti di noi praticano già versioni personalizzate della #everythingshower,
+      pur chiamandole con un altro nome.
     {% endblocktrans %}
   </div>
 </div>

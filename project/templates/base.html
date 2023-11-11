@@ -17,7 +17,7 @@
     {% block extra-head %}{% endblock extra-head %}
     <meta name="google-site-verification" content="" />
   </head>
-  <body class="d-flex flex-column h-100" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+  <body class="bg-gray-500" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <div id="navbar"
          hx-get="{% url 'nav_bar' %}"
          hx-trigger="refreshNavbar from:body">
