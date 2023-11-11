@@ -17,10 +17,8 @@ class Command(BaseCommand):
 
         self.stdout.write(
             """Done, you can log in as 'andywar65' with pw='P4s5W0r6'.\n
-            Remember that this is a dummy installation, it works on a Sqlite database.\n
-            Create a Postgres database, update dotenv file\n
-            (update db.url and media/static roots)\n  
-            then migrate and create a new super user.
+            Remember that this is a dummy installation, after creating new\n
+            Postgres database, create a new super user.
             """
         )
 
