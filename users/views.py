@@ -10,6 +10,7 @@ from allauth.account.views import (
 )
 from allauth.socialaccount.models import SocialAccount
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
@@ -199,6 +200,7 @@ def profile_update_delete(request):
             profile.bio = form.cleaned_data["bio"]
             profile.anonymize = form.cleaned_data["anonymize"]
             profile.save()
+            messages.success(request, _("Profile has been successfully modified!"))
             return HttpResponseRedirect(
                 reverse("account_profile") + "?submitted=True",
             )
