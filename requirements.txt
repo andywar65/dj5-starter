@@ -8,15 +8,15 @@ asgiref==3.7.2
     # via django
 certifi==2023.7.22
     # via requests
-cffi==1.15.1
+cffi==1.16.0
     # via cryptography
-charset-normalizer==3.2.0
+charset-normalizer==3.3.2
     # via requests
-coverage==7.3.1
+coverage==7.3.2
     # via -r requirements.in
-crispy-bootstrap5==0.7
+crispy-bootstrap5==2023.10
     # via -r requirements.in
-cryptography==41.0.4
+cryptography==41.0.5
     # via pyjwt
 cssselect2==0.7.0
     # via svglib
@@ -26,7 +26,7 @@ dj-database-url==2.1.0
     # via environs
 dj-email-url==1.0.6
     # via environs
-django==4.2.5
+django==4.2.7
     # via
     #   -r requirements.in
     #   crispy-bootstrap5
@@ -39,7 +39,7 @@ django==4.2.5
     #   django-modeltranslation
     #   django-polymorphic
     #   easy-thumbnails
-django-allauth==0.57.0
+django-allauth==0.58.2
     # via -r requirements.in
 django-cache-url==3.4.4
     # via environs
@@ -51,7 +51,7 @@ django-debug-toolbar==4.2.0
     # via -r requirements.in
 django-filer==3.1.0
     # via -r requirements.in
-django-htmx==1.16.0
+django-htmx==1.17.0
     # via -r requirements.in
 django-modeltranslation==0.18.11
     # via -r requirements.in
@@ -67,7 +67,7 @@ environs[django]==9.5.0
     # via -r requirements.in
 factory-boy==3.3.0
     # via -r requirements.in
-faker==19.6.2
+faker==20.0.0
     # via factory-boy
 idna==3.4
     # via requests
@@ -77,18 +77,18 @@ marshmallow==3.20.1
     # via environs
 oauthlib==3.2.2
     # via requests-oauthlib
-packaging==23.1
+packaging==23.2
     # via marshmallow
-pillow==10.0.1
+pillow==10.1.0
     # via
     #   -r requirements.in
     #   easy-thumbnails
     #   reportlab
-psycopg[binary,pool]==3.1.11
+psycopg[binary,pool]==3.1.12
     # via -r requirements.in
-psycopg-binary==3.1.11
+psycopg-binary==3.1.12
     # via psycopg
-psycopg-pool==3.1.8
+psycopg-pool==3.2.0
     # via psycopg
 pycparser==2.21
     # via cffi
@@ -102,7 +102,7 @@ python-dotenv==1.0.0
     # via environs
 python3-openid==3.2.0
     # via django-allauth
-reportlab==4.0.6
+reportlab==4.0.7
     # via
     #   easy-thumbnails
     #   svglib
@@ -135,7 +135,7 @@ tzdata==2023.3
     # via
     #   django
     #   psycopg
-urllib3==2.0.5
+urllib3==2.1.0
     # via requests
 webencodings==0.5.1
     # via
