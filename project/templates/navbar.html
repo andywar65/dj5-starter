@@ -36,7 +36,18 @@
         </div>
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex flex-shrink-0 items-center">
-            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+            <a class="navbar-brand"
+               hx-get="{% url 'home' %}"
+               hx-target="#content"
+               hx-push-url="true">
+              {% if logo %}
+                <img src="{% thumbnail logo.image 32x32 crop %}"
+                     class="h-8 w-auto rounded-full"
+                     alt="{{ request.site.name }}">
+              {% else %}
+                {{ request.site.name }}
+              {% endif %}
+            </a>
           </div>
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
