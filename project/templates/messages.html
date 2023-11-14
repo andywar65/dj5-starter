@@ -1,5 +1,8 @@
-<ul class="messages">
-  {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-  {% endfor %}
-</ul>
+{% for message in messages %}
+  <div class="row alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert" id="message-{{ forloop.counter }}">
+    <div class="col col-10">{{ message }}</div>
+    <div class="col text-end">
+      <button aria-label="Close" class="btn-close" script="on click remove #message-{{ forloop.counter }}"></button>
+    </div>
+  </div>
+{% endfor %}
