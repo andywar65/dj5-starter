@@ -9,11 +9,7 @@
   </div>
   <div class="card-body">
     {% if messages %}
-      <ul class="messages">
-        {% for message in messages %}
-          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-      </ul>
+      {% include "messages.html" %}
     {% endif %}
     {% if submitted %}
       <div class="row alert alert-success" role="alert" id="success_box">
