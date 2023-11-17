@@ -39,7 +39,8 @@
             <a class="navbar-brand"
                hx-get="{% url 'home' %}"
                hx-target="#content"
-               hx-push-url="true">
+               hx-push-url="true"
+               title="{{ request.site.name }}">
               {% if logo %}
                 <img src="{% thumbnail logo.image 32x32 crop %}"
                      class="h-8 w-auto rounded-full"

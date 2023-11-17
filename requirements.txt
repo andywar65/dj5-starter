@@ -92,16 +92,14 @@ pillow==10.0.1
     #   -r requirements.in
     #   easy-thumbnails
     #   reportlab
-psycopg[binary,pool]==3.1.11
+psycopg2-binary==2.9.9
     # via -r requirements.in
-psycopg-binary==3.1.11
-    # via psycopg
-psycopg-pool==3.1.8
-    # via psycopg
 pycparser==2.21
     # via cffi
 pyjwt[crypto]==2.8.0
-    # via django-allauth
+    # via
+    #   django-allauth
+    #   pyjwt
 python-dateutil==2.8.2
     # via faker
 python-dotenv==1.0.0
@@ -135,12 +133,6 @@ typing-extensions==4.8.0
     #   asgiref
     #   dj-database-url
     #   django-modeltranslation
-    #   psycopg
-    #   psycopg-pool
-tzdata==2023.3
-    # via
-    #   django
-    #   psycopg
 urllib3==2.0.5
     # via requests
 webencodings==0.5.1

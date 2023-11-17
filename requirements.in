@@ -1,5 +1,5 @@
 django>=4.2.5,<5.0
-psycopg[binary,pool]
+psycopg2-binary
 django-allauth
 django-htmx
 django-modeltranslation
