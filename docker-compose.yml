@@ -9,8 +9,10 @@ services:
       - POSTGRES_PASSWORD=postgres
   web:
     build: .
-    command: sh -c "python manage.py makemigrations && python manage.py migrate &&
-                python manage.py tailwind runserver 0.0.0.0:8000"
+    # command: sh -c "python manage.py migrate &&
+                # python manage.py createsuperuser --noinput &&
+                # python manage.py tailwind runserver 0.0.0.0:8000"
+    command: python manage.py tailwind runserver 0.0.0.0:8000
     volumes:
       - .:/code
     ports:
@@ -19,8 +21,5 @@ services:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - DJANGO_SUPERUSER_PASSWORD=P4s5W0r6
-      - DJANGO_SUPERUSER_USERNAME=andywar65
-      - DJANGO_SUPERUSER_EMAIL=andy.war65@gmail.com
     depends_on:
       - db
