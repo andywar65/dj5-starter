@@ -41,10 +41,9 @@ INTERNAL_IPS = [
 # Application definition
 
 INSTALLED_APPS = [
+    # third party recommended before core apps
     "modeltranslation",
-    "tinymce",
-    "easy_thumbnails",
-    "filer",
+    # core apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -64,6 +63,9 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     "django_htmx",
     "debug_toolbar",
+    "easy_thumbnails",
+    "filer",
+    "tinymce",
     # local
     "users.apps.UsersConfig",
 ]
