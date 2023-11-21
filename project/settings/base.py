@@ -218,4 +218,10 @@ EMAIL_RECIPIENT = env.str("EMAIL_RECIPIENT", default="me@example.com")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "users.User"
 
+DJANGO_SUPERUSER_USERNAME = env.str("DJANGO_SUPERUSER_USERNAME", default="andywar65")
+DJANGO_SUPERUSER_EMAIL = env.str(
+    "DJANGO_SUPERUSER_EMAIL", default="andy.war1965@gmail.com"
+)
+DJANGO_SUPERUSER_PASSWORD = env.str("DJANGO_SUPERUSER_PASSWORD")
+
 SITE_ID = 1

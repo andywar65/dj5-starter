@@ -4,6 +4,8 @@ from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
 from django.core.management.utils import get_random_secret_key
 
+from users.models import User
+
 
 class Command(BaseCommand):
     help = "Generate dot env file."
@@ -35,4 +37,8 @@ def create_item():
         f.write("STATIC_URL=/static/\n")
         f.write("MEDIA_ROOT=/path/to/your/media_app\n")
         f.write("MEDIA_URL=/media/")
+        f.write("DJANGO_SUPERUSER_USERNAME=andywar65")
+        f.write("DJANGO_SUPERUSER_EMAIL=andy.war1965@gmail.com")
+        f.write(f"DJANGO_SUPERUSER_PASSWORD={User.objects.make_random_password()}")
+
     f.close()

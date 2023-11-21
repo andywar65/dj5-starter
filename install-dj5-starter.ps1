@@ -24,7 +24,7 @@ pre-commit install
 # Here we generate secret key and save it in .env file
 python manage.py generate_dot_env
 python manage.py migrate
-python manage.py create_super_user
+python manage.py createsuperuser --noinput
 # this is a ps shortcut for runserver
 .\run
 # You should be able to login with "andywar65" and "P4s5W0r6"
