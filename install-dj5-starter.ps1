@@ -5,8 +5,8 @@
 cd X:/your/venv/root
 mkdir dj5-starter
 cd dj5-starter
-# start and activate virtual environment
-py -3.10 -m virtualenv env
+# start and activate virtual environment with Python 3.12
+py -3.12 -m virtualenv env
 env/Scripts/activate
 # make some other directories
 mkdir static
@@ -27,4 +27,4 @@ python manage.py migrate
 python manage.py createsuperuser --noinput
 # this is a ps shortcut for runserver
 .\run
-# You should be able to login with "andywar65" and "P4s5W0r6"
+# You should be able to login with "andywar65" and pw in .env file
