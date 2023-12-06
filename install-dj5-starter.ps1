@@ -20,11 +20,11 @@ cd dj5-starter
 python -m pip install -r requirements.txt
 # I use pre-commit systemwide, so I just install it in the local repository
 pre-commit install
-# standard + custom commands
 # Here we generate secret key and save it in .env file
-python manage.py generate_dot_env
+python generate_dot_env.py
+# standard commands
 python manage.py migrate
 python manage.py createsuperuser --noinput
 # this is a ps shortcut for runserver
 .\run
-# You should be able to login with "andywar65" and pw in .env file
+# You should be able to login with "andywar65" and pw "P4s5W0r6"
