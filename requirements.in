@@ -1,4 +1,4 @@
-django>=4.2.7,<5.0
+django>=5.0,<6.0
 psycopg[binary,pool]
 django-allauth
 django-htmx
