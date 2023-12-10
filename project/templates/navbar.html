@@ -42,7 +42,7 @@
                title="{{ request.site.name }}">
               {% if logo %}
                 <img src="{% thumbnail logo.image 32x32 crop %}"
-                     class="h-8 w-auto rounded-full"
+                     class="h-8 w-auto rounded-full hover:ring-2 hover:ring-white"
                      alt="{{ request.site.name }}">
               {% else %}
                 {{ request.site.name }}
