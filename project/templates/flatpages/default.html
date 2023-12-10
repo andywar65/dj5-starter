@@ -2,11 +2,11 @@
 {% load i18n %}
 
 {% block content %}
-  <div class="card mx-auto" style="max-width: 960px;">
-    <div class="card-header">
-      <h3>{{ flatpage.title }}</h3>
+  <div class="flex flex-col max-w-2xl bg-white rounded border-1 border-black mx-auto">
+    <div class="py-3 px-6 bg-black text-white text-xl">
+      {{ flatpage.title }}
     </div>
-    <div class="card-body">
+    <div class="p-6">
       {{ flatpage.content }}
     </div>
   </div>
