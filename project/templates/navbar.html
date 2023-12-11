@@ -63,10 +63,10 @@
                    script="on click add .hidden to #profile-dropdown then add .hidden to #language-dropdown then toggle .hidden on #flatpage-dropdown">
                   {% translate 'Docs' %}
                 </a>
-                {% if flatpages %}
-                  <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
-                       id="flatpage-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                    <div class="py-1" role="none">
+                <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                     id="flatpage-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                  <div class="py-1" role="none">
+                    {% if flatpages %}
                       {% for page in flatpages %}
                         <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
                            role="menuitem"
@@ -76,9 +76,17 @@
                           {{ page.title }}
                         </a>
                       {% endfor %}
-                    </div>
+                    {% else %}
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         href="#"
+                         script="on click toggle .hidden on #flatpage-dropdown">
+                        {% trans "No documents yet" %}
+                      </a>
+                    {% endif %}
                   </div>
-                {% endif %}
+                </div>
               </div>
               {% if user.is_authenticated %}
                 <div class="relative">
