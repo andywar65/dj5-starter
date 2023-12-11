@@ -80,12 +80,21 @@
                   </div>
                 {% endif %}
               </div>
-              <div class="relative">
-                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                   script="on click add .hidden to #flatpage-dropdown">
-                  {% translate 'Login' %}
-                </a>
-              </div>
+              {% if user.is_authenticated %}
+                <div class="relative">
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                     script="on click add .hidden to #flatpage-dropdown">
+                    {% translate 'Profile' %}
+                  </a>
+                </div>
+              {% else %}
+                <div class="relative">
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                     script="on click add .hidden to #flatpage-dropdown">
+                    {% translate 'Login' %}
+                  </a>
+                </div>
+              {% endif %}
               <div class="relative">
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                    script="on click add .hidden to #flatpage-dropdown">
