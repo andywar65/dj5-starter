@@ -125,16 +125,38 @@
                           {% trans "Go to Admin" %}
                         </a>
                       {% endif %}
-
                     </div>
                   </div>
                 </div>
               {% else %}
                 <div class="relative">
                   <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                     script="on click add .hidden to #flatpage-dropdown">
+                     script="on click add .hidden to #flatpage-dropdown then toggle .hidden on #profile-dropdown">
                     {% translate 'Login' %}
                   </a>
+                  <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                       id="profile-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div class="py-1" role="none">
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_login' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Login' %}
+                      </a>
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_signup' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Sign Up' %}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               {% endif %}
               <div class="relative">
