@@ -164,14 +164,14 @@
                    script="on click add .hidden to #flatpage-dropdown then add .hidden to #profile-dropdown then toggle .hidden on #language-dropdown">
                   {% translate 'Language' %}
                 </a>
-                <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                <div class="hidden absolute left-0 z-10 mt-3 w-72 origin-top-right rounded-md bg-white border-1 border-black"
                      id="language-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
                   <div class="py-1" role="none">
                     <form class="flex flex-wrap" action="{% url 'set_language' %}" method="POST">
                       {% csrf_token %}
-                      <div class="col-auto">
+                      <div class="w-32">
                         <input name="next" type="hidden" value="">
-                        <select class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" name="language">
+                        <select class="block appearance-none w-full py-1 px-2 mb-1 text-base ml-2 leading-normal bg-white text-gray-800 border border-gray-200 rounded" name="language">
                           {% get_current_language as LANGUAGE_CODE %}
                           {% get_available_languages as LANGUAGES %}
                           {% get_language_info_list for LANGUAGES as languages %}
@@ -182,8 +182,8 @@
                           {% endfor %}
                         </select>
                       </div>
-                      <div class="col-auto">
-                        <button class="bg-gray-300 text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" type="submit">{% translate 'Set language' %}</button>
+                      <div class="right-0">
+                        <button class="ml-3 bg-gray-300 text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" type="submit">{% translate 'Set language' %}</button>
                       </div>
                     </form>
                   </div>
