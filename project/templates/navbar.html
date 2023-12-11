@@ -60,7 +60,7 @@
                   {% get_flatpages "/docs/" as flatpages %}
                 {% endif %}
                 <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                   script="on click toggle .hidden on #flatpage-dropdown">
+                   script="on click add .hidden to #profile-dropdown then toggle .hidden on #flatpage-dropdown">
                   {% translate 'Docs' %}
                 </a>
                 {% if flatpages %}
@@ -83,9 +83,51 @@
               {% if user.is_authenticated %}
                 <div class="relative">
                   <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
-                     script="on click add .hidden to #flatpage-dropdown">
+                     script="on click add .hidden to #flatpage-dropdown then toggle .hidden on #profile-dropdown">
                     {% translate 'Profile' %}
                   </a>
+                  <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                       id="profile-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div class="py-1" role="none">
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_profile' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Profile' %}
+                      </a>
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_contact' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Contact' %}
+                      </a>
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_logout' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Logout' %}
+                      </a>
+                      {% if user.is_staff %}
+                        <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                           role="menuitem"
+                           tabindex="-1"
+                           href="/admin/"
+                           script="on click toggle .hidden on #profile-dropdown">
+                          {% trans "Go to Admin" %}
+                        </a>
+                      {% endif %}
+
+                    </div>
+                  </div>
                 </div>
               {% else %}
                 <div class="relative">
