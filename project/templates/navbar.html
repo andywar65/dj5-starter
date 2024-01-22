@@ -44,9 +44,11 @@
               {% else %}
                 {% get_flatpages "/docs/" as flatpages %}
               {% endif %}
-              {% for page in flatpages %}
-                <a class="dropdown-item" href="{{ page.url }}">{{ page.title }}</a>
-              {% endfor %}
+              {% if flatpages %}
+                {% for page in flatpages %}
+                  <a class="dropdown-item" href="{{ page.url }}">{{ page.title }}</a>
+                {% endfor %}
+              {% endif %}
             </div>
           </li>
           {% if user.is_authenticated %}
