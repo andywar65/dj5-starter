@@ -1,11 +1,14 @@
 from io import StringIO
 
+from django.conf import settings
 from django.contrib.flatpages.models import FlatPage
 from django.core.management import call_command
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
 from users.models import User
+
+pword = settings.DJANGO_SUPERUSER_PASSWORD
 
 
 class PendingMigrationsTests(TestCase):
@@ -84,7 +87,7 @@ class SearchTest(TestCase):
             url="/documenti/pagina-piatta/",
             content="bar",
         )
-        User.objects.create_superuser("boss", "boss@example.com", "P4s5W0r6")
+        User.objects.create_superuser("boss", "boss@example.com", pword)
 
     def test_search_results_view_status_code(self):
         response = self.client.get(reverse("search_results") + "?lang=en&q=foo")
@@ -120,7 +123,7 @@ class SearchTest(TestCase):
         print("\n-Test search equal querysets")
 
     def test_super_user_change_flatpage(self):
-        self.client.login(username="boss", password="P4s5W0r6")
+        self.client.login(username="boss", password=pword)
         # just for coverage
         response = self.client.get("/admin/flatpages/flatpage/1/change/")
         self.assertEqual(response.status_code, 200)

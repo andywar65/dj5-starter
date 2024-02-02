@@ -9,6 +9,8 @@ from django.urls import reverse
 
 from users.models import User
 
+pword = settings.DJANGO_SUPERUSER_PASSWORD
+
 
 @override_settings(USE_I18N=False)
 @override_settings(MEDIA_ROOT=Path(settings.MEDIA_ROOT).joinpath("temp"))
@@ -16,11 +18,9 @@ class UserViewsTest(TestCase):
     @classmethod
     def setUpTestData(cls):
         print("\nTest user views")
-        boss = User.objects.create_superuser("boss", "boss@example.com", "P4s5W0r6")
+        boss = User.objects.create_superuser("boss", "boss@example.com", pword)
         EmailAddress.objects.create(user_id=boss.uuid)
-        immutable = User.objects.create_user(
-            "immutable", "immu@example.com", "P4s5W0r6"
-        )
+        immutable = User.objects.create_user("immutable", "immu@example.com", pword)
         p = Permission.objects.get(codename="change_profile")
         immutable.user_permissions.remove(p)
 
@@ -57,7 +57,7 @@ class UserViewsTest(TestCase):
 
     def test_immutable_user_views_status_code_302(self):
         print("\n-Test Immutable User Views logged")
-        self.client.login(username="immutable", password="P4s5W0r6")
+        self.client.login(username="immutable", password="pword")
 
         response = self.client.get(reverse("account_profile"))
         self.assertEqual(response.status_code, 302)
@@ -73,7 +73,7 @@ class UserViewsTest(TestCase):
 
     def test_user_views_status_code_200(self):
         print("\n-Test User Views logged in")
-        self.client.login(username="boss", password="P4s5W0r6")
+        self.client.login(username="boss", password="pword")
 
         response = self.client.get(reverse("account_profile"))
         self.assertEqual(response.status_code, 200)
@@ -83,9 +83,9 @@ class UserViewsTest(TestCase):
         self.assertEqual(response.status_code, 200)
         print("\n--Test Account Contact success")
 
-    def test_change_account_profile(self):
-        print("\n-Test Change account profile")
-        self.client.login(username="boss", password="P4s5W0r6")
+    def test_change_account_avatar(self):
+        print("\n-Test Change account avatar")
+        self.client.login(username="boss", password=pword)
         img_path = Path(settings.PROJECT_DIR).joinpath("static/tests/image.jpg")
         with open(img_path, "rb") as f:
             content = f.read()
@@ -122,6 +122,10 @@ class UserViewsTest(TestCase):
         )
         print("\n--Test Delete Avatar redirect")
 
+    def test_change_account_profile(self):
+        print("\n-Test Change account profile")
+        self.client.login(username="boss", password=pword)
+
         response = self.client.post(
             reverse("account_profile"),
             {
@@ -135,7 +139,7 @@ class UserViewsTest(TestCase):
         )
         self.assertRedirects(
             response,
-            reverse("account_profile") + "?submitted=True",
+            reverse("account_profile") + "?refresh=True",
             status_code=302,
             target_status_code=200,
         )
@@ -143,7 +147,7 @@ class UserViewsTest(TestCase):
 
     def test_send_account_contact(self):
         print("\n-Test send account contact")
-        self.client.login(username="boss", password="P4s5W0r6")
+        self.client.login(username="boss", password=pword)
 
         response = self.client.post(
             reverse("account_contact"),
@@ -160,7 +164,7 @@ class UserViewsTest(TestCase):
 
     def test_delete_account_profile(self):
         print("\n-Test delete account profile")
-        self.client.login(username="boss", password="P4s5W0r6")
+        self.client.login(username="boss", password=pword)
 
         response = self.client.delete(
             reverse("account_profile"),

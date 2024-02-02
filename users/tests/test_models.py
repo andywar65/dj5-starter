@@ -1,7 +1,10 @@
 from allauth.socialaccount.models import SocialAccount
+from django.conf import settings
 from django.test import TestCase, override_settings
 
 from users.models import User, UserMessage
+
+pword = settings.DJANGO_SUPERUSER_PASSWORD
 
 
 @override_settings(USE_I18N=False)
@@ -12,7 +15,7 @@ class UserModelTest(TestCase):
         # Set up non-modified objects used by all test methods
         user = User.objects.create(
             username="andy.war65",
-            password="P4s5W0r6",
+            password=pword,
             first_name="Andrea",
             last_name="Guerra",
             email="andy@war.com",
@@ -25,13 +28,11 @@ class UserModelTest(TestCase):
         profile = user.profile
         profile.bio = "My biography"
         profile.save()
-        User.objects.create(
-            username="nonames", password="P4s5W0r6", email="nonames@war.com"
-        )
+        User.objects.create(username="nonames", password=pword, email="nonames@war.com")
         UserMessage.objects.create(user_id=user.uuid, subject="Foo", body="Bar")
         anonim = User.objects.create(
             username="anonim",
-            password="P4s5W0r6",
+            password=pword,
             first_name="Anonimous",
             last_name="War",
             email="anonim@war.com",
