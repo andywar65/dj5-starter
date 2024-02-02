@@ -57,7 +57,7 @@ class UserViewsTest(TestCase):
 
     def test_immutable_user_views_status_code_302(self):
         print("\n-Test Immutable User Views logged")
-        self.client.login(username="immutable", password="pword")
+        self.client.login(username="immutable", password=pword)
 
         response = self.client.get(reverse("account_profile"))
         self.assertEqual(response.status_code, 302)
@@ -73,7 +73,7 @@ class UserViewsTest(TestCase):
 
     def test_user_views_status_code_200(self):
         print("\n-Test User Views logged in")
-        self.client.login(username="boss", password="pword")
+        self.client.login(username="boss", password=pword)
 
         response = self.client.get(reverse("account_profile"))
         self.assertEqual(response.status_code, 200)
