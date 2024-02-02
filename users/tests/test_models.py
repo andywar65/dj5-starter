@@ -41,41 +41,41 @@ class UserModelTest(TestCase):
 
     def test_user_get_avatar(self):
         user = User.objects.get(username="andy.war65")
-        self.assertEquals(user.get_avatar(), "foo")
+        self.assertEqual(user.get_avatar(), "foo")
         print("\n-Tested User get avatar")
 
     def test_profile_get_names(self):
         user = User.objects.get(username="andy.war65")
-        self.assertEquals(user.profile.__str__(), "andy.war65")
+        self.assertEqual(user.profile.__str__(), "andy.war65")
         print("\n-Tested Profile __str__")
-        self.assertEquals(user.__str__(), "andy.war65")
+        self.assertEqual(user.__str__(), "andy.war65")
         print("\n-Tested User __str__")
-        self.assertEquals(user.get_full_name(), "Andrea Guerra")
+        self.assertEqual(user.get_full_name(), "Andrea Guerra")
         print("\n-Tested User full name")
-        self.assertEquals(user.get_short_name(), "Andrea")
+        self.assertEqual(user.get_short_name(), "Andrea")
         print("\n-Tested User short name")
 
     def test_profile_get_no_names(self):
         user = User.objects.get(username="nonames")
-        self.assertEquals(user.profile.__str__(), "nonames")
+        self.assertEqual(user.profile.__str__(), "nonames")
         print("\n-Tested Profile no __str__")
-        self.assertEquals(user.__str__(), "nonames")
+        self.assertEqual(user.__str__(), "nonames")
         print("\n-Tested User no __str__")
-        self.assertEquals(user.get_full_name(), "nonames")
+        self.assertEqual(user.get_full_name(), "nonames")
         print("\n-Tested User no full name")
-        self.assertEquals(user.get_short_name(), "nonames")
+        self.assertEqual(user.get_short_name(), "nonames")
         print("\n-Tested User no short name")
 
     def test_profile_get_anonimized(self):
         user = User.objects.get(username="anonim")
-        self.assertEquals(user.get_full_name(), "anonim")
+        self.assertEqual(user.get_full_name(), "anonim")
         print("\n-Tested User anonymous full name")
-        self.assertEquals(user.get_short_name(), "anonim")
+        self.assertEqual(user.get_short_name(), "anonim")
         print("\n-Tested User anonymous short name")
-        self.assertEquals(user.get_avatar(), None)
+        self.assertEqual(user.get_avatar(), None)
         print("\n-Tested User no avatar")
 
     def test_usermessage_get_str(self):
         message = UserMessage.objects.get(subject="Foo")
-        self.assertEquals(message.__str__(), "Message - " + str(message.id))
+        self.assertEqual(message.__str__(), "Message - " + str(message.id))
         print("\n-Tested UserMessage __str__")
