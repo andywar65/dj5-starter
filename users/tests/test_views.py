@@ -91,16 +91,16 @@ class UserViewsTest(TestCase):
             content = f.read()
 
         response = self.client.post(
-            reverse("account_profile"),
+            reverse("avatar_display"),
             {
                 "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
-                "avatar_submit": True,
             },
+            headers={"HX-Request": "true"},
             follow=True,
         )
         self.assertRedirects(
             response,
-            reverse("account_profile") + "?submitted=True",
+            reverse("avatar_display") + "?refresh=True",
             status_code=302,
             target_status_code=200,
         )
