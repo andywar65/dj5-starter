@@ -7,7 +7,7 @@ from users.models import User, UserMessage
 pword = settings.DJANGO_SUPERUSER_PASSWORD
 
 
-@override_settings(USE_I18N=False)
+@override_settings(LANGUAGE_CODE="en-us")
 class UserModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
