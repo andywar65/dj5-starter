@@ -84,7 +84,7 @@ class UserViewsTest(TestCase):
         print("\n--Test Account Contact success")
 
     def test_change_account_avatar(self):
-        print("\n-Test Change account avatar")
+        print("\n-Test Add and Delete account avatar")
         self.client.login(username="boss", password=pword)
         img_path = Path(settings.PROJECT_DIR).joinpath("static/tests/image.jpg")
         with open(img_path, "rb") as f:
@@ -106,21 +106,12 @@ class UserViewsTest(TestCase):
         )
         print("\n--Test Add Avatar redirect")
 
-        response = self.client.post(
-            reverse("account_profile"),
-            {
-                "avatar": False,
-                "avatar_submit": True,
-            },
-            follow=True,
+        response = self.client.delete(
+            reverse("avatar_update"),
+            headers={"HX-Request": "true"},
         )
-        self.assertRedirects(
-            response,
-            reverse("account_profile") + "?submitted=True",
-            status_code=302,
-            target_status_code=200,
-        )
-        print("\n--Test Delete Avatar redirect")
+        self.assertEqual(response.status_code, 200)
+        print("\n--Test Delete Avatar status code")
 
     def test_change_account_profile(self):
         print("\n-Test Change account profile")
