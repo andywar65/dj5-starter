@@ -1,0 +1,230 @@
+{% load static %}
+{% load i18n %}
+{% load flatpages %}
+{% load thumbnail %}
+
+<header class="fixed-top">
+  <nav class="bg-black">
+    <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div class="relative flex h-16 items-center justify-between">
+        <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <!-- Mobile menu button-->
+          <button type="button"
+                  class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  aria-controls="mobile-menu"
+                  aria-expanded="false"
+                  script="on click toggle .hidden on #mobile-menu">
+            <span class="absolute -inset-0.5"></span>
+            <span class="sr-only">Open main menu</span>
+            <!--
+              Icon when menu is closed.
+
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!--
+              Icon when menu is open.
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex flex-shrink-0 items-center">
+            <button class=""
+                    hx-get="{% url 'home' %}"
+                    hx-target="#content"
+                    hx-push-url="true"
+                    title="{{ request.site.name }}">
+              {% if logo %}
+                <img src="{% thumbnail logo.image 32x32 crop %}"
+                     class="h-8 w-auto rounded-full"
+                     alt="{{ request.site.name }}">
+              {% else %}
+                {{ request.site.name }}
+              {% endif %}
+            </button>
+          </div>
+          <div class="hidden sm:ml-6 sm:block">
+            <div class="flex space-x-4">
+              <div class="relative">
+                {% get_current_language as LANG %}
+                {% if LANG == "it" %}
+                  {% get_flatpages "/documenti/" as flatpages %}
+                {% else %}
+                  {% get_flatpages "/docs/" as flatpages %}
+                {% endif %}
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                   script="on click add .hidden to #profile-dropdown then add .hidden to #language-dropdown then toggle .hidden on #flatpage-dropdown">
+                  {% translate 'Docs' %}
+                </a>
+                <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                     id="flatpage-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                  <div class="py-1" role="none">
+                    {% if flatpages %}
+                      {% for page in flatpages %}
+                        <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                           role="menuitem"
+                           tabindex="-1"
+                           href="{{ page.url }}"
+                           script="on click toggle .hidden on #flatpage-dropdown">
+                          {{ page.title }}
+                        </a>
+                      {% endfor %}
+                    {% else %}
+                      <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         href="#"
+                         script="on click toggle .hidden on #flatpage-dropdown">
+                        {% trans "No documents yet" %}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% if user.is_authenticated %}
+                <div class="relative">
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                     script="on click add .hidden to #flatpage-dropdown then add .hidden to #language-dropdown then toggle .hidden on #profile-dropdown">
+                    {% translate 'Profile' %}
+                  </a>
+                  <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                       id="profile-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div class="py-1" role="none">
+                      <a class="cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_profile' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Profile' %}
+                      </a>
+                      <a class="cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_contact' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Contact' %}
+                      </a>
+                      <a class="cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_logout' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Logout' %}
+                      </a>
+                      {% if user.is_staff %}
+                        <a class="text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                           role="menuitem"
+                           tabindex="-1"
+                           href="/admin/"
+                           script="on click toggle .hidden on #profile-dropdown">
+                          {% trans "Go to Admin" %}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              {% else %}
+                <div class="relative">
+                  <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                     script="on click add .hidden to #flatpage-dropdown then add .hidden to #language-dropdown then toggle .hidden on #profile-dropdown">
+                    {% translate 'Login' %}
+                  </a>
+                  <div class="hidden absolute left-0 z-10 mt-3 w-56 origin-top-right rounded-md bg-white border-1 border-black"
+                       id="profile-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                    <div class="py-1" role="none">
+                      <a class="cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_login' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Login' %}
+                      </a>
+                      <a class="cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:text-gray-900 hover:bg-gray-100"
+                         role="menuitem"
+                         tabindex="-1"
+                         hx-get="{% url 'account_signup' %}"
+                         hx-target="#content"
+                         hx-push-url="true"
+                         script="on click toggle .hidden on #profile-dropdown">
+                        {% trans 'Sign Up' %}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              <div class="relative">
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                   script="on click add .hidden to #flatpage-dropdown then add .hidden to #profile-dropdown then toggle .hidden on #language-dropdown">
+                  {% translate 'Language' %}
+                </a>
+                <div class="hidden absolute left-0 z-10 mt-3 origin-top-right rounded-md bg-white border-1 border-black"
+                     id="language-dropdown" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                  <div class="py-1" role="none">
+                    <form class="columns-2" action="{% url 'set_language' %}" method="POST">
+                      {% csrf_token %}
+                      <div class="w-full">
+                        <input name="next" type="hidden" value="">
+                        <select class="block appearance-none w-full py-1 px-2 mb-1 text-base ml-2 leading-normal bg-white text-gray-800 border border-gray-200 rounded" name="language">
+                          {% get_current_language as LANGUAGE_CODE %}
+                          {% get_available_languages as LANGUAGES %}
+                          {% get_language_info_list for LANGUAGES as languages %}
+                          {% for language in languages %}
+                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                              {{ language.name_local }}
+                            </option>
+                          {% endfor %}
+                        </select>
+                      </div>
+                      <div>
+                        <button class="ml-3 mr-3 bg-gray-300 text-gray-700 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" type="submit">
+                          {% translate 'Select' %}
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <form>
+                {% get_current_language as LANG %}
+                <input class="block appearance-none w-full py-1 px-2 mb-2 text-base ml-2 leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                       name="q"
+                       type="search"
+                       placeholder="{% translate 'Write to search' %}"
+                       hx-get="{% url 'search_results' %}?lang={{ LANG }}"
+                       hx-target="#content"
+                       hx-trigger="keyup changed delay:500ms, search"
+                       hx-push-url="true"
+                       aria-label="Search"
+                       script="on click add .hidden to #flatpage-dropdown then add .hidden to #profile-dropdown then add .hidden to #language-dropdown">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden" id="mobile-menu">
+      <div class="space-y-1 px-2 pb-3 pt-2">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+      </div>
+    </div>
+  </nav>
+</header>
