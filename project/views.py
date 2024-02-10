@@ -27,12 +27,6 @@ def nav_bar(request):
     return TemplateResponse(request, template_name, context)
 
 
-def select_language(request):
-    check_htmx_request(request)
-    template_name = "htmx/language_selector.html"
-    return TemplateResponse(request, template_name, {})
-
-
 def search_box(request):
     check_htmx_request(request)
     template_name = "htmx/searchbox.html"

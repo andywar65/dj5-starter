@@ -39,7 +39,7 @@ from users.views import (
     profile_update_delete,
 )
 
-from .views import home, nav_bar, search_box, search_results, select_language
+from .views import home, nav_bar, search_box, search_results
 
 # from django.views.generic import RedirectView
 
@@ -83,11 +83,6 @@ urlpatterns = [
     path("tinymce/", include("tinymce.urls")),
     path("nav-bar/", nav_bar, name="nav_bar"),
     path("search-box/", search_box, name="search_box"),
-    path(
-        "select-language/",
-        select_language,
-        name="select_language",
-    ),
 ]
 
 urlpatterns += i18n_patterns(
