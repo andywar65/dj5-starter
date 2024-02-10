@@ -22,7 +22,7 @@ A starter project for Django 5 with allauth (formerly [starter-fullstack](https:
 - Styled with Bootstrap 5
 - Some interaction with HTMX, avoiding full page reload
 ## Tests
-Unittests, coverage 98%
+Unittests, coverage 96%, test avatar CRUD cycle
 ## Working on:
 - Tailwind for CSS
 - Hyperscript for local interactions
