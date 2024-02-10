@@ -35,6 +35,23 @@ class ProjectViewTest(TestCase):
     def setUpTestData(cls):
         print("\nTest project views")
 
+    def test_home_view_no_htmx(self):
+        response = self.client.get(reverse("home"))
+
+        self.assertEqual(response.status_code, 200)
+        print("\n-Test home no htmx status 200")
+
+        self.assertTemplateUsed(response, "home.html")
+        print("\n-Test home no htmx template")
+
+    def test_home_view(self):
+        response = self.client.get(reverse("home"), headers={"HX-Request": "true"})
+        self.assertEqual(response.status_code, 200)
+        print("\n-Test home status 200")
+
+        self.assertTemplateUsed(response, "htmx/home.html")
+        print("\n-Test home template")
+
     def test_navbar_view(self):
         response = self.client.get(reverse("nav_bar"), headers={"HX-Request": "true"})
         self.assertEqual(response.status_code, 200)
@@ -42,6 +59,11 @@ class ProjectViewTest(TestCase):
 
         self.assertTemplateUsed(response, "navbar.html")
         print("\n-Test navbar template")
+
+    def test_navbar_view_no_htmx(self):
+        response = self.client.get(reverse("nav_bar"))
+        self.assertEqual(response.status_code, 302)
+        print("\n-Test navbar no htmx status 302")
 
     def test_searchbox_view(self):
         response = self.client.get(
