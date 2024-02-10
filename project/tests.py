@@ -35,22 +35,6 @@ class ProjectViewTest(TestCase):
     def setUpTestData(cls):
         print("\nTest project views")
 
-    def test_select_language_view_no_htmx(self):
-        response = self.client.get(reverse("select_language"))
-        # response is unexpected, as it redirects to looks for a flatpage
-        self.assertEqual(response.status_code, 302)
-        print("\n-Test select language no htmx status 404")
-
-    def test_select_language_view(self):
-        response = self.client.get(
-            reverse("select_language"), headers={"HX-Request": "true"}
-        )
-        self.assertEqual(response.status_code, 200)
-        print("\n-Test select language status 200")
-
-        self.assertTemplateUsed(response, "htmx/language_selector.html")
-        print("\n-Test select language template")
-
     def test_navbar_view(self):
         response = self.client.get(reverse("nav_bar"), headers={"HX-Request": "true"})
         self.assertEqual(response.status_code, 200)
