@@ -26,7 +26,11 @@
             <button class="btn btn-danger"
                     hx-delete="{% url 'avatar_update' %}"
                     hx-target="#avatar_display"
-                    hx-confirm="{% trans 'Are you sure you want to delete your Avatar?' %}">
+                    hx-confirm="{% blocktrans %}
+                                  Click 'OK' to delete your Avatar.
+                                  Remember that social account images
+                                  cannot be deleted.
+                                {% endblocktrans %}">
               {% trans 'Delete' %}
             </button>
           {% endif %}
