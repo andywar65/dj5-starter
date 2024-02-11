@@ -89,13 +89,10 @@ class HTMXSignupView(HxTemplateMixin, SignupView):
 def avatar_display_create(request):
     check_htmx_request(request)
     user = request.user
-    context = {"user": user}
+    form = AvatarChangeForm()
+    context = {"user": user, "avatar_form": form}
     template_name = "account/htmx/avatar_display.html"
-    if request.method == "GET" and "create" in request.GET:
-        template_name = "account/htmx/avatar_create.html"
-        form = AvatarChangeForm()
-        context = {"form": form}
-    elif request.method == "POST":
+    if request.method == "POST":
         form = AvatarChangeForm(request.POST, request.FILES)
         if form.is_valid():
             # assign profile form fields
@@ -105,8 +102,6 @@ def avatar_display_create(request):
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?refresh=True",
             )
-        context = {"form": form}
-        template_name = "account/htmx/avatar_create.html"
     elif request.method == "GET" and "refresh" in request.GET:
         return TemplateResponse(
             request,
@@ -125,19 +120,18 @@ def avatar_display_create(request):
 def avatar_update_delete(request):
     check_htmx_request(request)
     user = request.user
-    context = {"user": user}
-    template_name = "account/htmx/avatar_update.html"
+    form = AvatarChangeForm()
+    context = {"user": user, "avatar_form": form}
+    template_name = "account/htmx/avatar_display.html"
     if request.method == "DELETE":
         profile = user.profile
         profile.avatar = None
         profile.save()
-        template_name = "account/htmx/avatar_display.html"
-        form = AvatarChangeForm()
         # SocialAccount.objects.filter(user_id=user.uuid).delete()
         return TemplateResponse(
             request,
             template_name,
-            context={"avatar_form": form},
+            context,
             headers={"HX-Trigger": "refreshNavbar"},
         )
     elif request.method == "POST":
@@ -150,13 +144,6 @@ def avatar_update_delete(request):
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?refresh=True",
             )
-    else:
-        form = AvatarChangeForm(
-            initial={
-                "avatar": user.profile.avatar,
-            }
-        )
-    context["form"] = form
     return TemplateResponse(
         request,
         template_name,

@@ -1,11 +1,12 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-{% include "account/htmx/avatar_snippet.html" %}
-<div class="card mt-2">
+<div id="avatar-update-form"
+     class="card mt-2"
+     style="display: none">
   <div class="card-body">
     <form>
-      {{ form|crispy }}
+      {{ avatar_form|crispy }}
       <div class="row">
         <div class="col">
           <button class="btn btn-primary"
@@ -17,8 +18,7 @@
           </button>
           <button class="btn-close"
                   title="{% trans 'Dismiss' %}"
-                  hx-get="{% url 'avatar_display' %}"
-                  hx-target="#avatar_display">
+                  script="on click hide #avatar-update-form then show #avatar-update-link">
           </button>
         </div>
         <div class="col text-end">

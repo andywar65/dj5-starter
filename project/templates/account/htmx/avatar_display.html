@@ -1,13 +1,17 @@
 {% load i18n %}
 
 {% if not user.profile.anonymize %}
+  <!-- Profile is not anonymized, let's handle the avatar -->
   {% if user.get_avatar %}
+    <!-- Avatar exists, show the modify link -->
     {% include "account/htmx/avatar_snippet.html" %}
-    <a class="link-primary"
-       hx-get="{% url 'avatar_update' %}"
-       hx-target="#avatar_display">
+    <a id="avatar-update-link"
+       class="link-primary"
+       script="on click hide me then show #avatar-update-form">
       {% trans "Modify Avatar" %}
     </a>
+    <!-- Hidden update form -->
+    {% include "account/htmx/avatar_update.html" %}
   {% else %}
     <!-- No avatar, show only create button -->
     <button id="avatar-create-button"
