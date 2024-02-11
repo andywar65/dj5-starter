@@ -214,11 +214,12 @@ def profile_update_delete(request):
                 "anonymize": user.profile.anonymize,
             }
         )
+        avatar_form = AvatarChangeForm()
     if request.htmx:
         template_name = "account/htmx/account_profile.html"
     else:
         template_name = "account/account_profile.html"
-    context = {"form": form}
+    context = {"form": form, "avatar_form": avatar_form}
     if request.method == "GET" and "refresh" in request.GET:
         return TemplateResponse(
             request,
