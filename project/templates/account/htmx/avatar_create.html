@@ -1,10 +1,12 @@
 {% load i18n %}
 {% load crispy_forms_tags %}
 
-<div class="card">
+<div id="avatar-create-form"
+     class="card"
+     style="display: none">
   <div class="card-body">
     <form>
-      {{ form|crispy }}
+      {{ avatar_form|crispy }}
       <button class="btn btn-primary"
               type="submit"
               hx-post="{% url 'avatar_display' %}"
@@ -14,8 +16,7 @@
       </button>
       <button class="btn-close"
               title="{% trans 'Dismiss' %}"
-              hx-get="{% url 'avatar_display' %}"
-              hx-target="#avatar_display">
+              script="on click hide #avatar-create-form then show #avatar-create-button">
       </button>
     </form>
   </div>

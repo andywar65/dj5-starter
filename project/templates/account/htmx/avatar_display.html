@@ -1,5 +1,4 @@
 {% load i18n %}
-{% load crispy_forms_tags %}
 
 {% if not user.profile.anonymize %}
   {% if user.get_avatar %}
@@ -10,31 +9,14 @@
       {% trans "Modify Avatar" %}
     </a>
   {% else %}
+    <!-- No avatar, show only create button -->
     <button id="avatar-create-button"
             class="btn btn-bg btn-success"
             script="on click hide me then show #avatar-create-form">
       {% trans "Add Avatar" %}
     </button>
-    <div id="avatar-create-form"
-         class="card"
-         style="display: none">
-      <div class="card-body">
-        <form>
-          {{ avatar_form|crispy }}
-          <button class="btn btn-primary"
-                  type="submit"
-                  hx-post="{% url 'avatar_display' %}"
-                  hx-target="#avatar_display"
-                  hx-encoding="multipart/form-data">
-            {% trans "Add Avatar" %}
-          </button>
-          <button class="btn-close"
-                  title="{% trans 'Dismiss' %}"
-                  script="on click hide #avatar-create-form then show #avatar-create-button">
-          </button>
-        </form>
-      </div>
-    </div>
+    <!-- Hidden create form -->
+    {% include "account/htmx/avatar_create.html" %}
   {% endif %}
   <hr>
 {% endif %}
