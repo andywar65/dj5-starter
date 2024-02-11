@@ -132,11 +132,12 @@ def avatar_update_delete(request):
         profile.avatar = None
         profile.save()
         template_name = "account/htmx/avatar_display.html"
+        form = AvatarChangeForm()
         # SocialAccount.objects.filter(user_id=user.uuid).delete()
         return TemplateResponse(
             request,
             template_name,
-            context,
+            context={"avatar_form": form},
             headers={"HX-Trigger": "refreshNavbar"},
         )
     elif request.method == "POST":
