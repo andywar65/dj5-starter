@@ -154,6 +154,7 @@ def avatar_update_delete(request):
 @permission_required("users.change_profile")
 def profile_update_delete(request):
     user = request.user
+    avatar_form = AvatarChangeForm()
     if request.method == "DELETE":
         check_htmx_request(request)
         user.is_active = False
@@ -202,7 +203,6 @@ def profile_update_delete(request):
                 "anonymize": user.profile.anonymize,
             }
         )
-        avatar_form = AvatarChangeForm()
     if request.htmx:
         template_name = "account/htmx/account_profile.html"
     else:
