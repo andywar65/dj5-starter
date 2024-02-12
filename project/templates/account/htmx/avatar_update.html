@@ -3,7 +3,7 @@
 
 <div id="avatar-update-form"
      class="card mt-2"
-     style="display: none">
+     {% if not invalid_form %}style="display: none"{% endif %}>
   <div class="card-body">
     <form>
       {{ avatar_form|crispy }}

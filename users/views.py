@@ -102,6 +102,9 @@ def avatar_display_create(request):
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?refresh=True",
             )
+        else:
+            context["avatar_form"] = form
+            context["invalid_form"] = True
     elif request.method == "GET" and "refresh" in request.GET:
         return TemplateResponse(
             request,
@@ -144,6 +147,9 @@ def avatar_update_delete(request):
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?refresh=True",
             )
+        else:
+            context["avatar_form"] = form
+            context["invalid_form"] = True
     return TemplateResponse(
         request,
         template_name,

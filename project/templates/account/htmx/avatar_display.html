@@ -7,6 +7,7 @@
     {% include "account/htmx/avatar_snippet.html" %}
     <a id="avatar-update-link"
        class="link-primary"
+       {% if invalid_form %}style="display: none"{% endif %}
        script="on click hide me then show #avatar-update-form">
       {% trans "Modify Avatar" %}
     </a>
@@ -16,6 +17,7 @@
     <!-- No avatar, show only create button -->
     <button id="avatar-create-button"
             class="btn btn-bg btn-success"
+            {% if invalid_form %}style="display: none"{% endif %}
             script="on click hide me then show #avatar-create-form">
       {% trans "Add Avatar" %}
     </button>
