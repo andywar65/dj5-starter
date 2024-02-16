@@ -1,5 +1,5 @@
 {% load i18n %}
-{% load fb_versions %}
+{% load thumbnail %}
 
 <div class="card mx-auto" style="max-width: 960px;">
   <div class="card-body">
@@ -36,7 +36,7 @@
         {% if images %}
           {% for image in images %}
             <figure class="figure">
-              <img src="{% version image.fb_image 'large' %}" class="figure-img img-fluid rounded" alt="{{ image.description }}">
+              <img src="{% thumbnail image.fb_image 640x0 %}" class="figure-img img-fluid rounded" alt="{{ image.description }}">
               <figcaption class="figure-caption">{{ image.description|default_if_none:"" }}</figcaption>
             </figure>
           {% endfor %}
