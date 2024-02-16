@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 from djgeojson.fields import PointField
-from filebrowser.fields import FileBrowseField
+from filer.fields.image import FilerImageField
 
 from project.utils import generate_unique_slug  # check_wide_image
 
@@ -221,12 +221,7 @@ class ProjectCarousel(models.Model):
         related_name="project_carousel",
         verbose_name=_("Project"),
     )
-    fb_image = FileBrowseField(
-        _("Image"),
-        max_length=200,
-        extensions=[".jpg", ".png", ".jpeg", ".gif", ".tif", ".tiff"],
-        directory="images/",
-    )
+    fb_image = FilerImageField(related_name="carousel_image", on_delete=models.SET_NULL)
     description = models.CharField(
         _("Description"),
         help_text=_("Will be used in captions"),
