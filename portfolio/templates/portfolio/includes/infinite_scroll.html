@@ -1,0 +1,12 @@
+{% include "portfolio/includes/project_list_loop.html" %}
+{% if page_obj.has_next %}
+  <tr
+    {% if all_projects %}
+      hx-get="{% url 'portfolio:project_list_all' %}?page={{ page_obj.next_page_number }}"
+    {% else %}
+      hx-get="{% url 'portfolio:project_list' %}?page={{ page_obj.next_page_number }}"
+    {% endif %}
+    hx-trigger="revealed"
+    hx-swap="afterend">
+  </tr>
+{% endif %}

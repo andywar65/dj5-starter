@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-24 12:31+0200\n"
+"PO-Revision-Date: 2023-05-24 12:37+0200\n"
+"Last-Translator: andywar65 <andy.war1965@gmail.com>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: .\portfolio\admin.py:17
+msgid "Advanced options"
+msgstr "Erweiterte Optionen"
+
+#: .\portfolio\admin.py:88 .\portfolio\models.py:89
+msgid "Text"
+msgstr "Text"
+
+#: .\portfolio\admin.py:95
+msgid "Meta"
+msgstr "Meya"
+
+#: .\portfolio\apps.py:9
+msgid "Project Manager"
+msgstr "Projektmanager"
+
+#: .\portfolio\choices.py:4
+msgid "Other category"
+msgstr "Andere Kategorie"
+
+#: .\portfolio\choices.py:5
+msgid "Residential"
+msgstr "Wohn"
+
+#: .\portfolio\choices.py:6
+msgid "Offices"
+msgstr "Büros"
+
+#: .\portfolio\choices.py:7
+msgid "Healthcare"
+msgstr "Gesundheitspflege"
+
+#: .\portfolio\choices.py:8
+msgid "Production"
+msgstr "Produktion"
+
+#: .\portfolio\choices.py:9
+msgid "Instruction"
+msgstr "Anleitung"
+
+#: .\portfolio\choices.py:10
+msgid "Accommodation"
+msgstr "Unterkunft"
+
+#: .\portfolio\choices.py:14
+msgid "Other intervention"
+msgstr "Andere Maßnahmen"
+
+#: .\portfolio\choices.py:15
+msgid "Furniture"
+msgstr "Möbel"
+
+#: .\portfolio\choices.py:16
+msgid "Refurbishment"
+msgstr "Renovierung"
+
+#: .\portfolio\choices.py:17
+msgid "Restoration"
+msgstr "Wiederherstellung"
+
+#: .\portfolio\choices.py:18
+msgid "Extension"
+msgstr "Verlängerung"
+
+#: .\portfolio\choices.py:19
+msgid "Construction"
+msgstr "Konstruktion"
+
+#: .\portfolio\choices.py:20
+msgid "Demolition"
+msgstr "Abriss"
+
+#: .\portfolio\choices.py:24
+msgid "Status unknown"
+msgstr "Status unbekannt"
+
+#: .\portfolio\choices.py:25
+msgid "Designed"
+msgstr "Geplant"
+
+#: .\portfolio\choices.py:26
+msgid "Under construction"
+msgstr "In Ausfuhrung"
+
+#: .\portfolio\choices.py:27
+msgid "Done"
+msgstr "Realisiert"
+
+#: .\portfolio\choices.py:31
+msgid "Other"
+msgstr "Sonstiges"
+
+#: .\portfolio\choices.py:50
+msgid "Other activity"
+msgstr "Andere Aktivität"
+
+#: .\portfolio\choices.py:51
+msgid "Feasibility study"
+msgstr "Grundlagenermittlung"
+
+#: .\portfolio\choices.py:52
+msgid "Preliminary design"
+msgstr "Vorplanung"
+
+#: .\portfolio\choices.py:53
+msgid "Definitive design"
+msgstr "Entwurfsplanung"
+
+#: .\portfolio\choices.py:54
+msgid "Authoring"
+msgstr "Genehmigungsplanung"
+
+#: .\portfolio\choices.py:55
+msgid "Construction design"
+msgstr "Ausführungsplanung"
+
+#: .\portfolio\choices.py:56
+msgid "Tender design"
+msgstr "Vorbereitung der Vergabe"
+
+#: .\portfolio\choices.py:57
+msgid "Project management"
+msgstr "Mitwirkung bei der Vergabe"
+
+#: .\portfolio\choices.py:58
+msgid "Construction supervision"
+msgstr "Objektüberwachung"
+
+#: .\portfolio\choices.py:59
+msgid "Maintenance design"
+msgstr "Objektbetreuung"
+
+#: .\portfolio\choices.py:60
+msgid "All activities"
+msgstr "Alle Aktivitäten"
+
+#: .\portfolio\models.py:19
+#, python-format
+msgid "Another project by %(name)s!"
+msgstr "Ein weiteres Projekt von %(name)s!"
+
+#: .\portfolio\models.py:21
+msgid "Another project by this site!"
+msgstr "Ein weiteres Projekt dieser Seite!"
+
+#: .\portfolio\models.py:27 .\portfolio\models.py:43 .\portfolio\models.py:59
+msgid "Name"
+msgstr "Name"
+
+#: .\portfolio\models.py:29 .\portfolio\models.py:45 .\portfolio\models.py:237
+msgid "Position"
+msgstr "Position"
+
+#: .\portfolio\models.py:35
+msgid "Activity"
+msgstr "Aktivität"
+
+#: .\portfolio\models.py:36
+#: .\portfolio\templates\portfolio\includes\project_meta_large.html:35
+msgid "Activities"
+msgstr "Aktivitäten"
+
+#: .\portfolio\models.py:51
+msgid "Intervention"
+msgstr "Intervention"
+
+#: .\portfolio\models.py:52
+msgid "Interventions"
+msgstr "Interventionen"
+
+#: .\portfolio\models.py:66 .\portfolio\models.py:109
+#: .\portfolio\templates\portfolio\includes\project_meta_large.html:29
+msgid "Client"
+msgstr "Auftraggeber"
+
+#: .\portfolio\models.py:67
+msgid "Clients"
+msgstr "Klientel"
+
+#: .\portfolio\models.py:72
+msgid "Slug"
+msgstr ""
+
+#: .\portfolio\models.py:77
+msgid ""
+"Appears on the address bar.\n"
+"            Automatically generated for the active language\n"
+"            "
+msgstr ""
+"Erscheint in der Adressleiste.\n"
+"            Automatisch generiert für die aktive Sprache\n"
+"            "
+
+#: .\portfolio\models.py:83
+msgid "Title"
+msgstr "Titel"
+
+#: .\portfolio\models.py:84
+msgid "Title of the project"
+msgstr "Titel des Projekts"
+
+#: .\portfolio\models.py:88
+msgid "Introduction"
+msgstr "Einführung"
+
+#: .\portfolio\models.py:91
+msgid "Start date"
+msgstr "Startdatum"
+
+#: .\portfolio\models.py:95
+msgid "End date"
+msgstr "Endtermin"
+
+#: .\portfolio\models.py:100
+#: .\portfolio\templates\portfolio\includes\project_meta_large.html:23
+msgid "Site"
+msgstr "Seite"
+
+#: .\portfolio\models.py:103
+msgid "Loose location"
+msgstr "Lockere Lage"
+
+#: .\portfolio\models.py:115
+msgid "Functional category"
+msgstr "Funktionale Kategorie"
+
+#: .\portfolio\models.py:120
+msgid "Type of intervention"
+msgstr "Art des Eingriffs"
+
+#: .\portfolio\models.py:126
+msgid "Status of intervention"
+msgstr "Status der Intervention"
+
+#: .\portfolio\models.py:132
+msgid "Cost of intervention"
+msgstr "Interventionskosten"
+
+#: .\portfolio\models.py:137
+msgid "Performed activities"
+msgstr "Ausgeführte Tätigkeiten"
+
+#: .\portfolio\models.py:141 .\portfolio\models.py:222
+msgid "Project"
+msgstr "Projekt"
+
+#: .\portfolio\models.py:142
+#: .\portfolio\templates\portfolio\htmx\project_archive_year.html:7
+#: .\portfolio\templates\portfolio\htmx\project_category_list.html:7
+msgid "Projects"
+msgstr "Projekte"
+
+#: .\portfolio\models.py:180
+msgid "Location"
+msgstr "Standort"
+
+#: .\portfolio\models.py:183
+msgid "Map"
+msgstr "Karte"
+
+#: .\portfolio\models.py:184
+msgid "Maps"
+msgstr "Karten"
+
+#: .\portfolio\models.py:201 .\portfolio\views.py:48
+msgid "Others"
+msgstr "Andere"
+
+#: .\portfolio\models.py:206 .\portfolio\views.py:48
+msgid "Selected"
+msgstr "Ausgewählt"
+
+#: .\portfolio\models.py:225
+msgid "Image"
+msgstr "Bild"
+
+#: .\portfolio\models.py:231
+msgid "Description"
+msgstr "Beschreibung"
+
+#: .\portfolio\models.py:232
+msgid "Will be used in captions"
+msgstr "Wird in Bildunterschriften verwendet"
+
+#: .\portfolio\models.py:240
+msgid "Project carousel"
+msgstr "Projekt Karussell"
+
+#: .\portfolio\models.py:241
+msgid "Project carousels"
+msgstr "Projekt Karussells"
+
+#: .\portfolio\templates\portfolio\add_buttons.html:4
+msgid "Save"
+msgstr "Speichern"
+
+#: .\portfolio\templates\portfolio\add_buttons.html:8
+msgid "Save and add"
+msgstr "Speichern und hinzufügen"
+
+#: .\portfolio\templates\portfolio\add_buttons.html:11
+msgid "Fields with asterisk (*) are required"
+msgstr "Felder mit Sternchen (*) sind Pflichtfelder"
+
+#: .\portfolio\templates\portfolio\gallery.html:15
+msgid "Previous"
+msgstr "Bisherige"
+
+#: .\portfolio\templates\portfolio\gallery.html:19
+msgid "Next"
+msgstr "Nächste"
+
+#: .\portfolio\templates\portfolio\htmx\project_archive_year.html:11
+#: .\portfolio\templates\portfolio\htmx\project_category_list.html:11
+#: .\portfolio\templates\portfolio\htmx\project_list.html:16
+#: .\portfolio\templates\portfolio\htmx\project_map.html:19
+msgid "Add project"
+msgstr "Projekt hinzufügen"
+
+#: .\portfolio\templates\portfolio\htmx\project_archive_year.html:29
+msgid "PREVIOUS"
+msgstr "BISHERIGE"
+
+#: .\portfolio\templates\portfolio\htmx\project_archive_year.html:37
+msgid "NEXT"
+msgstr "NÄCHSTE"
+
+#: .\portfolio\templates\portfolio\htmx\project_detail.html:31
+msgid "Modify"
+msgstr "Ändern"
+
+#: .\portfolio\templates\portfolio\htmx\project_detail.html:44
+msgid "No images yet"
+msgstr "Noch keine Bilder"
+
+#: .\portfolio\templates\portfolio\htmx\project_list.html:7
+#: .\portfolio\templates\portfolio\htmx\project_map.html:10
+msgid "Associazione Professionale Perilli"
+msgstr ""
+
+#: .\portfolio\templates\portfolio\htmx\project_list.html:9
+#: .\portfolio\templates\portfolio\htmx\project_map.html:12
+msgid "All projects"
+msgstr "Alle Projekte"
+
+#: .\portfolio\templates\portfolio\htmx\project_list.html:11
+#: .\portfolio\templates\portfolio\htmx\project_map.html:14
+msgid "Selected projects"
+msgstr "Ausgewählte Projekte"
+
+#: .\portfolio\templates\portfolio\includes\project_list_loop.html:31
+msgid "No projects available"
+msgstr "Keine Projekte verfügbar"
+
+#: .\portfolio\templates\portfolio\includes\project_meta_large.html:4
+msgid "Date"
+msgstr "Datum"
+
+#: .\portfolio\templates\portfolio\includes\project_meta_large_2.html:4
+msgid "Category"
+msgstr "Kategorie"
+
+#: .\portfolio\templates\portfolio\includes\project_meta_large_2.html:12
+msgid "Type"
+msgstr "Typ"
+
+#: .\portfolio\templates\portfolio\includes\project_meta_large_2.html:20
+msgid "Status"
+msgstr "Status"
+
+#: .\portfolio\templates\portfolio\includes\project_meta_large_2.html:28
+msgid "Cost"
+msgstr "Kosten"
+
+#: .\portfolio\urls.py:15
+msgid "selected/"
+msgstr "ausgewahlt/"
+
+#: .\portfolio\urls.py:16
+msgid "all/"
+msgstr "alle/"
+
+#: .\portfolio\urls.py:17
+msgid "map/"
+msgstr "karte/"
+
+#: .\portfolio\urls.py:19
+msgid "category/"
+msgstr "kategorie/"
+
+#: .\portfolio\views.py:101
+#, python-format
+msgid "in Category: %(read)s"
+msgstr "in Kategorie: %(read)s"
+
+#: .\portfolio\views.py:104
+#, python-format
+msgid "with Intervention type: %(read)s"
+msgstr "mit Interventionstyp: %(read)s"
+
+#: .\portfolio\views.py:109
+#, python-format
+msgid "with Status: %(read)s"
+msgstr "mit Status: %(read)s"
+
+#: .\portfolio\views.py:112
+#, python-format
+msgid "with Cost € %(read)s or lower"
+msgstr "mit Kosten € %(read)s oder weniger"
+
+#~ msgid "Hospitals"
+#~ msgstr "Krankenhäuser"
+
+#~ msgid "Schools"
+#~ msgstr "Schulen"
+
+#~ msgid "All"
+#~ msgstr "Alle"
+
+#~ msgid "Code name"
+#~ msgstr "Code Name"
+
+#, python-format
+#~ msgid "Project-%(date)s"
+#~ msgstr "Projekt-%(date)s"
+
+#~ msgid "Something like \"Rome - Monteverde\""
+#~ msgstr "So etwas wie \"Rom - Monteverde\""

@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<li class="list-group-item">
+  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+  <a class="link-primary"
+     hx-get="{% url 'portfolio:year' year=prog.date.year %}"
+     hx-target="#content"
+     hx-push-url="true">
+    {{ prog.date|date:"Y" }}
+  </a>
+  {% if prog.date_end %}
+    -
+    <a class="link-primary"
+       hx-get="{% url 'portfolio:year' year=prog.date_end.year %}"
+       hx-target="#content"
+       hx-push-url="true">
+      {{ prog.date_end|date:"Y" }}
+    </a>
+  {% endif %}
+</li>
+{% if prog.site %}
+  <li class="list-group-item"><i class="fa fa-map-marker" aria-hidden="true"></i>
+    {{ prog.site }}</li>
+{% endif %}
+<li class="list-group-item">
+  <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+  {% for type in prog.type.all %}
+    <a class="link-primary"
+       hx-get="{% url 'portfolio:project_category' %}?type={{ type.id }}"
+       hx-target="#content"
+       hx-push-url="true">
+      <strong>{{ type.name }} </strong>
+    </a>
+  {% endfor %}
+</li>
+<li class="list-group-item">
+  <i class="fa fa-wrench" aria-hidden="true"></i>
+  <em>{{ prog.get_activities }}</em>
+</li>
+<li class="list-group-item">
+  <i class="fa fa-user" aria-hidden="true"></i>
+  {{ prog.get_clients }}
+</li>

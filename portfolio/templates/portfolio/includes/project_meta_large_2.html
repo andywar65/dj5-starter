@@ -1,0 +1,34 @@
+{% load i18n %}
+
+<li class="list-group-item">
+  <strong>{% translate "Category" %}:</strong>
+  <a class="link-primary"
+     hx-get="{% url 'portfolio:project_category' %}?category={{ prog.category }}"
+     hx-target="#content"
+     hx-push-url="true">
+    {{ prog.get_category_display }}</a>
+</li>
+<li class="list-group-item">
+  <strong>{% translate "Type" %}:</strong>
+  <a class="link-primary"
+     hx-get="{% url 'portfolio:project_category' %}?type={{ prog.type }}"
+     hx-target="#content"
+     hx-push-url="true">
+    {{ prog.get_type_display }}</a>
+</li>
+<li class="list-group-item">
+  <strong>{% translate "Status" %}:</strong>
+  <a class="link-primary"
+     hx-get="{% url 'portfolio:project_category' %}?status={{ prog.status }}"
+     hx-target="#content"
+     hx-push-url="true">
+    {{ prog.get_status_display }}</a>
+</li>
+<li class="list-group-item">
+  <strong>{% translate "Cost" %}:</strong>
+  <a class="link-primary"
+     hx-get="{% url 'portfolio:project_category' %}?cost={{ prog.cost }}"
+     hx-target="#content"
+     hx-push-url="true">
+    € {{ prog.cost }}</a>
+</li>
