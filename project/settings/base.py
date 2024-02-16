@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     "leaflet",
     # local
     "users.apps.UsersConfig",
+    "portfolio.apps.PortfolioConfig",
 ]
 
 MIDDLEWARE = [
