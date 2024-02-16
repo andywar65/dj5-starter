@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-17 20:27+0200\n"
-"PO-Revision-Date: 2023-10-18 15:11+0200\n"
+"POT-Creation-Date: 2024-02-16 09:36+0100\n"
+"PO-Revision-Date: 2024-02-16 09:42+0100\n"
 "Last-Translator: andywar65 <andy.war1965@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: .\project\settings\base.py:162
+#: .\project\settings\base.py:168
 msgid "Italian"
 msgstr "Italiano"
 
-#: .\project\settings\base.py:163
+#: .\project\settings\base.py:169
 msgid "English"
 msgstr "Inglese"
 
@@ -71,39 +71,40 @@ msgid "This account is inactive."
 msgstr "Questo account è inattivo."
 
 #: .\project\templates\account\htmx\account_profile.html:8
-#: .\project\templates\account\htmx\account_profile.html:39
+#: .\project\templates\account\htmx\account_profile.html:33
 msgid "Change Profile"
 msgstr "Cambia il profilo"
 
-#: .\project\templates\account\htmx\account_profile.html:13
+#: .\project\templates\account\htmx\account_profile.html:17
+#: .\users\views.py:198
 msgid "Profile has been successfully modified!"
 msgstr "Il profilo è stato aggiornato con successo!"
 
-#: .\project\templates\account\htmx\account_profile.html:29
-msgid "Change Avatar"
-msgstr "Cambia l'immagine del profilo"
-
-#: .\project\templates\account\htmx\account_profile.html:44
+#: .\project\templates\account\htmx\account_profile.html:38
 msgid "Change Password?"
-msgstr "Cambia la password"
+msgstr "Cambia la password?"
 
-#: .\project\templates\account\htmx\account_profile.html:49
+#: .\project\templates\account\htmx\account_profile.html:43
 msgid "Connect social"
 msgstr "Connetti i social"
 
-#: .\project\templates\account\htmx\account_profile.html:54
+#: .\project\templates\account\htmx\account_profile.html:48
 msgid "Are you sure you want to delete your account?"
 msgstr "Sei sicuro di voler eliminare l'account?"
 
-#: .\project\templates\account\htmx\account_profile.html:55
-msgid "Delete* Account"
-msgstr "Elimina* l'account"
+#: .\project\templates\account\htmx\account_profile.html:49
+msgid "Delete** Account"
+msgstr "Elimina** l'account"
 
-#: .\project\templates\account\htmx\account_profile.html:59
+#: .\project\templates\account\htmx\account_profile.html:51
+msgid "*Required fields"
+msgstr "*Campi obbligatori"
+
+#: .\project\templates\account\htmx\account_profile.html:54
 #, python-format
 msgid ""
 "\n"
-"          *WARNING! Account will not be deleted, but set to 'inactive'.\n"
+"          **WARNING! Account will not be deleted, but set to 'inactive'.\n"
 "          All user info except username will be completely deleted.\n"
 "          Contact %(site_name)s if you want to recover your original "
 "account.\n"
@@ -114,8 +115,45 @@ msgstr ""
 "          Tutte le tue informazioni saranno cancellate eccetto lo username.\n"
 "          Contatta %(site_name)s se vuoi ripristinare l'account originale."
 
+#: .\project\templates\account\htmx\avatar_create.html:15
+#: .\project\templates\account\htmx\avatar_display.html:22
+msgid "Add Avatar"
+msgstr "Aggiungi Immagine Profilo"
+
+#: .\project\templates\account\htmx\avatar_create.html:18
+#: .\project\templates\account\htmx\avatar_update.html:20
+msgid "Dismiss"
+msgstr "Annulla"
+
+#: .\project\templates\account\htmx\avatar_display.html:12
+msgid "Modify Avatar"
+msgstr "Modifica l'immagine del profilo"
+
+#: .\project\templates\account\htmx\avatar_update.html:17
+#, fuzzy
+#| msgid "Change Avatar"
+msgid "Change Image"
+msgstr "Cambia l'immagine del profilo"
+
+#: .\project\templates\account\htmx\avatar_update.html:29
+msgid ""
+"\n"
+"                                  Click 'OK' to delete your Avatar.\n"
+"                                  Remember that social account images\n"
+"                                  cannot be deleted.\n"
+"                                "
+msgstr ""
+"\n"
+"Fai click su 'OK' per cancellare l'immagine.\n"
+"Ricorda che l'immagine degli account social\n"
+"non possono essere eliminati."
+
+#: .\project\templates\account\htmx\avatar_update.html:34
+msgid "Delete"
+msgstr "Elimina"
+
 #: .\project\templates\account\htmx\contact.html:6
-#: .\project\templates\navbar.html:82
+#: .\project\templates\navbar.html:84
 msgid "Contact"
 msgstr "Contatto"
 
@@ -338,7 +376,7 @@ msgstr "Invia password"
 
 #: .\project\templates\account\htmx\signup.html:6
 #: .\project\templates\account\htmx\signup.html:27
-#: .\project\templates\navbar.html:113
+#: .\project\templates\navbar.html:115
 #: .\project\templates\socialaccount\signup.html:8
 #: .\project\templates\socialaccount\signup.html:20
 msgid "Sign Up"
@@ -429,11 +467,6 @@ msgstr ""
 "\n"
 "dj5-starter è un kit di partenza con Django 5.0"
 
-#: .\project\templates\htmx\language_selector.html:19
-#: .\project\templates\htmx\select_language.html:4
-msgid "Set language"
-msgstr "Seleziona lingua"
-
 #: .\project\templates\htmx\search_results.html:8
 msgid "Search"
 msgstr "Cerca"
@@ -450,23 +483,28 @@ msgstr "Non abbiamo trovato elementi che soddisfino la tua ricerca"
 msgid "Write to search"
 msgstr "Scrivi per cercare"
 
+#: .\project\templates\htmx\select_language.html:4
+#: .\project\templates\htmx\select_language.html:24
+msgid "Set language"
+msgstr "Seleziona lingua"
+
 #: .\project\templates\navbar.html:38
 msgid "Docs"
 msgstr "Documenti"
 
-#: .\project\templates\navbar.html:77 .\users\models.py:106
+#: .\project\templates\navbar.html:79 .\users\models.py:97
 msgid "Profile"
 msgstr "Profilo"
 
-#: .\project\templates\navbar.html:87
+#: .\project\templates\navbar.html:89
 msgid "Logout"
 msgstr "Esci"
 
-#: .\project\templates\navbar.html:90
+#: .\project\templates\navbar.html:92
 msgid "Go to Admin"
 msgstr "Vai all'amministrazione"
 
-#: .\project\templates\navbar.html:102 .\project\templates\navbar.html:108
+#: .\project\templates\navbar.html:104 .\project\templates\navbar.html:110
 msgid "Login"
 msgstr "Accedi"
 
@@ -527,7 +565,7 @@ msgstr ""
 "%(site_name)s. Come ultima operazione ti chiediamo di riempire il form qui "
 "sotto:"
 
-#: .\project\urls.py:90
+#: .\project\urls.py:89
 msgid "search/"
 msgstr "cerca/"
 
@@ -547,7 +585,7 @@ msgstr "Cognome"
 msgid "Email"
 msgstr ""
 
-#: .\users\forms.py:32 .\users\models.py:86
+#: .\users\forms.py:32 .\users\models.py:77
 msgid "Short bio"
 msgstr "Biografia"
 
@@ -567,7 +605,7 @@ msgstr "Scrivi il soggetto"
 msgid "Write here the message"
 msgstr "Scrivi il messaggio"
 
-#: .\users\models.py:58 .\users\models.py:115
+#: .\users\models.py:58 .\users\models.py:106
 msgid "User"
 msgstr "Utente"
 
@@ -579,67 +617,67 @@ msgstr "Utenti"
 msgid "Avatar"
 msgstr "Immagine"
 
-#: .\users\models.py:88
+#: .\users\models.py:79
 msgid "Anonymize"
 msgstr "Anonimizza"
 
-#: .\users\models.py:90
+#: .\users\models.py:81
 msgid "Anonymize your account in public pages"
 msgstr "Anonimizza il tuo profilo nelle pagine pubbliche"
 
-#: .\users\models.py:107
+#: .\users\models.py:98
 msgid "Profiles"
 msgstr "Profili"
 
-#: .\users\models.py:119
+#: .\users\models.py:110
 msgid "Subject"
 msgstr "Soggetto"
 
-#: .\users\models.py:122
+#: .\users\models.py:113
 msgid "Text"
 msgstr "Testo"
 
-#: .\users\models.py:126
+#: .\users\models.py:117
 #, python-format
 msgid "Message - %(id)d"
 msgstr "Messaggio - %(id)d"
 
-#: .\users\models.py:129
+#: .\users\models.py:120
 msgid "Message"
 msgstr "Messaggio"
 
-#: .\users\models.py:130
+#: .\users\models.py:121
 msgid "Messages"
 msgstr "Messaggi"
 
-#: .\users\models.py:134
+#: .\users\models.py:125
 msgid "Name"
 msgstr "Nome"
 
-#: .\users\models.py:143
+#: .\users\models.py:134
 msgid "Logo"
 msgstr "Logo"
 
-#: .\users\models.py:144
+#: .\users\models.py:135
 msgid "Logos"
 msgstr "Logo"
 
-#: .\users\models.py:149
+#: .\users\models.py:140
 msgid "Title"
 msgstr "Titolo"
 
-#: .\users\models.py:153
+#: .\users\models.py:144
 msgid "Link"
 msgstr "Collegamento"
 
-#: .\users\models.py:158
+#: .\users\models.py:149
 msgid "Footer link"
 msgstr "Link a pie' di pagina"
 
-#: .\users\models.py:159
+#: .\users\models.py:150
 msgid "Footer links"
 msgstr "Link a pie' di pagina"
 
-#: .\users\views.py:192
+#: .\users\views.py:246
 msgid "From"
 msgstr "Da"
