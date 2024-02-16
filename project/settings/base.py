@@ -32,7 +32,10 @@ SECRET_KEY = env.str("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG", default=False)
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = env.list(
+    "ALLOWED_HOSTS",
+    ("studioperilli.com", "www.studioperilli.com", "localhost", "127.0.0.1"),
+)
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -152,6 +155,12 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+LEAFLET_CONFIG = {
+    "DEFAULT_CENTER": (41.8988, 12.5451),
+    "DEFAULT_ZOOM": 10,
+    "RESET_VIEW": False,
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -170,7 +179,7 @@ USE_TZ = True
 
 LANGUAGES = [
     ("it", _("Italian")),
-    ("en", _("English")),
+    ("de", _("German")),
 ]
 
 MODELTRANSLATION_TRANSLATION_FILES = ("users.translation",)
