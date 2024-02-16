@@ -7,6 +7,8 @@ from django.template.response import TemplateResponse
 from django.urls import reverse
 from neapolitan.views import CRUDView
 
+from portfolio.models import Project
+
 
 def check_htmx_request(request):
     """Helper function"""
@@ -59,14 +61,33 @@ def search_results(request):
             flatpages = flatpages.order_by("-rank")
             success = True
 
+        # search in projects
+        if "lang" not in request.GET:
+            v = SearchVector("title", "intro", "body", "site")
+        else:
+            if request.GET["lang"] == "it":
+                v = SearchVector("title_it", "intro_it", "body_it", "site")
+            else:
+                v = SearchVector("title_de", "intro_de", "body_de", "site")
+
+        projects = Project.objects.annotate(rank=SearchRank(v, q))
+        projects = projects.filter(rank__gt=0.01)
+        if projects:
+            projects = projects.order_by("-rank")
+            success = True
+
+        context = {
+            "search": request.GET["q"],
+            "success": success,
+        }
+        if flatpages:
+            context["flatpages":flatpages]
+        if projects:
+            context["progs":projects]
         return TemplateResponse(
             request,
             template_name,
-            {
-                "search": request.GET["q"],
-                "flatpages": flatpages,
-                "success": success,
-            },
+            context,
         )
     else:
         return TemplateResponse(
