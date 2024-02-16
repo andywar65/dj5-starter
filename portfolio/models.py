@@ -221,7 +221,7 @@ class ProjectCarousel(models.Model):
         related_name="project_carousel",
         verbose_name=_("Project"),
     )
-    fb_image = FilerImageField(related_name="carousel_image", on_delete=models.SET_NULL)
+    fb_image = FilerImageField(related_name="carousel_image", on_delete=models.CASCADE)
     description = models.CharField(
         _("Description"),
         help_text=_("Will be used in captions"),
