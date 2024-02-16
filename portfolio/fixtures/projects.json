@@ -3,8 +3,8 @@
     "model": "portfolio.activity",
     "pk": 1,
     "fields": {
-        "full": "Altre attivitá",
-        "full_it": "Altre attivitá",
+        "full": "Altre attività",
+        "full_it": "Altre attività",
         "full_de": "Sonstiges Leistungphasen",
         "position": 0
     }
@@ -13,8 +13,8 @@
     "model": "portfolio.activity",
     "pk": 2,
     "fields": {
-        "full": "Studio di fattibilitá",
-        "full_it": "Studio di fattibilitá",
+        "full": "Studio di fattibilità",
+        "full_it": "Studio di fattibilità",
         "full_de": "Grundlagenermittlung",
         "position": 1
     }
@@ -103,8 +103,8 @@
     "model": "portfolio.activity",
     "pk": 11,
     "fields": {
-        "full": "Tutte le attivitá",
-        "full_it": "Tutte le attivitá",
+        "full": "Tutte le attività",
+        "full_it": "Tutte le attività",
         "full_de": "Alle Leistungphasen",
         "position": 10
     }
@@ -133,8 +133,8 @@
     "model": "portfolio.activity",
     "pk": 15,
     "fields": {
-        "full": "Studio di fattibilitá (2)",
-        "full_it": "Studio di fattibilitá (2)",
+        "full": "Studio di fattibilità (2)",
+        "full_it": "Studio di fattibilità (2)",
         "full_de": "Machbarkeitsstudie",
         "position": 13
     }
@@ -617,9 +617,9 @@
         "body_de": "<p>Umbau und Sanierung einer Luxuswohnung in einem Renaissancehaus mit ma&szlig;gefertigten Einrichtungen und Vert&auml;felungen.</p>",
         "date": "2007-02-01",
         "date_end": null,
-        "site": "Via Mario de’ Fiori, Roma",
-        "site_it": "Via Mario de’ Fiori, Roma",
-        "site_de": "Via Mario de’ Fiori, Rom",
+        "site": "Via Mario de Fiori, Roma",
+        "site_it": "Via Mario de Fiori, Roma",
+        "site_de": "Via Mario de Fiori, Rom",
         "category": "ALT",
         "status": "REA",
         "cost": "450000.00",
@@ -1663,3 +1663,4 @@
         }
     }
 }
+]
