@@ -1,0 +1,38 @@
+{% load i18n %}
+
+<li class="list-group-item">
+  <strong>{% translate "Date" %}:</strong>
+  <a class="link-primary"
+     hx-get="{% url 'portfolio:year' year=prog.date.year %}"
+     hx-target="#content"
+     hx-push-url="true">
+    {{ prog.date|date:"Y" }}
+  </a>
+  {% if prog.date_end %}
+    -
+    <a class="link-primary"
+       hx-get="{% url 'portfolio:year' year=prog.date_end.year %}"
+       hx-target="#content"
+       hx-push-url="true">
+      {{ prog.date_end|date:"Y" }}
+    </a>
+  {% endif %}
+</li>
+{% if prog.site %}
+  <li class="list-group-item">
+    <strong>{% translate "Site" %}:</strong>
+    {{ prog.site }}
+  </li>
+{% endif %}
+{% if prog.client %}
+  <li class="list-group-item">
+    <strong>{% translate "Client" %}:</strong>
+    {{ prog.client }}
+  </li>
+{% endif %}
+{% if prog.activity %}
+  <li class="list-group-item">
+    <strong>{% translate "Activities" %}:</strong>
+    {{ prog.get_activities }}
+  </li>
+{% endif %}

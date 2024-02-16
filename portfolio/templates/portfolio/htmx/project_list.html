@@ -1,0 +1,28 @@
+{% load i18n %}
+
+<div class="card mx-auto" style="max-width: 960px;">
+  <div class="card-header bg-light">
+    <div class="row">
+      <div class="col col-8">
+        <h3>{% translate 'Associazione Professionale Perilli' %}</h3>
+        {% if all_projects %}
+          <h3>{% translate 'All projects' %}</h3>
+        {% else %}
+          <h3>{% translate 'Selected projects' %}</h3>
+        {% endif %}
+      </div>
+      <div class="col text-end">
+        {% if perms.portfolio.add_project %}
+          <a class="btn btn-secondary" href="/admin/portfolio/project/add/">{% translate "Add project" %}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <tbody>
+        {% include "portfolio/includes/infinite_scroll.html" %}
+      </tbody>
+    </table>
+  </div>
+</div>

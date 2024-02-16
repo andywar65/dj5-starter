@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load fb_versions %}
+
+<div class="card mx-auto" style="max-width: 960px;">
+  <div class="card-body">
+    <div class="row">
+      <div class="col col-xl-4 col-lg-4 col-12 mb-3">
+        <h3>{{ prog.title }}</h3>
+        <ul class="list-group list-group-flush">
+          {% include 'portfolio/includes/project_meta.html' %}
+          <li class="list-group-item">
+            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+            {{ prog.get_status_display }}
+          </li>
+          <li class="list-group-item">
+            <strong>€</strong>
+            <a class="link-primary"
+               hx-get="{% url 'portfolio:project_category' %}?cost={{ prog.cost }}"
+               hx-target="#content"
+               hx-push-url="true">
+              {{ prog.cost }}</a>
+          </li>
+        </ul>
+        {% if prog.body %}
+          <p><em>{{ prog.body|safe }}</em></p>
+        {% else %}
+          <p><em>{{ prog.intro }}</em></p>
+        {% endif %}
+        {% if perms.portfolio.change_project %}
+          <a class="link-secondary" href="/admin/portfolio/project/{{ prog.id }}/change/">
+            {% translate "Modify" %}
+          </a>
+        {% endif %}
+      </div>
+      <div class="col col-xl-8 col-lg-8 col-12">
+        {% if images %}
+          {% for image in images %}
+            <figure class="figure">
+              <img src="{% version image.fb_image 'large' %}" class="figure-img img-fluid rounded" alt="{{ image.description }}">
+              <figcaption class="figure-caption">{{ image.description|default_if_none:"" }}</figcaption>
+            </figure>
+          {% endfor %}
+        {% else %}
+          <p>{% trans "No images yet" %}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

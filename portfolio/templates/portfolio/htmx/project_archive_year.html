@@ -1,0 +1,43 @@
+{% load i18n %}
+
+<div class="card mx-auto" style="max-width: 960px;">
+  <div class="card-header">
+    <div class="row">
+      <div class="col col-8">
+        <h3>{% translate 'Projects' %} {{ year }}</h3>
+      </div>
+      <div class="col text-end">
+        {% if perms.portfolio.add_project %}
+          <a class="btn btn-secondary" href="/admin/portfolio/project/add/">{% translate "Add project" %}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <table class="table">
+      <tbody>
+        {% include "portfolio/includes/infinite_scroll.html" %}
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col col-6">
+        {% if previous_year %}
+          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <a class="link-primary"
+             hx-get="{% url 'portfolio:year' year=previous_year %}"
+             hx-target="#content"
+             hx-push-url="true">{% translate "PREVIOUS" %}</a>
+        {% endif %}
+      </div>
+      <div class="col col-6 text-end">
+        {% if next_year %}
+          <a class="link-primary"
+             hx-get="{% url 'portfolio:year' year=next_year %}"
+             hx-target="#content"
+             hx-push-url="true">{% translate "NEXT" %}</a>
+          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

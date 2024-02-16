@@ -1,0 +1,11 @@
+{% load i18n %}
+<div class="row">
+  <div class="col col-md-6">
+    <button class="btn btn-secondary btn-lg btn-block" type="submit">{% translate "Save" %}</button>
+  </div>
+  <div class="col col-md-6">
+    <button class="btn btn-light btn-lg btn-block" type="submit" name="add_another">
+      {% translate "Save and add" %}</button>
+  </div>
+</div>
+<small>{% translate "Fields with asterisk (*) are required" %}</small>

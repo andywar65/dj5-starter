@@ -1,0 +1,30 @@
+{% load i18n %}
+{% load static %}
+{% load leaflet_tags %}
+{% load geojson_tags %}
+
+<div class="card mx-auto" style="max-width: 960px;">
+  <div class="card-header bg-light">
+    <div class="row">
+      <div class="col col-8">
+        <h3>{% translate 'Associazione Professionale Perilli' %}</h3>
+        {% if all_projects %}
+          <h3>{% translate 'All projects' %}</h3>
+        {% else %}
+          <h3>{% translate 'Selected projects' %}</h3>
+        {% endif %}
+      </div>
+      <div class="col text-end">
+        {% if perms.portfolio.add_project %}
+          <a class="btn btn-secondary" href="/admin/portfolio/project/add/">{% translate "Add project" %}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <script src="{% static 'portfolio/js/base_list.js'%}"></script>
+    {% leaflet_map "mymap" callback="window.map_init" %}
+    <script id="marker_data" type="application/json">{{ object_list|geojsonfeature:"popupContent"|safe }}</script>
+    {{ layer_list|json_script:"layer_data" }}
+  </div>
+</div>
