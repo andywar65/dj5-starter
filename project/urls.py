@@ -24,6 +24,7 @@ from django.contrib.flatpages.sitemaps import FlatPageSitemap
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path, re_path
 from django.utils.translation import gettext_lazy as _
+from django.views.generic import RedirectView
 
 from users.views import (
     ContactFormView,
@@ -39,10 +40,7 @@ from users.views import (
     profile_update_delete,
 )
 
-from .views import home, nav_bar, search_box, search_results
-
-# from django.views.generic import RedirectView
-
+from .views import nav_bar, search_box, search_results
 
 sitemaps = {
     "flatpages": FlatPageSitemap,
@@ -74,6 +72,7 @@ urlpatterns = [
     path("accounts/avatar/update/", avatar_update_delete, name="avatar_update"),
     path("accounts/", include("allauth.urls")),
     path("__debug__/", include("debug_toolbar.urls")),
+    path("", RedirectView.as_view(pattern_name="portfolio:project_list"), name="home"),
     path(
         "sitemap.xml",
         sitemap,
@@ -87,7 +86,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
-    path("", home, name="home"),
+    path(_("projects/"), include("portfolio.urls", namespace="portfolio")),
     re_path(r"^(?P<url>.*/)$", fp_views.flatpage),
 )
 
