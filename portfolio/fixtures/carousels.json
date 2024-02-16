@@ -1,0 +1,637 @@
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 3,
+    "fields": {
+        "home": 4,
+        "fb_image": "uploads/images/videotime3.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 4,
+    "fields": {
+        "home": 4,
+        "fb_image": "uploads/images/videotime2.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 5,
+    "fields": {
+        "home": 5,
+        "fb_image": "uploads/images/cantiere_s_lucia.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 6,
+    "fields": {
+        "home": 5,
+        "fb_image": "uploads/images/sanita-ospedale-santa-lucia-roma-arke-ambiente-esterno-eybo2o.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 7,
+    "fields": {
+        "home": 6,
+        "fb_image": "uploads/images/foto_polo_2_042.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 8,
+    "fields": {
+        "home": 6,
+        "fb_image": "uploads/images/app0005.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 9,
+    "fields": {
+        "home": 7,
+        "fb_image": "uploads/images/bruno.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 10,
+    "fields": {
+        "home": 7,
+        "fb_image": "uploads/images/massimina__4.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 11,
+    "fields": {
+        "home": 8,
+        "fb_image": "uploads/images/salaria.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 12,
+    "fields": {
+        "home": 8,
+        "fb_image": "uploads/images/1esternoristorante.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 13,
+    "fields": {
+        "home": 9,
+        "fb_image": "uploads/images/ipotesi1-funzioni-plt_.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 14,
+    "fields": {
+        "home": 9,
+        "fb_image": "uploads/images/cinema_7_big_0.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 15,
+    "fields": {
+        "home": 10,
+        "fb_image": "uploads/images/post_arredo-1024x714.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 16,
+    "fields": {
+        "home": 10,
+        "fb_image": "uploads/images/dscf9290-1024x768.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 17,
+    "fields": {
+        "home": 11,
+        "fb_image": "uploads/images/dsc_2115.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 18,
+    "fields": {
+        "home": 11,
+        "fb_image": "uploads/images/dsc_2079.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 19,
+    "fields": {
+        "home": 12,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.59.51_(2).jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 20,
+    "fields": {
+        "home": 12,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.59.52_(1).jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 21,
+    "fields": {
+        "home": 12,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.59.51_(1).jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 22,
+    "fields": {
+        "home": 13,
+        "fb_image": "uploads/images/principe-eugenio.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 23,
+    "fields": {
+        "home": 13,
+        "fb_image": "uploads/images/dscn5786-1024x768.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 24,
+    "fields": {
+        "home": 14,
+        "fb_image": "uploads/images/autorimessa-luci.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 25,
+    "fields": {
+        "home": 14,
+        "fb_image": "uploads/images/pianta.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 26,
+    "fields": {
+        "home": 15,
+        "fb_image": "uploads/images/nuovo_retro.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 27,
+    "fields": {
+        "home": 15,
+        "fb_image": "uploads/images/021020141040.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 28,
+    "fields": {
+        "home": 16,
+        "fb_image": "uploads/images/prova_lato.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 29,
+    "fields": {
+        "home": 16,
+        "fb_image": "uploads/images/retro_photoshop_copy.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 30,
+    "fields": {
+        "home": 17,
+        "fb_image": "uploads/images/wp_011400.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 31,
+    "fields": {
+        "home": 18,
+        "fb_image": "uploads/images/ingresso-1024x768.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 32,
+    "fields": {
+        "home": 18,
+        "fb_image": "uploads/images/interno-soggiorno-1024x768.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 33,
+    "fields": {
+        "home": 19,
+        "fb_image": "uploads/images/prospettiva3_copy.jpg",
+        "description": "Immagine realizzata dal committente",
+        "description_it": "Immagine realizzata dal committente",
+        "description_de": "Vom Kunden erstelltes Bild",
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 34,
+    "fields": {
+        "home": 19,
+        "fb_image": "uploads/images/wp_020393.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 35,
+    "fields": {
+        "home": 20,
+        "fb_image": "uploads/images/via_delle_baleniere_1_finestre_laterali_copy.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 36,
+    "fields": {
+        "home": 20,
+        "fb_image": "uploads/images/20150526_144400.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 37,
+    "fields": {
+        "home": 21,
+        "fb_image": "uploads/images/1_legno.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 38,
+    "fields": {
+        "home": 21,
+        "fb_image": "uploads/images/new_con_ombra.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 39,
+    "fields": {
+        "home": 22,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.51.46_(1).jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 40,
+    "fields": {
+        "home": 22,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.51.45.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 41,
+    "fields": {
+        "home": 23,
+        "fb_image": "uploads/images/20171018_183202_1.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 42,
+    "fields": {
+        "home": 23,
+        "fb_image": "uploads/images/20200617_150542.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 43,
+    "fields": {
+        "home": 24,
+        "fb_image": "uploads/images/20180910_163628.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 44,
+    "fields": {
+        "home": 24,
+        "fb_image": "uploads/images/20190122_115629.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 45,
+    "fields": {
+        "home": 25,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.44.35.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 46,
+    "fields": {
+        "home": 25,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.44.34.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 47,
+    "fields": {
+        "home": 26,
+        "fb_image": "uploads/images/whatsapp_image_2021-08-20_at_18.04.16.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 48,
+    "fields": {
+        "home": 26,
+        "fb_image": "uploads/images/whatsapp_image_2021-08-16_at_11.46.07.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 49,
+    "fields": {
+        "home": 26,
+        "fb_image": "uploads/images/whatsapp_image_2021-07-08_at_13.41.28_(2).jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 50,
+    "fields": {
+        "home": 27,
+        "fb_image": "uploads/images/20190521_105456.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 51,
+    "fields": {
+        "home": 27,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.45.44.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 52,
+    "fields": {
+        "home": 27,
+        "fb_image": "uploads/images/whatsapp_image_2021-10-17_at_15.47.50.jpeg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 53,
+    "fields": {
+        "home": 29,
+        "fb_image": "uploads/images/cerc-foto-di-francesco-galli_06.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 54,
+    "fields": {
+        "home": 29,
+        "fb_image": "uploads/images/cerc-foto-di-francesco-galli_07.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 55,
+    "fields": {
+        "home": 29,
+        "fb_image": "uploads/images/cerc-foto-di-francesco-galli_36.jpg",
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+}
+]
