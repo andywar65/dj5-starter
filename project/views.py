@@ -4,6 +4,8 @@ from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
 from django.http import Http404
 from django.template.response import TemplateResponse
 
+from portfolio.models import Project
+
 
 def check_htmx_request(request):
     """Helper function"""
@@ -52,7 +54,7 @@ def search_results(request):
                 rank=SearchRank(v, q)
             )
         else:
-            flatpages = FlatPage.objects.filter(url__startswith="/docs/").annotate(
+            flatpages = FlatPage.objects.filter(url__startswith="/dokumente/").annotate(
                 rank=SearchRank(v, q)
             )
         flatpages = flatpages.filter(rank__gt=0.01)
@@ -60,14 +62,33 @@ def search_results(request):
             flatpages = flatpages.order_by("-rank")
             success = True
 
+        # search in projects
+        if "lang" not in request.GET:
+            v = SearchVector("title", "intro", "body", "site")
+        else:
+            if request.GET["lang"] == "it":
+                v = SearchVector("title_it", "intro_it", "body_it", "site")
+            else:
+                v = SearchVector("title_de", "intro_de", "body_de", "site")
+
+        projects = Project.objects.annotate(rank=SearchRank(v, q))
+        projects = projects.filter(rank__gt=0.01)
+        if projects:
+            projects = projects.order_by("-rank")
+            success = True
+
+        context = {
+            "search": request.GET["q"],
+            "success": success,
+        }
+        if flatpages:
+            context["flatpages":flatpages]
+        if projects:
+            context["progs":projects]
         return TemplateResponse(
             request,
             template_name,
-            {
-                "search": request.GET["q"],
-                "flatpages": flatpages,
-                "success": success,
-            },
+            context,
         )
     else:
         return TemplateResponse(
