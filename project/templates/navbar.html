@@ -35,6 +35,32 @@
                role="button"
                data-bs-toggle="dropdown"
                aria-expanded="false">
+              {% translate 'Projects' %}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item"
+                 hx-get="{% url 'portfolio:project_list' %}"
+                 hx-target="#content"
+                 hx-push-url="true">{% trans 'Selected' %}
+              </a>
+              <a class="dropdown-item"
+                 hx-get="{% url 'portfolio:project_list_all' %}"
+                 hx-target="#content"
+                 hx-push-url="true">{% trans 'All' %}
+              </a>
+              <a class="dropdown-item"
+                 href="{% url 'portfolio:project_map' %}">
+                {% trans 'Map' %}
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle"
+               href=""
+               id="navbarDropdown"
+               role="button"
+               data-bs-toggle="dropdown"
+               aria-expanded="false">
               {% translate 'Docs' %}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
