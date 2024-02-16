@@ -1,0 +1,33 @@
+[
+{
+    "model": "users.user",
+    "pk": "92766a47-31ad-4a1c-9ef5-403657fbd7eb",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$mquT21oQY0b7igwJmFHnWX$Ne7iaRlW8NeHhrTYEE2PsxokoSSjNqYQS/kFzeF39ns=",
+        "last_login": "2024-02-17T18:06:33.761Z",
+        "is_superuser": true,
+        "username": "andywar65",
+        "first_name": "",
+        "last_name": "",
+        "email": "andy.war1965@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-02-16T14:02:10.656Z",
+        "groups": [],
+        "user_permissions": [
+            99
+        ]
+    }
+},
+{
+    "model": "users.profile",
+    "pk": "92766a47-31ad-4a1c-9ef5-403657fbd7eb",
+    "fields": {
+        "avatar": "",
+        "bio": null,
+        "bio_it": null,
+        "bio_de": null,
+        "anonymize": false
+    }
+}
+]

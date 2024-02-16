@@ -1,0 +1,2302 @@
+[
+{
+    "model": "portfolio.activity",
+    "pk": 1,
+    "fields": {
+        "full": "Altre attività",
+        "full_it": "Altre attività",
+        "full_de": "Sonstiges Leistungphasen",
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 2,
+    "fields": {
+        "full": "Studio di fattibilità",
+        "full_it": "Studio di fattibilità",
+        "full_de": "Grundlagenermittlung",
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 3,
+    "fields": {
+        "full": "Progetto preliminare",
+        "full_it": "Progetto preliminare",
+        "full_de": "Vorplanung",
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 4,
+    "fields": {
+        "full": "Progetto definitivo",
+        "full_it": "Progetto definitivo",
+        "full_de": "Entwurfsplanung",
+        "position": 3
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 5,
+    "fields": {
+        "full": "Perizia",
+        "full_it": "Perizia",
+        "full_de": "Genehmigungsplanung",
+        "position": 4
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 6,
+    "fields": {
+        "full": "Progetto esecutivo",
+        "full_it": "Progetto esecutivo",
+        "full_de": "Ausfuhrungsplanung",
+        "position": 5
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 7,
+    "fields": {
+        "full": "Progetto di gara",
+        "full_it": "Progetto di gara",
+        "full_de": "Vorbereitung der Vergabe",
+        "position": 6
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 8,
+    "fields": {
+        "full": "Project management",
+        "full_it": "Project management",
+        "full_de": "Mitwirkung bei der Vergabe",
+        "position": 7
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 9,
+    "fields": {
+        "full": "Direzione lavori",
+        "full_it": "Direzione lavori",
+        "full_de": "Objektuberwachung / Bauleitung",
+        "position": 8
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 10,
+    "fields": {
+        "full": "Progetto di manutenzione",
+        "full_it": "Progetto di manutenzione",
+        "full_de": "Objektbetreuung",
+        "position": 9
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 11,
+    "fields": {
+        "full": "Tutte le attività",
+        "full_it": "Tutte le attività",
+        "full_de": "Alle Leistungphasen",
+        "position": 10
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 13,
+    "fields": {
+        "full": "Richieste alle Soprintendenze",
+        "full_it": "Richieste alle Soprintendenze",
+        "full_de": "Denkmalschutz Genehmigung",
+        "position": 11
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 14,
+    "fields": {
+        "full": "Progettazione complessiva",
+        "full_it": "Progettazione complessiva",
+        "full_de": "Gesamtplanung",
+        "position": 12
+    }
+},
+{
+    "model": "portfolio.activity",
+    "pk": 15,
+    "fields": {
+        "full": "Studio di fattibilità (2)",
+        "full_it": "Studio di fattibilità (2)",
+        "full_de": "Machbarkeitsstudie",
+        "position": 13
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 1,
+    "fields": {
+        "name": "Ristrutturazione",
+        "name_it": "Ristrutturazione",
+        "name_de": "Renovierung",
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 2,
+    "fields": {
+        "name": "Restauro",
+        "name_it": "Restauro",
+        "name_de": "Restaurierung",
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 3,
+    "fields": {
+        "name": "Risanamento",
+        "name_it": "Risanamento",
+        "name_de": "Sanierung",
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 4,
+    "fields": {
+        "name": "Trasformazione",
+        "name_it": "Trasformazione",
+        "name_de": "Umbau",
+        "position": 3
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 5,
+    "fields": {
+        "name": "Nuova costruzione",
+        "name_it": "Nuova costruzione",
+        "name_de": "Neubau",
+        "position": 6
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 6,
+    "fields": {
+        "name": "Demolizione",
+        "name_it": "Demolizione",
+        "name_de": "Abriss",
+        "position": 7
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 7,
+    "fields": {
+        "name": "Sopraelevazione",
+        "name_it": "Sopraelevazione",
+        "name_de": "Aufstockung",
+        "position": 4
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 8,
+    "fields": {
+        "name": "Ampliamento",
+        "name_it": "Ampliamento",
+        "name_de": "Anbau",
+        "position": 5
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 9,
+    "fields": {
+        "name": "Variante di PRG",
+        "name_it": "Variante di PRG",
+        "name_de": "Neubaumaßnahme",
+        "position": 8
+    }
+},
+{
+    "model": "portfolio.intervention",
+    "pk": 10,
+    "fields": {
+        "name": "Arredamento",
+        "name_it": "Arredamento",
+        "name_de": "Einrichtung",
+        "position": 9
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 1,
+    "fields": {
+        "name": "Privato",
+        "name_it": "Privato",
+        "name_de": "Privat"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 2,
+    "fields": {
+        "name": "Ospedale Israelitico",
+        "name_it": "Ospedale Israelitico",
+        "name_de": "Ospedale Israelitico"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 3,
+    "fields": {
+        "name": "Videotime S.p.a.",
+        "name_it": "Videotime S.p.a.",
+        "name_de": "Videotime S.p.a."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 4,
+    "fields": {
+        "name": "Immobiliare Maria Adriana S.r.L.",
+        "name_it": "Immobiliare Maria Adriana S.r.L.",
+        "name_de": "Immobiliare Maria Adriana S.r.L."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 5,
+    "fields": {
+        "name": "Fondazione I.R.C.C.S. Santa Lucia",
+        "name_it": "Fondazione I.R.C.C.S. Santa Lucia",
+        "name_de": "Stiftung I.R.C.C.S. Santa Lucia"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 6,
+    "fields": {
+        "name": "Polo Didattico S.r.l.",
+        "name_it": "Polo Didattico S.r.l.",
+        "name_de": "Polo Didattico S.r.l."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 7,
+    "fields": {
+        "name": "R.I.P. S.r.l.",
+        "name_it": "R.I.P. S.r.l.",
+        "name_de": "R.I.P. S.r.l."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 8,
+    "fields": {
+        "name": "Nicolai Ricevimenti S.r.l.",
+        "name_it": "Nicolai Ricevimenti S.r.l.",
+        "name_de": "Nicolai Ricevimenti S.r.l."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 9,
+    "fields": {
+        "name": "Porto Argoo S.r.l.",
+        "name_it": "Porto Argoo S.r.l.",
+        "name_de": "Porto Argoo S.r.l."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 10,
+    "fields": {
+        "name": "Premier Tax Free Italia S.r.l.",
+        "name_it": "Premier Tax Free Italia S.r.l.",
+        "name_de": "Premier Tax Free Italia S.r.l."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 11,
+    "fields": {
+        "name": "Pisco S.r.l.",
+        "name_it": "Pisco S.r.l.",
+        "name_de": "Pisco S.r.l."
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 12,
+    "fields": {
+        "name": "Agence France-Presse",
+        "name_it": "Agence France-Presse",
+        "name_de": "Agence France-Presse"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 13,
+    "fields": {
+        "name": "Ambasciata Tedesca presso la Santa Sede",
+        "name_it": "Ambasciata Tedesca presso la Santa Sede",
+        "name_de": "Deutsche Botschaft beim Heiligen Stuhl, Rom"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 14,
+    "fields": {
+        "name": "Scuola Germanica Roma",
+        "name_it": "Scuola Germanica Roma",
+        "name_de": "Deutsche Schule Rom"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 15,
+    "fields": {
+        "name": "Ambasciata Tedesca presso l'Italia",
+        "name_it": "Ambasciata Tedesca presso l'Italia",
+        "name_de": "Deutsche Botschaft bei Italien, Rom"
+    }
+},
+{
+    "model": "portfolio.client",
+    "pk": 16,
+    "fields": {
+        "name": "Fondazione EBRI",
+        "name_it": "Fondazione EBRI",
+        "name_de": "Stiftung EBRI"
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 4,
+    "fields": {
+        "slug": "studi-televisivi",
+        "slug_it": "studi-televisivi",
+        "slug_de": "fernsehstudios",
+        "title": "Studi televisivi",
+        "title_it": "Studi televisivi",
+        "title_de": "Fernsehstudios",
+        "intro": "Uffici e studi televisivi. Restauro di facciate",
+        "intro_it": "Uffici e studi televisivi. Restauro di facciate",
+        "intro_de": "Büros- und Fernsehstudiosanlage. Restaurierung der Fassade.",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Struttura per uffici e studi televisivi.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Restauro della facciata e del tetto di un edificio del '700.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">con resti archeologici romani;</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Recinto con la Villa Celimontana (XVI sec.), su resti archeologici romani.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Struttura per uffici e studi televisivi.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Restauro della facciata e del tetto di un edificio del '700.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">con resti archeologici romani;</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Recinto con la Villa Celimontana (XVI sec.), su resti archeologici romani.</span></span></span></p>",
+        "body_de": "<p class=\"western\" style=\"line-height: 0.39cm; margin-top: 0.07cm; margin-bottom: 0.07cm;\"><span style=\"font-family: Verdana, sans-serif;\"><span style=\"font-size: small;\"><em>B&uuml;ros- und Fernsehstudiosanlage. Restaurierung der Fassade und des Daches eines Geb&auml;udes aus dem 18.Jh. mit R&ouml;mischen arch&auml;eologischen Resten; Einfriedung mit der Villa Celimontana (16. Jh.), &uuml;ber R&ouml;mischen arch&auml;eologischen Resten.</em></span></span></p>",
+        "date": "1999-01-01",
+        "date_end": "2000-01-01",
+        "site": "Piazza SS. Giovanni e Paolo, Roma",
+        "site_it": "Piazza SS. Giovanni e Paolo, Roma",
+        "site_de": "Piazza SS. Giovanni e Paolo, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "200000.00",
+        "client": [
+            3
+        ],
+        "type": [
+            1
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 5,
+    "fields": {
+        "slug": "ospedale-di-riabilitazione",
+        "slug_it": "ospedale-di-riabilitazione",
+        "slug_de": "krankenhauses-rh",
+        "title": "Ospedale di riabilitazione",
+        "title_it": "Ospedale di riabilitazione",
+        "title_de": "Krankenhauses-RH",
+        "intro": "Nuova struttura ospedaliera",
+        "intro_it": "Nuova struttura ospedaliera",
+        "intro_de": "Neue Krankenhausanlage mit Krankenhausaufenthalt",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Nuova struttura ospedaliera con ricovero, sale cure riabilitative, sale fisioterapia, sala basket, parcheggi interrati, locali esterni.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Nuova struttura ospedaliera con ricovero, sale cure riabilitative, sale fisioterapia, sala basket, parcheggi interrati, locali esterni.</span></span></span></p>",
+        "body_de": "<p class=\"western\" style=\"line-height: 0.39cm; margin-top: 0.07cm; margin-bottom: 0.07cm;\"><span style=\"font-family: Verdana, sans-serif;\"><span style=\"font-size: small;\"><em>Neue Krankenhausanlage mit Krankenhausaufenthalt, RH-Behandlungsr&auml;umen, Physikalischen Therapienr&auml;umen, Basketballhalle, Tiefgaragen, &auml;u&szlig;eren R&auml;umen.</em></span></span></p>",
+        "date": "2000-02-01",
+        "date_end": "2003-01-01",
+        "site": "Via Ardeatina, Roma",
+        "site_it": "Via Ardeatina, Roma",
+        "site_de": "Via Ardeatina, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "41000000.00",
+        "client": [
+            4,
+            5
+        ],
+        "type": [
+            5
+        ],
+        "activity": [
+            9
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 6,
+    "fields": {
+        "slug": "centro-conferenze-parcheggio",
+        "slug_it": "centro-conferenze-parcheggio",
+        "slug_de": "konferenzzentrum-parkplatz",
+        "title": "Centro conferenze, parcheggio",
+        "title_it": "Centro conferenze, parcheggio",
+        "title_de": "Konferenzzentrum, Parkplatz",
+        "intro": "Riconversione ex scuola in centro congressi",
+        "intro_it": "Riconversione ex scuola in centro congressi",
+        "intro_de": "Umnutzung einer ehmaligen Schule als Konferenzzentrum",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Riconversione ex scuola in centro congressi con parcheggio e sale esterne;</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Installazione di una nuova scala antincendio</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Riconversione ex scuola in centro congressi con parcheggio e sale esterne;</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Installazione di una nuova scala antincendio</span></span></span></p>",
+        "body_de": "<p class=\"western\" style=\"line-height: 0.39cm; margin-top: 0.07cm; margin-bottom: 0.07cm;\"><span style=\"color: #000000;\"><span style=\"font-family: Verdana, sans-serif;\"><span style=\"font-size: small;\"><span lang=\"it-IT\"><em>Umnutzung einer ehmaligen Schule als </em></span></span></span></span><span style=\"color: #000000;\"><span style=\"font-family: Verdana, sans-serif;\"><span style=\"font-size: small;\"><span lang=\"it-IT\"><em><span style=\"font-weight: normal;\">Konferenzzentrum mit Parkplatz und &auml;u&szlig;eren R&auml;umen; Einbau einer neuen Feuertreppe</span></em></span></span></span></span></p>",
+        "date": "2002-02-01",
+        "date_end": "2003-01-01",
+        "site": "Piazza Oderico da Pordenone, Rom",
+        "site_it": "Piazza Oderico da Pordenone, Rom",
+        "site_de": "Piazza Oderico da Pordenone, Roma",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "300000.00",
+        "client": [
+            6
+        ],
+        "type": [
+            1,
+            2
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 7,
+    "fields": {
+        "slug": "villino-trifamiliare",
+        "slug_it": "villino-trifamiliare",
+        "slug_de": "mehrfamilienhaus",
+        "title": "Villino trifamiliare",
+        "title_it": "Villino trifamiliare",
+        "title_de": "Mehrfamilienhaus",
+        "intro": "Ampliamento di una casa unifamiliare con 2 unità aggiuntive e parcheggio sotterraneo",
+        "intro_it": "Ampliamento di una casa unifamiliare con 2 unità aggiuntive e parcheggio sotterraneo",
+        "intro_de": "Anbau eines Einfamilienhaus mit 2 zusätzlichen Einheiten und Tiefgarage.",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento di una casa unifamiliare con 2 unit&agrave; aggiuntive e parcheggio sotterraneo.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Installazione di una facciata ventilata in blocchi di cemento</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento di una casa unifamiliare con 2 unit&agrave; aggiuntive e parcheggio sotterraneo.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Installazione di una facciata ventilata in blocchi di cemento</span></span></span></p>",
+        "body_de": "<p class=\"western\" style=\"line-height: 0.39cm; margin-top: 0.07cm; margin-bottom: 0.07cm;\"><span style=\"font-family: Verdana, sans-serif;\"><span style=\"font-size: small;\"><em>Anbau eines Einfamilienhaus mit 2 zus&auml;tzlichen Einheiten und Tiefgarage. Einbau eines vorgesetzten hinterl&uuml;fteten Fassade aus Betonbausteinen</em></span></span></p>",
+        "date": "2002-06-01",
+        "date_end": "2004-01-01",
+        "site": "Via P. Fontebasso, Roma",
+        "site_it": "Via P. Fontebasso, Roma",
+        "site_de": "Via P. Fontebasso, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "300000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            4
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 8,
+    "fields": {
+        "slug": "hotel",
+        "slug_it": "hotel",
+        "slug_de": "hotel",
+        "title": "Hotel",
+        "title_it": "Hotel",
+        "title_de": "Hotel",
+        "intro": "Hotel con suite e ristorante",
+        "intro_it": "Hotel con suite e ristorante",
+        "intro_de": "Hotels mit Suites und Restaurant",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento, modifica e ristrutturazione di un albergo con suite e ristorante, spazi esterni</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento, modifica e ristrutturazione di un albergo con suite e ristorante, spazi esterni</span></span></span></p>",
+        "body_de": "<p>Anbau, Umbau und Renovierung eines Hotels mit Suites und Restaurant, &auml;u&szlig;ere R&auml;ume</p>",
+        "date": "2006-01-01",
+        "date_end": null,
+        "site": "Via Salaria, Roma",
+        "site_it": "Via Salaria, Roma",
+        "site_de": "Via Salaria, Rom",
+        "category": "ALT",
+        "status": "PRO",
+        "cost": "2000000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            4,
+            8
+        ],
+        "activity": [
+            14
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 9,
+    "fields": {
+        "slug": "cinema-admiral",
+        "slug_it": "cinema-admiral",
+        "slug_de": "kino-admiral",
+        "title": "Cinema Admiral",
+        "title_it": "Cinema Admiral",
+        "title_de": "Kino Admiral",
+        "intro": "Multisala con ristorante ed altre funzioni",
+        "intro_it": "Multisala con ristorante ed altre funzioni",
+        "intro_de": "Multiplex-Kino mit Resturant und anderen Gewerben",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Conversione di un cinema monosala in cinema multisala con ristorante e altre attivit&agrave; (libreria, centro benessere).</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Conversione di un cinema monosala in cinema multisala con ristorante e altre attivit&agrave; (libreria, centro benessere).</span></span></span></p>",
+        "body_de": "<p>Umbau eines Kinos mit einem einzigen Saal in einem Multiplex-Kino mit Resturant und anderen Gewerben (Buchhandlung, Wellness-Center).</p>",
+        "date": "2007-01-01",
+        "date_end": null,
+        "site": "Piazza Verbano, Roma",
+        "site_it": "Piazza Verbano, Roma",
+        "site_de": "Piazza Verbano, Rom",
+        "category": "ALT",
+        "status": "PRO",
+        "cost": "10000000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            4
+        ],
+        "activity": [
+            4,
+            15
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 10,
+    "fields": {
+        "slug": "abitazione-privata",
+        "slug_it": "abitazione-privata",
+        "slug_de": "wohnung",
+        "title": "Abitazione privata",
+        "title_it": "Abitazione privata",
+        "title_de": "Wohnung",
+        "intro": "Abitazione di lusso in palazzo rinascimentale",
+        "intro_it": "Abitazione di lusso in palazzo rinascimentale",
+        "intro_de": "Luxuswohnung in einem Renaissancehaus",
+        "body": null,
+        "body_it": null,
+        "body_de": "<p>Umbau und Sanierung einer Luxuswohnung in einem Renaissancehaus mit ma&szlig;gefertigten Einrichtungen und Vert&auml;felungen.</p>",
+        "date": "2007-02-01",
+        "date_end": null,
+        "site": "Via Mario de Fiori, Roma",
+        "site_it": "Via Mario de Fiori, Roma",
+        "site_de": "Via Mario de Fiori, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "450000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            10
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 11,
+    "fields": {
+        "slug": "residenze-negozi-e-autorimessa",
+        "slug_it": "residenze-negozi-e-autorimessa",
+        "slug_de": "wohnhaus-mit-gewerben-und-tiefgaragen",
+        "title": "Residenze, negozi e autorimessa",
+        "title_it": "Residenze, negozi e autorimessa",
+        "title_de": "Wohnhaus mit Gewerben und Tiefgaragen",
+        "intro": "Edificio residenziale con cortile e 40 appartamenti",
+        "intro_it": "Edificio residenziale con cortile e 40 appartamenti",
+        "intro_de": "Wohnhaus mit Hof mit 40 Wohnungen",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Edificio residenziale con cortile con 40 appartamenti di diverse metrature e tipologie, piano terra con negozi, parcheggio interrato a due piani.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Edificio residenziale con cortile con 40 appartamenti di diverse metrature e tipologie, piano terra con negozi, parcheggio interrato a due piani.</span></span></span></p>",
+        "body_de": "<p>Wohnhaus mit Hof mit 40 Wohnungen verschieder Gr&ouml;&szlig;en und Arten, Erdgescho&szlig; mit Gewerben, zwei Etagen- Tiefgarage.</p>",
+        "date": "2008-01-01",
+        "date_end": "2011-01-01",
+        "site": "Via F. Colombo, Roma",
+        "site_it": "Via F. Colombo, Roma",
+        "site_de": "Via F. Colombo, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "8000000.00",
+        "client": [
+            7
+        ],
+        "type": [
+            5
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 12,
+    "fields": {
+        "slug": "abitazione",
+        "slug_it": "abitazione",
+        "slug_de": "wohnung-1",
+        "title": "Abitazione",
+        "title_it": "Abitazione",
+        "title_de": "Wohnung",
+        "intro": "Un piccolo appartamento con terrazza in un ex convento di suore",
+        "intro_it": "Un piccolo appartamento con terrazza in un ex convento di suore",
+        "intro_de": "Kleine Wohnung mit Terrasse in einem ehmaligen Nonnekloster",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Un piccolo appartamento con terrazza in un ex convento di suore.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Le pareti scorrevoli consentono uno spazio con stanze separate o come uno spazio aperto.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Cucina invernale ed estiva.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Un piccolo appartamento con terrazza in un ex convento di suore.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Le pareti scorrevoli consentono uno spazio con stanze separate o come uno spazio aperto.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Cucina invernale ed estiva.</span></span></span></p>",
+        "body_de": "<p>Eine kleine Wohnung mit Terrasse in einem ehmaligen Nonnekloster. Schiebew&auml;nde erm&ouml;glichen einen Raum mit getrennten Zimmern oder als Openspace. Winter- und Sommerk&uuml;che.</p>",
+        "date": "2010-01-01",
+        "date_end": null,
+        "site": "Via Baccina, Roma",
+        "site_it": "Via Baccina, Roma",
+        "site_de": "Via Baccina, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "65000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 13,
+    "fields": {
+        "slug": "abitazione-1",
+        "slug_it": "abitazione-1",
+        "slug_de": "wohnung",
+        "title": "Abitazione",
+        "title_it": "Abitazione",
+        "title_de": "Wohnung",
+        "intro": "Distribuzione classica con interruzione del corridoio",
+        "intro_it": "Distribuzione classica con interruzione del corridoio",
+        "intro_de": "Klassische Wohnungsverteilung mit Unterbrechnung des Flurs",
+        "body": null,
+        "body_it": null,
+        "body_de": "<p>Klassische Wohnungsverteilung durch die Unterbrechnung des Flurs dynamisch geschafft. Wichtige Fussbodenverst&auml;rkung</p>",
+        "date": "2011-01-01",
+        "date_end": null,
+        "site": "Via Principe Eugenio, Roma",
+        "site_it": "Via Principe Eugenio, Roma",
+        "site_de": "Via Principe Eugenio, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "150000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 14,
+    "fields": {
+        "slug": "garage-interrato",
+        "slug_it": "garage-interrato",
+        "slug_de": "tiefgarage-fuer-lkw",
+        "title": "Garage interrato",
+        "title_it": "Garage interrato",
+        "title_de": "Tiefgarage fuer LKW",
+        "intro": "Parcheggio con tetto verde",
+        "intro_it": "Parcheggio con tetto verde",
+        "intro_de": "Parkplatz mit gr�nen Dach",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Parcheggio con tetto verde come estensione di una collina naturale in area protetta</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Parcheggio con tetto verde come estensione di una collina naturale in area protetta</span></span></span></p>",
+        "body_de": "<p>Parkplatz mit gr&uuml;nen Dach als Erweiteurng eines nat&uuml;rlichen H&uuml;gels in einem Denkmalgeschutzen Bereich</p>",
+        "date": "2011-02-01",
+        "date_end": "2012-01-01",
+        "site": "Via dell'Imbrecciato, Roma",
+        "site_it": "Via dell'Imbrecciato, Roma",
+        "site_de": "Via dell'Imbrecciato, Rom",
+        "category": "ALT",
+        "status": "PRO",
+        "cost": "750000.00",
+        "client": [
+            8
+        ],
+        "type": [
+            5
+        ],
+        "activity": [
+            13,
+            14
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 15,
+    "fields": {
+        "slug": "condominio",
+        "slug_it": "condominio",
+        "slug_de": "mehrfamilienhaus",
+        "title": "Condominio",
+        "title_it": "Condominio",
+        "title_de": "Mehrfamilienhaus",
+        "intro": "Tre appartamenti a partire da uno",
+        "intro_it": "Tre appartamenti a partire da uno",
+        "intro_de": "Einfamilienhaus mit 2 zusätzlichen Einheiten",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento di una casa unifamiliare con 2 unit&agrave; aggiuntive.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Un gioco di fitting per garantire omogeneit&agrave; formale</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento di una casa unifamiliare con 2 unit&agrave; aggiuntive.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Un gioco di fitting per garantire omogeneit&agrave; formale</span></span></span></p>",
+        "body_de": "<p>Anbau eines Einfamilienhaus mit 2 zus&auml;tzlichen Einheiten. Ein Einspassungsspiel um die formale Homogenit&auml;t zu garantieren</p>",
+        "date": "2011-03-01",
+        "date_end": "2013-01-01",
+        "site": "Vicolo del Casal Lumbroso, Roma",
+        "site_it": "Vicolo del Casal Lumbroso, Roma",
+        "site_de": "Vicolo del Casal Lumbroso, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "400000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            8,
+            5,
+            6
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 16,
+    "fields": {
+        "slug": "hotel-1",
+        "slug_it": "hotel-1",
+        "slug_de": "hotel-1",
+        "title": "Hotel",
+        "title_it": "Hotel",
+        "title_de": "Hotel",
+        "intro": "Ampliamento con nuovo ristorante",
+        "intro_it": "Ampliamento con nuovo ristorante",
+        "intro_de": "Anbau eines Hotels mit neuen Restaurant",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento ed ampliamento di un albergo, con nuovo ristorante, locali di servizio, scala antincendio, nuova strada di accesso e giardino</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento ed ampliamento di un albergo, con nuovo ristorante, locali di servizio, scala antincendio, nuova strada di accesso e giardino</span></span></span></p>",
+        "body_de": "<p>Aufstockung und Anbau eines Hotels, mit neuen Restaurant, Dienstr&auml;umen, Feuertreppe, neuer Anchlussstrasse und Garten</p>",
+        "date": "2011-04-01",
+        "date_end": "2012-01-01",
+        "site": "Portoferraio, Isola d'Elba (LI)",
+        "site_it": "Portoferraio, Isola d'Elba (LI)",
+        "site_de": "Portoferraio - Elba Insel (LI) - Toskana",
+        "category": "ALT",
+        "status": "PRO",
+        "cost": "2000000.00",
+        "client": [
+            9
+        ],
+        "type": [
+            1,
+            7,
+            8
+        ],
+        "activity": [
+            14
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 17,
+    "fields": {
+        "slug": "uffici",
+        "slug_it": "uffici",
+        "slug_de": "buros",
+        "title": "Uffici",
+        "title_it": "Uffici",
+        "title_de": "Büros",
+        "intro": "Uffici a due piani con reception",
+        "intro_it": "Uffici a due piani con reception",
+        "intro_de": "Zweigeschoßige Büros mit Empfangsraum",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Uffici a due piani con reception, sale riunioni.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Locali per call center adatti alla tecnologia degli edifici</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Uffici a due piani con reception, sale riunioni.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Locali per call center adatti alla tecnologia degli edifici</span></span></span></p>",
+        "body_de": "<p>Zweigescho&szlig;ige B&uuml;ros mit Empfangsraum, Versammlungsr&auml;umen. Callcenterr&auml;umen geignete Haustechnik</p>",
+        "date": "2012-01-01",
+        "date_end": null,
+        "site": "Via Gregoriana, Roma",
+        "site_it": "Via Gregoriana, Roma",
+        "site_de": "Via Gregoriana, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "100000.00",
+        "client": [
+            10
+        ],
+        "type": [
+            1,
+            4
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 18,
+    "fields": {
+        "slug": "struttura-residenziale-terapeutica-riabilitativa",
+        "slug_it": "struttura-residenziale-terapeutica-riabilitativa",
+        "slug_de": "forensisch-psychiatrisches-krankenhaus",
+        "title": "Struttura Residenziale Terapeutica Riabilitativa",
+        "title_it": "Struttura Residenziale Terapeutica Riabilitativa",
+        "title_de": "Forensisch- Psychiatrisches Krankenhaus",
+        "intro": "Appartamenti organizzati attorno alle corti",
+        "intro_it": "Appartamenti organizzati attorno alle corti",
+        "intro_de": "Appartments um sonnige Höfe organisiert",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Camere/appartamenti per gli ospiti organizzati intorno a corti soleggiate, sale per trattamenti, palestra, officine, uffici e locali di servizio del personale, campi sportivi e orti sociali.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Delimitazione e apertura verso l'esterno</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Camere/appartamenti per gli ospiti organizzati intorno a corti soleggiate, sale per trattamenti, palestra, officine, uffici e locali di servizio del personale, campi sportivi e orti sociali.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Delimitazione e apertura verso l'esterno</span></span></span></p>",
+        "body_de": "<p>G&auml;stezimmer/Appartments um sonnige H&ouml;fe organisiert, Behandlungsr&auml;ume, Sporthalle, Werkst&auml;tte, B&uuml;ros und Dienstr&auml;ume f&uuml;r das Personal, Sportfelder und soziale Gem&uuml;seg&auml;rten. Begrenzung und &Ouml;ffnung das &Auml;u&szlig;ere gegen&uuml;ber</p>",
+        "date": "2012-02-01",
+        "date_end": "2013-01-01",
+        "site": "Terracina (LT)",
+        "site_it": "Terracina (LT)",
+        "site_de": "Terracina (LT) - Latium",
+        "category": "ALT",
+        "status": "PRO",
+        "cost": "17000000.00",
+        "client": [
+            11
+        ],
+        "type": [
+            5
+        ],
+        "activity": [
+            2,
+            4
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 19,
+    "fields": {
+        "slug": "villa-familiare",
+        "slug_it": "villa-familiare",
+        "slug_de": "einfamilienhaus",
+        "title": "Villa familiare",
+        "title_it": "Villa familiare",
+        "title_de": "Einfamilienhaus",
+        "intro": "Forme chiare in contrasto con l'edificio esistente",
+        "intro_it": "Forme chiare in contrasto con l'edificio esistente",
+        "intro_de": "Klare Formen in Kontrast mit dem bestehenden Bau",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento per una casa unifamiliare.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Forme chiare in contrasto con l'edificio esistente;</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Colori e materiali da costruzione consentono l'omogeneit&agrave; del nuovo oggetto</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento per una casa unifamiliare.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Forme chiare in contrasto con l'edificio esistente;</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Colori e materiali da costruzione consentono l'omogeneit&agrave; del nuovo oggetto</span></span></span></p>",
+        "body_de": "<p>Anbau f&uuml;r ein Einfamilienhaus. Klare Formen in Kontrast mit dem bestehenden Bau; Farben und Baumaterialien erm&ouml;gliche die Homogenit&auml;t des neuen Objektes</p>",
+        "date": "2012-03-01",
+        "date_end": "2013-01-01",
+        "site": "Vicolo del Casal Lumbroso, Roma",
+        "site_it": "Vicolo del Casal Lumbroso, Roma",
+        "site_de": "Vicolo del Casal Lumbroso, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "350000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            8
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 20,
+    "fields": {
+        "slug": "facciate-di-tre-edifici",
+        "slug_it": "facciate-di-tre-edifici",
+        "slug_de": "fassaden-von-drei-gebauden",
+        "title": "Facciate di tre edifici",
+        "title_it": "Facciate di tre edifici",
+        "title_de": "Fassaden von drei Gebäuden",
+        "intro": "Un cantiere mobile per un edificio triplo su piattaforma commerciale",
+        "intro_it": "Un cantiere mobile per un edificio triplo su piattaforma commerciale",
+        "intro_de": "Eine mobile Baustelle für einen Drillingbau auf einem Gewerbenpodest",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Un cantiere mobile per un edificio triplo su piattaforma commerciale.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Indagine sui colori e sui dettagli in dialogo con l'ente per la tutela dei monumenti.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Un cantiere mobile per un edificio triplo su piattaforma commerciale.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Indagine sui colori e sui dettagli in dialogo con l'ente per la tutela dei monumenti.</span></span></span></p>",
+        "body_de": "<p>Eine mobile Baustelle f&uuml;r einen Drillingbau auf einem Gewerbenpodest. Farbenund Detailsuntersuchung im Dialog mit der Denkmalschutzbeh&ouml;rde.</p>",
+        "date": "2013-01-01",
+        "date_end": "2014-01-01",
+        "site": "Via delle Baleniere, Ostia",
+        "site_it": "Via delle Baleniere, Ostia",
+        "site_de": "Via delle Baleniere, Ostia (Rom)",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "700000.00",
+        "client": [
+            7
+        ],
+        "type": [
+            1,
+            3
+        ],
+        "activity": [
+            11,
+            13
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 21,
+    "fields": {
+        "slug": "villa-familiare-1",
+        "slug_it": "villa-familiare-1",
+        "slug_de": "einfamilienhaus",
+        "title": "Villa familiare",
+        "title_it": "Villa familiare",
+        "title_de": "Einfamilienhaus",
+        "intro": "Ampliamento per una casa unifamiliare",
+        "intro_it": "Ampliamento per una casa unifamiliare",
+        "intro_de": "Anbau für ein Einfamilienhaus",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento per una casa unifamiliare con adeguamento all'edificio esistente.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Parcheggio sotterraneo.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ampliamento per una casa unifamiliare con adeguamento all'edificio esistente.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Parcheggio sotterraneo.</span></span></span></p>",
+        "body_de": "<p>Anbau f&uuml;r ein Einfamilienhaus mit Anpassung an dem bestehenden Bau. Tiefgarage.</p>",
+        "date": "2015-01-01",
+        "date_end": "2016-01-01",
+        "site": "Vicolo del Casal Lumbroso, Roma",
+        "site_it": "Vicolo del Casal Lumbroso, Roma",
+        "site_de": "Vicolo del Casal Lumbroso, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "300000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            8
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 22,
+    "fields": {
+        "slug": "complesso-residenziale",
+        "slug_it": "complesso-residenziale",
+        "slug_de": "wohnanlage-mit-3-einfamilienhausern",
+        "title": "Complesso residenziale",
+        "title_it": "Complesso residenziale",
+        "title_de": "Wohnanlage mit 3 Einfamilienhäusern",
+        "intro": "Gruppo di case nel bosco con vista sul Lago",
+        "intro_it": "Gruppo di case nel bosco con vista sul Lago",
+        "intro_de": "Häuserensemble im Wald mit Blick auf den Braccianosee",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Gruppo di case nel bosco con vista sul Lago di Bracciano.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Materiali da costruzione tradizionali con una planimetria moderna.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Piscine e parco condominiale su strada privata.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Gruppo di case nel bosco con vista sul Lago di Bracciano.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Materiali da costruzione tradizionali con una planimetria moderna.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Piscine e parco condominiale su strada privata.</span></span></span></p>",
+        "body_de": "<p>H&auml;userensemble im Wald mit Blick auf den Braccianosee. Traditionelle Baumaterialen mit modernem Raumplan. Pools und gemeinsamem Parkanlage auf einer privaten Strasse.</p>",
+        "date": "2017-01-01",
+        "date_end": "2019-01-01",
+        "site": "Via Sutri, Trevignano Romano (RM)",
+        "site_it": "Via Sutri, Trevignano Romano (RM)",
+        "site_de": "Via Sutri, Trevignano Romano (Rom)",
+        "category": "ALT",
+        "status": "PRO",
+        "cost": "1000000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            9
+        ],
+        "activity": [
+            13,
+            14
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 23,
+    "fields": {
+        "slug": "abitazione-2",
+        "slug_it": "abitazione-2",
+        "slug_de": "wohnung",
+        "title": "Abitazione",
+        "title_it": "Abitazione",
+        "title_de": "Wohnung",
+        "intro": "Una casa degli anni '60 con finiture su misura",
+        "intro_it": "Una casa degli anni '60 con finiture su misura",
+        "intro_de": "Einem 60er Jahr Haus mit maßgefertigten Einrichtungen",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ristrutturazione e ristrutturazione di un appartamento di lusso in una casa degli anni '60 con finiture su misura.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ristrutturazione e ristrutturazione di un appartamento di lusso in una casa degli anni '60 con finiture su misura.</span></span></span></p>",
+        "body_de": "<p>Umbau und Sanierung einer Luxuswohnung in einem 60er Jahr Haus mit ma&szlig;gefertigten Einrichtungen.</p>",
+        "date": "2017-02-01",
+        "date_end": null,
+        "site": "Via San Cipriano, Roma",
+        "site_it": "Via San Cipriano, Roma",
+        "site_de": "Via San Cipriano, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "100000.00",
+        "client": [
+            1
+        ],
+        "type": [
+            1,
+            4
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 24,
+    "fields": {
+        "slug": "ufficio-in-palazzo-ottocentesco",
+        "slug_it": "ufficio-in-palazzo-ottocentesco",
+        "slug_de": "buro-im-renaissance-palazzo",
+        "title": "Ufficio in palazzo ottocentesco",
+        "title_it": "Ufficio in palazzo ottocentesco",
+        "title_de": "Büro im Renaissance Palazzo",
+        "intro": "Domotica complicata in un edificio storico",
+        "intro_it": "Domotica complicata in un edificio storico",
+        "intro_de": "Komplizierte Haustechnik in einem denkmalgesch�tzten",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Domotica complicata in un edificio storico, elevata flessibilit&agrave; con piccole modifiche nella disposizione degli ambienti.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Interior design, domotica, locali tecnici.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Domotica complicata in un edificio storico, elevata flessibilit&agrave; con piccole modifiche nella disposizione degli ambienti.</span></span> <span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Interior design, domotica, locali tecnici.</span></span></span></p>",
+        "body_de": "<p>Komplizierte Haustechnik in einem denkmalgesch&uuml;tzten, h&ouml;he Flexibilit&auml;t mit kleiner &Auml;nderung der Raumverteilung. Inneneinrichtung, Domotik, Technische R&auml;ume.</p>",
+        "date": "2018-01-01",
+        "date_end": null,
+        "site": "Piazza Colonna Traiana, Roma",
+        "site_it": "Piazza Colonna Traiana, Roma",
+        "site_de": "Piazza Colonna Traiana, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "120000.00",
+        "client": [
+            12
+        ],
+        "type": [
+            1,
+            4
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 25,
+    "fields": {
+        "slug": "giardino-pensile",
+        "slug_it": "giardino-pensile",
+        "slug_de": "dachgarten-uber-der-kanzlei",
+        "title": "Giardino pensile",
+        "title_it": "Giardino pensile",
+        "title_de": "Dachgarten über der Kanzlei",
+        "intro": "Da palude a giardino pensile",
+        "intro_it": "Da palude a giardino pensile",
+        "intro_de": "Vom Sumpf zum Dachgarten",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Il giardino pensile, che era diventata palude, &egrave; stato ristrutturato e ripiantato con un nuovo sistema di drenaggio</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Il giardino pensile, che era diventata palude, &egrave; stato ristrutturato e ripiantato con un nuovo sistema di drenaggio</span></span></span></p>",
+        "body_de": "<p>Durch ein neues Drainagesystem wurde der im Sumpf verwandelten Dachgarten saniert und neugepflanzet</p>",
+        "date": "2019-08-01",
+        "date_end": null,
+        "site": "Via di Villa Sacchetti, Roma",
+        "site_it": "Via di Villa Sacchetti, Roma",
+        "site_de": "Via di Villa Sacchetti, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "140000.00",
+        "client": [
+            13
+        ],
+        "type": [
+            1,
+            3
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 26,
+    "fields": {
+        "slug": "scuola",
+        "slug_it": "scuola",
+        "slug_de": "schule",
+        "title": "Scuola Germanica",
+        "title_it": "Scuola Germanica",
+        "title_de": "Deutsche Schule",
+        "intro": "Tra ristrutturazione e restauro dell'architettura moderna",
+        "intro_it": "Tra ristrutturazione e restauro dell'architettura moderna",
+        "intro_de": "Zwischen Sanierung und Restaurierung der Modernen Architektur",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Tra ristrutturazione e restauro dell'architettura moderna: un edificio degli anni '80 con forti segni del tempo.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Tra ristrutturazione e restauro dell'architettura moderna: un edificio degli anni '80 con forti segni del tempo.</span></span></span></p>",
+        "body_de": "<p>Zwischen Sanierung und Restaurierung der Modernen Architektur: ein bau aus den 80er Jahren mit starken Zeichnen des Veraltens.</p>",
+        "date": "2020-06-01",
+        "date_end": "2022-08-31",
+        "site": "Via Aurelia Antica, Roma",
+        "site_it": "Via Aurelia Antica, Roma",
+        "site_de": "Via Aurelia Antica, Rom",
+        "category": "ALT",
+        "status": "COR",
+        "cost": "1600000.00",
+        "client": [
+            14
+        ],
+        "type": [
+            1,
+            3,
+            4
+        ],
+        "activity": [
+            9,
+            10
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 27,
+    "fields": {
+        "slug": "villa-almone",
+        "slug_it": "villa-almone",
+        "slug_de": "villa-almone",
+        "title": "Villa Almone",
+        "title_it": "Villa Almone",
+        "title_de": "Villa Almone",
+        "intro": "Ristrutturazione Parte Ufficiale della Residenza (ATR)",
+        "intro_it": "Ristrutturazione Parte Ufficiale della Residenza (ATR)",
+        "intro_de": "Renovierung des Amtlichen Teils der Residenz (ATR)",
+        "body": "<ol>\r\n<li><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ristrutturazione Parte Ufficiale della Residenza (ATR): nuova illuminazione e decoro interno, rifacimento pavimenti e rivestimenti -2019 - Consulenza, Appalti e Direzione Lavori - Costo totale: &euro; 65000,00</span></span></span></li>\r\n<li><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Risanamento campo da bocce 2020 - Costo totale: &euro; 9500,00</span></span></span></li>\r\n<li><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\"><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Risanamento</span></span></span>&nbsp;piscina 2020-21 - Costo totale: &euro; 35000,00</span></span></span></li>\r\n</ol>",
+        "body_it": "<ol>\r\n<li><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ristrutturazione Parte Ufficiale della Residenza (ATR): nuova illuminazione e decoro interno, rifacimento pavimenti e rivestimenti -2019 - Consulenza, Appalti e Direzione Lavori - Costo totale: &euro; 65000,00</span></span></span></li>\r\n<li><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Risanamento campo da bocce 2020 - Costo totale: &euro; 9500,00</span></span></span></li>\r\n<li><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\"><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Risanamento</span></span></span>&nbsp;piscina 2020-21 - Costo totale: &euro; 35000,00</span></span></span></li>\r\n</ol>",
+        "body_de": "<ol>\r\n<li>Renovierung des Amtlichen Teils der Residenz (ATR): neue Beleuchtung und Inneneinrichtung, Sanierung der Fu&szlig;b&ouml;den und W&auml;nde -2019 - Beratung, Ausschreibung und Bauleitung - Gesamtkosten: &euro; 65000.00</li>\r\n<li>Sanierung der Bocciabahn 2020 - Gesamtkosten: &euro; 9500.00</li>\r\n<li>Sanierung des Pools 2020-21 - Gesamtkosten: &euro; 35000.00</li>\r\n</ol>",
+        "date": "2019-09-01",
+        "date_end": "2021-01-01",
+        "site": "Via Cristoforo Colombo, Roma",
+        "site_it": "Via Cristoforo Colombo, Roma",
+        "site_de": "Via Cristoforo Colombo, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "110000.00",
+        "client": [
+            15
+        ],
+        "type": [
+            1,
+            3
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 28,
+    "fields": {
+        "slug": "ospedale-israelitico",
+        "slug_it": "ospedale-israelitico",
+        "slug_de": "krankenhaus-ospedale-israelitico",
+        "title": "Ospedale Israelitico",
+        "title_it": "Ospedale Israelitico",
+        "title_de": "Krankenhaus Ospedale Israelitico",
+        "intro": null,
+        "intro_it": null,
+        "intro_de": null,
+        "body": null,
+        "body_it": null,
+        "body_de": null,
+        "date": "1999-02-01",
+        "date_end": "2001-01-01",
+        "site": "Via Tiberina e Via V. Veronese, Roma",
+        "site_it": "Via Tiberina e Via V. Veronese, Roma",
+        "site_de": "Via Tiberina und Via V. Veronese, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "0.00",
+        "client": [
+            2
+        ],
+        "type": [
+            1
+        ],
+        "activity": [
+            2,
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.project",
+    "pk": 29,
+    "fields": {
+        "slug": "centro-europeo-di-ricerca-sul-cervello",
+        "slug_it": "centro-europeo-di-ricerca-sul-cervello",
+        "slug_de": "gehirnforschungszentrum-cerc",
+        "title": "Centro Europeo di Ricerca sul Cervello",
+        "title_it": "Centro Europeo di Ricerca sul Cervello",
+        "title_de": "Gehirnforschungszentrum CERC",
+        "intro": "Ristrutturazione e riconversione a centro ricerche di un edificio dismesso",
+        "intro_it": "Ristrutturazione e riconversione a centro ricerche di un edificio dismesso",
+        "intro_de": "Sanierung und Umnutzung als Forschzentrum eines verallesenen Geb�udes",
+        "body": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ristrutturazione e riconversione a centro ricerche di un edificio dismesso con la realizzazione di laboratori, sale conferenze, strutture per la conduzione di esperimenti sugli animali, magazzini, impianti tecnici centrali, scale antincendio, parcheggi interrati.</span></span></span></p>",
+        "body_it": "<p><span class=\"HwtZe\" lang=\"it\"><span class=\"jCAhz ChMk0b\"><span class=\"ryNqvb\">Ristrutturazione e riconversione a centro ricerche di un edificio dismesso con la realizzazione di laboratori, sale conferenze, strutture per la conduzione di esperimenti sugli animali, magazzini, impianti tecnici centrali, scale antincendio, parcheggi interrati.</span></span></span></p>",
+        "body_de": "<p>Sanierung und Umnutzung als Forschzentrum eines verallesenen Geb&auml;udes mit Realisierung von Laboratoren, Konferenzr&auml;umen, Einrichtungen zur Durchf&uuml;hrung von Tierversuchen, Lagern,Technischen Anlagenzentral Feuertreppen, Tiefgaragen.</p>",
+        "date": "2003-01-01",
+        "date_end": "2007-01-01",
+        "site": "Via Fosso di Fiorano, Roma",
+        "site_it": "Via Fosso di Fiorano, Roma",
+        "site_de": "Via Fosso di Fiorano, Rom",
+        "category": "ALT",
+        "status": "REA",
+        "cost": "20000000.00",
+        "client": [
+            16,
+            4,
+            5
+        ],
+        "type": [
+            1,
+            4,
+            5
+        ],
+        "activity": [
+            11
+        ]
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 26,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.427217,
+                41.889994
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 27,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.497948,
+                41.872389
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 25,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.484887,
+                41.920407
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 24,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.485142,
+                41.8957
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 23,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.437888,
+                41.914532
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 22,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.24646,
+                42.172882
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 21,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.368621,
+                41.866181
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 20,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.277807,
+                41.734642
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 19,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.367893,
+                41.8668
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 18,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                13.21566,
+                41.301398
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 17,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.484644,
+                41.904775
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 16,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                10.32178,
+                42.816614
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 15,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.366996,
+                41.865035
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 14,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.448252,
+                41.842669
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 13,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.508306,
+                41.89386
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 12,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.490133,
+                41.894786
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 11,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.492728,
+                41.86954
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 10,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.481576,
+                41.905024
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 9,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.506407,
+                41.923275
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 8,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.5043,
+                41.974143
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 29,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.514913,
+                41.798096
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 7,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.359304,
+                41.880461
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 6,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.493813,
+                41.860366
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 5,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.514385,
+                41.841144
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 28,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.428103,
+                41.835654
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectmap",
+    "pk": 4,
+    "fields": {
+        "geom": {
+            "type": "Point",
+            "coordinates": [
+                12.492424,
+                41.886182
+            ]
+        }
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 1,
+    "fields": {
+        "home": 26,
+        "fb_image": 2,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 2,
+    "fields": {
+        "home": 26,
+        "fb_image": 3,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 3,
+    "fields": {
+        "home": 26,
+        "fb_image": 59,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 4,
+    "fields": {
+        "home": 27,
+        "fb_image": 23,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 5,
+    "fields": {
+        "home": 27,
+        "fb_image": 6,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 6,
+    "fields": {
+        "home": 27,
+        "fb_image": 5,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 7,
+    "fields": {
+        "home": 25,
+        "fb_image": 4,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 8,
+    "fields": {
+        "home": 25,
+        "fb_image": 1,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 9,
+    "fields": {
+        "home": 24,
+        "fb_image": 17,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 10,
+    "fields": {
+        "home": 24,
+        "fb_image": 21,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 11,
+    "fields": {
+        "home": 23,
+        "fb_image": 18,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 12,
+    "fields": {
+        "home": 23,
+        "fb_image": 24,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 13,
+    "fields": {
+        "home": 22,
+        "fb_image": 8,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 14,
+    "fields": {
+        "home": 22,
+        "fb_image": 7,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 15,
+    "fields": {
+        "home": 21,
+        "fb_image": 15,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 16,
+    "fields": {
+        "home": 21,
+        "fb_image": 45,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 17,
+    "fields": {
+        "home": 20,
+        "fb_image": 56,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 18,
+    "fields": {
+        "home": 20,
+        "fb_image": 16,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 19,
+    "fields": {
+        "home": 19,
+        "fb_image": 51,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 20,
+    "fields": {
+        "home": 19,
+        "fb_image": 13,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 21,
+    "fields": {
+        "home": 18,
+        "fb_image": 39,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 22,
+    "fields": {
+        "home": 18,
+        "fb_image": 41,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 23,
+    "fields": {
+        "home": 17,
+        "fb_image": 12,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 24,
+    "fields": {
+        "home": 16,
+        "fb_image": 53,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 25,
+    "fields": {
+        "home": 16,
+        "fb_image": 52,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 26,
+    "fields": {
+        "home": 15,
+        "fb_image": 46,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 27,
+    "fields": {
+        "home": 15,
+        "fb_image": 25,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 28,
+    "fields": {
+        "home": 14,
+        "fb_image": 48,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 29,
+    "fields": {
+        "home": 14,
+        "fb_image": 27,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 30,
+    "fields": {
+        "home": 13,
+        "fb_image": 50,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 31,
+    "fields": {
+        "home": 13,
+        "fb_image": 38,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 32,
+    "fields": {
+        "home": 12,
+        "fb_image": 10,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 33,
+    "fields": {
+        "home": 12,
+        "fb_image": 11,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 34,
+    "fields": {
+        "home": 12,
+        "fb_image": 9,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 35,
+    "fields": {
+        "home": 11,
+        "fb_image": 36,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 36,
+    "fields": {
+        "home": 11,
+        "fb_image": 35,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 37,
+    "fields": {
+        "home": 10,
+        "fb_image": 49,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 38,
+    "fields": {
+        "home": 10,
+        "fb_image": 37,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 39,
+    "fields": {
+        "home": 9,
+        "fb_image": 42,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 40,
+    "fields": {
+        "home": 9,
+        "fb_image": 33,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 41,
+    "fields": {
+        "home": 8,
+        "fb_image": 54,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 42,
+    "fields": {
+        "home": 8,
+        "fb_image": 14,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 43,
+    "fields": {
+        "home": 29,
+        "fb_image": 31,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 44,
+    "fields": {
+        "home": 29,
+        "fb_image": 32,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 45,
+    "fields": {
+        "home": 29,
+        "fb_image": 34,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 2
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 46,
+    "fields": {
+        "home": 7,
+        "fb_image": 28,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 47,
+    "fields": {
+        "home": 7,
+        "fb_image": 44,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 48,
+    "fields": {
+        "home": 6,
+        "fb_image": 40,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 49,
+    "fields": {
+        "home": 6,
+        "fb_image": 26,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 50,
+    "fields": {
+        "home": 5,
+        "fb_image": 30,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 51,
+    "fields": {
+        "home": 5,
+        "fb_image": 55,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 52,
+    "fields": {
+        "home": 4,
+        "fb_image": 58,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 0
+    }
+},
+{
+    "model": "portfolio.projectcarousel",
+    "pk": 53,
+    "fields": {
+        "home": 4,
+        "fb_image": 57,
+        "description": null,
+        "description_it": null,
+        "description_de": null,
+        "position": 1
+    }
+}
+]

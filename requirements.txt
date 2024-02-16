@@ -37,13 +37,17 @@ django==5.0.6
     #   django-crispy-forms
     #   django-debug-toolbar
     #   django-filer
+    #   django-geojson
     #   django-filter
     #   django-htmx
+    #   django-leaflet
     #   django-modeltranslation
     #   django-polymorphic
     #   django-template-partials
     #   django-tinymce
     #   easy-thumbnails
+    #   jsonfield
+django-allauth==0.58.2
     #   neapolitan
 django-allauth[socialaccount]==0.63.0
     # via -r requirements.in
@@ -57,6 +61,11 @@ django-debug-toolbar==4.3.0
     # via -r requirements.in
 django-filer==3.1.1
     # via -r requirements.in
+django-geojson==4.0.0
+    # via -r requirements.in
+django-htmx==1.17.0
+    # via -r requirements.in
+django-leaflet==0.29.0
 django-filter==24.2
     # via neapolitan
 django-htmx==1.17.3
@@ -81,6 +90,9 @@ faker==25.2.0
     # via factory-boy
 idna==3.7
     # via requests
+jsonfield==3.1.0
+    # via -r requirements.in
+lxml==4.9.3
 lxml==5.2.2
     # via svglib
 marshmallow==3.21.2

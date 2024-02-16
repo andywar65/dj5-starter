@@ -15,3 +15,6 @@ django-crispy-forms
 crispy-bootstrap5
 neapolitan
 django-template-partials
+django-geojson
+jsonfield
+django-leaflet

@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     "tinymce",
     "neapolitan",
     "template_partials",
+    "djgeojson",
+    "leaflet",
     # local
     "users.apps.UsersConfig",
 ]
