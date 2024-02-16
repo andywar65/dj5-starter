@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-24 12:31+0200\n"
-"PO-Revision-Date: 2023-06-12 21:08+0200\n"
+"POT-Creation-Date: 2024-02-17 00:19+0100\n"
+"PO-Revision-Date: 2024-02-17 00:24+0100\n"
 "Last-Translator: andywar65 <andy.war1965@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -22,11 +22,11 @@ msgstr ""
 msgid "Advanced options"
 msgstr "Opzioni avanzate"
 
-#: .\portfolio\admin.py:88 .\portfolio\models.py:89
+#: .\portfolio\admin.py:87 .\portfolio\models.py:89
 msgid "Text"
 msgstr "Testo"
 
-#: .\portfolio\admin.py:95
+#: .\portfolio\admin.py:93
 msgid "Meta"
 msgstr "Meta"
 
@@ -167,7 +167,7 @@ msgstr "Un nuovo progetto di questo sito!"
 msgid "Name"
 msgstr "Nome"
 
-#: .\portfolio\models.py:29 .\portfolio\models.py:45 .\portfolio\models.py:237
+#: .\portfolio\models.py:29 .\portfolio\models.py:45 .\portfolio\models.py:232
 msgid "Position"
 msgstr "Posizione"
 
@@ -289,23 +289,19 @@ msgstr "Altri"
 msgid "Selected"
 msgstr "Selezionati"
 
-#: .\portfolio\models.py:225
-msgid "Image"
-msgstr "Immagine"
-
-#: .\portfolio\models.py:231
+#: .\portfolio\models.py:226
 msgid "Description"
 msgstr "Descrizione"
 
-#: .\portfolio\models.py:232
+#: .\portfolio\models.py:227
 msgid "Will be used in captions"
 msgstr "Sarà utilizzato nelle didascalie"
 
-#: .\portfolio\models.py:240
+#: .\portfolio\models.py:235
 msgid "Project carousel"
 msgstr "Galleria dei progetti"
 
-#: .\portfolio\models.py:241
+#: .\portfolio\models.py:236
 msgid "Project carousels"
 msgstr "Gallerie dei progetti"
 
@@ -367,7 +363,7 @@ msgstr "Tutti i progetti"
 msgid "Selected projects"
 msgstr "Progetti selezionati"
 
-#: .\portfolio\templates\portfolio\includes\project_list_loop.html:31
+#: .\portfolio\templates\portfolio\includes\project_list_loop.html:30
 msgid "No projects available"
 msgstr "Non ci sono progetti disponibili"
 
@@ -426,6 +422,9 @@ msgstr "con stato: %(read)s"
 #, python-format
 msgid "with Cost € %(read)s or lower"
 msgstr "con importo: %(read)s o minore"
+
+#~ msgid "Image"
+#~ msgstr "Immagine"
 
 #~ msgid "Hospitals"
 #~ msgstr "Ospedali"

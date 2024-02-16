@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-16 09:36+0100\n"
-"PO-Revision-Date: 2024-02-16 09:42+0100\n"
+"POT-Creation-Date: 2024-02-17 00:19+0100\n"
+"PO-Revision-Date: 2024-02-17 00:23+0100\n"
 "Last-Translator: andywar65 <andy.war1965@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: .\project\settings\base.py:168
+#: .\project\settings\base.py:180
 msgid "Italian"
 msgstr "Italiano"
 
-#: .\project\settings\base.py:169
-msgid "English"
-msgstr "Inglese"
+#: .\project\settings\base.py:181
+msgid "German"
+msgstr "Tedesco"
 
 #: .\project\templates\403.html:4 .\project\templates\403.html:8
 msgid "Access denied"
@@ -153,7 +153,7 @@ msgid "Delete"
 msgstr "Elimina"
 
 #: .\project\templates\account\htmx\contact.html:6
-#: .\project\templates\navbar.html:84
+#: .\project\templates\navbar.html:110
 msgid "Contact"
 msgstr "Contatto"
 
@@ -376,7 +376,7 @@ msgstr "Invia password"
 
 #: .\project\templates\account\htmx\signup.html:6
 #: .\project\templates\account\htmx\signup.html:27
-#: .\project\templates\navbar.html:115
+#: .\project\templates\navbar.html:141
 #: .\project\templates\socialaccount\signup.html:8
 #: .\project\templates\socialaccount\signup.html:20
 msgid "Sign Up"
@@ -471,11 +471,11 @@ msgstr ""
 msgid "Search"
 msgstr "Cerca"
 
-#: .\project\templates\htmx\search_results.html:36
+#: .\project\templates\htmx\search_results.html:43
 msgid "Null search"
 msgstr "Nessun risultato"
 
-#: .\project\templates\htmx\search_results.html:39
+#: .\project\templates\htmx\search_results.html:46
 msgid "We didn't find elements that satisfy your search"
 msgstr "Non abbiamo trovato elementi che soddisfino la tua ricerca"
 
@@ -489,22 +489,38 @@ msgid "Set language"
 msgstr "Seleziona lingua"
 
 #: .\project\templates\navbar.html:38
+msgid "Projects"
+msgstr "Progetti"
+
+#: .\project\templates\navbar.html:44
+msgid "Selected"
+msgstr "Selezionati"
+
+#: .\project\templates\navbar.html:49
+msgid "All"
+msgstr "Tutti"
+
+#: .\project\templates\navbar.html:53
+msgid "Map"
+msgstr "Mappa"
+
+#: .\project\templates\navbar.html:64
 msgid "Docs"
 msgstr "Documenti"
 
-#: .\project\templates\navbar.html:79 .\users\models.py:97
+#: .\project\templates\navbar.html:105 .\users\models.py:97
 msgid "Profile"
 msgstr "Profilo"
 
-#: .\project\templates\navbar.html:89
+#: .\project\templates\navbar.html:115
 msgid "Logout"
 msgstr "Esci"
 
-#: .\project\templates\navbar.html:92
+#: .\project\templates\navbar.html:118
 msgid "Go to Admin"
 msgstr "Vai all'amministrazione"
 
-#: .\project\templates\navbar.html:104 .\project\templates\navbar.html:110
+#: .\project\templates\navbar.html:130 .\project\templates\navbar.html:136
 msgid "Login"
 msgstr "Accedi"
 
@@ -565,9 +581,13 @@ msgstr ""
 "%(site_name)s. Come ultima operazione ti chiediamo di riempire il form qui "
 "sotto:"
 
-#: .\project\urls.py:89
+#: .\project\urls.py:88
 msgid "search/"
 msgstr "cerca/"
+
+#: .\project\urls.py:89
+msgid "projects/"
+msgstr "progetti/"
 
 #: .\users\admin.py:16
 msgid "Advanced options"
@@ -681,3 +701,6 @@ msgstr "Link a pie' di pagina"
 #: .\users\views.py:246
 msgid "From"
 msgstr "Da"
+
+#~ msgid "English"
+#~ msgstr "Inglese"
