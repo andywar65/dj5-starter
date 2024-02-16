@@ -66,6 +66,8 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "filer",
     "tinymce",
+    "djgeojson",
+    "leaflet",
     # local
     "users.apps.UsersConfig",
 ]

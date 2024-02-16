@@ -13,3 +13,6 @@ easy-thumbnails
 django-filer
 django-crispy-forms
 crispy-bootstrap5
+django-geojson
+jsonfield
+django-leaflet
