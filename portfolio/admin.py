@@ -47,7 +47,6 @@ class ProjectCarouselInline(TranslationTabularInline):
         "fb_image",
         "description",
     )
-    sortable_field_name = "position"
     extra = 0
 
 
@@ -87,7 +86,6 @@ class ProjectAdmin(TranslationAdmin):
         (
             _("Text"),
             {
-                "classes": ("grp-collapse grp-closed",),
                 "fields": ("body",),
             },
         ),
