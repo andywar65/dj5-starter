@@ -5,6 +5,7 @@ from django.urls import reverse
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 from djgeojson.fields import PointField
+from easy_thumbnails.files import get_thumbnailer
 from filer.fields.image import FilerImageField
 
 from project.utils import generate_unique_slug  # check_wide_image
@@ -194,13 +195,15 @@ class ProjectMap(models.Model):
             "url": url,
         }
         intro_str = "<small>%(intro)s</small>" % {"intro": self.prog.intro}
-        image = self.get_thumbnail_path()
+        image = self.prog.project_carousel.first()
         if not image:
             return {
                 "content": title_str + intro_str,
                 "layer": _("Others"),
             }
-        image_str = '<img src="%(image)s">' % {"image": image}
+        thumbnailer = get_thumbnailer(image.fb_image)
+        thumb = thumbnailer.get_thumbnail({"size": (256, 256), "crop": True})
+        image_str = '<img src="%(image)s">' % {"image": thumb.url}
         return {
             "content": title_str + image_str + intro_str,
             "layer": _("Selected"),
