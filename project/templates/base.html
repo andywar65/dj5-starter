@@ -1,4 +1,5 @@
 {% load static %}
+{% load leaflet_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -8,7 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" type='image/x-icon' href="{% static 'favicon.ico' %}">
     <!-- Bootstrap CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">{% leaflet_js %}
+    {% leaflet_css %}
+    <style>
+      .leaflet-container {  /* all maps */
+        height: 600px;
+        margin-bottom: 20px;
+      }
+    </style>
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>{{ request.site.name }}</title>
