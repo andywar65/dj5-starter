@@ -44,7 +44,7 @@ class User(AbstractUser):
     def get_avatar(self):
         if self.profile.anonymize:
             return
-        elif self.profile.avatar:
+        elif self.profile.image:
             return True
         # attempts to retrieve avatar from social account
         try:
@@ -96,10 +96,16 @@ class Profile(models.Model):
             # image is saved on the front end, passed to filer image and deleted
             with open(self.avatar.path, "rb") as f:
                 file_obj = File(f)
-                image = Image.objects.create(
-                    owner=self.user, original_filename=self.user.username, file=file_obj
-                )
-                self.image = image
+                if self.image:
+                    self.image.file = file_obj
+                    self.image.save()
+                else:
+                    image = Image.objects.create(
+                        owner=self.user,
+                        original_filename=self.user.username,
+                        file=file_obj,
+                    )
+                    self.image = image
                 self.avatar = None
                 super(Profile, self).save(*args, **kwargs)
 

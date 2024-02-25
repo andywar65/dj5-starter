@@ -22,7 +22,7 @@
           </button>
         </div>
         <div class="col text-end">
-          {% if user.profile.avatar %}
+          {% if user.profile.image %}
             <button class="btn btn-danger"
                     hx-delete="{% url 'avatar_update' %}"
                     hx-target="#avatar_display"

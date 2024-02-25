@@ -1,9 +1,9 @@
 {% load thumbnail %}
 
-{% if user.profile.avatar %}
-  <a href="{{ user.profile.avatar.url }}" target="_blank">
+{% if user.profile.image %}
+  <a href="{{ user.profile.image.url }}" target="_blank">
     <img class="rounded-circle"
-         src="{% thumbnail user.profile.avatar 64x64 crop %}"
+         src="{% thumbnail user.profile.image 64x64 crop %}"
          alt="">
   </a>
 {% else %}

@@ -128,9 +128,8 @@ def avatar_update_delete(request):
     template_name = "account/htmx/avatar_display.html"
     if request.method == "DELETE":
         profile = user.profile
-        profile.avatar = None
+        profile.image = None
         profile.save()
-        # SocialAccount.objects.filter(user_id=user.uuid).delete()
         return TemplateResponse(
             request,
             template_name,
