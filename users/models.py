@@ -3,9 +3,11 @@ import uuid
 from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth.models import AbstractUser, Permission
 from django.contrib.contenttypes.models import ContentType
+from django.core.files import File
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
+from filer.models import Image
 
 
 class User(AbstractUser):
@@ -88,13 +90,18 @@ class Profile(models.Model):
         return self.user.username
 
     def save(self, *args, **kwargs):
-        # save and upload image
+        # save and eventually upload avatar
         super(Profile, self).save(*args, **kwargs)
-        # if self.temp_image:
-        # image is saved on the front end, passed to fb_image and deleted
-        # self.fb_image = FileObject(str(self.temp_image))
-        # self.temp_image = None
-        # super(Profile, self).save(*args, **kwargs)
+        if self.avatar:
+            # image is saved on the front end, passed to filer image and deleted
+            with open(self.avatar.path, "rb") as f:
+                file_obj = File(f)
+                image = Image.objects.create(
+                    owner=self.user, original_filename=self.user.username, file=file_obj
+                )
+                self.image = image
+                self.avatar = None
+                super(Profile, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Profile")
