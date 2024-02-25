@@ -41,7 +41,7 @@ admin.site.register(FlatPage, TinyMCEFlatPageAdmin)
 
 class ProfileAdmin(TranslationTabularInline):
     model = Profile
-    # exclude = ("temp_image",)
+    exclude = ("avatar",)
     extra = 0
 
 
