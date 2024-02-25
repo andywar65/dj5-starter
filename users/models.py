@@ -74,6 +74,9 @@ class Profile(models.Model):
         null=True,
         upload_to="uploads/images/users/",
     )
+    image = FilerImageField(
+        null=True, blank=True, related_name="profile_image", on_delete=models.SET_NULL
+    )
     bio = models.TextField(_("Short bio"), null=True, blank=True)
     anonymize = models.BooleanField(
         _("Anonymize"),
