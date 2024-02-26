@@ -20,6 +20,7 @@ from django.template.response import TemplateResponse
 from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
+from filer.models import Image
 
 from project.views import check_htmx_request
 
@@ -95,10 +96,14 @@ def avatar_display_create(request):
     if request.method == "POST":
         form = AvatarChangeForm(request.POST, request.FILES)
         if form.is_valid():
-            # assign profile form fields
-            profile = user.profile
-            profile.avatar = form.cleaned_data["avatar"]
-            profile.save()
+            # create profile image
+            image = Image.objects.create(
+                owner=user,
+                original_filename=user.username,
+                file=form.cleaned_data["avatar"],
+            )
+            user.profile.image = image
+            user.profile.save()
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?refresh=True",
             )
@@ -127,9 +132,10 @@ def avatar_update_delete(request):
     context = {"user": user, "avatar_form": form}
     template_name = "account/htmx/avatar_display.html"
     if request.method == "DELETE":
-        profile = user.profile
-        profile.image = None
-        profile.save()
+        if user.profile.image:
+            user.profile.image.delete()
+            user.profile.image = None
+            user.profile.save()
         return TemplateResponse(
             request,
             template_name,
@@ -139,10 +145,18 @@ def avatar_update_delete(request):
     elif request.method == "POST":
         form = AvatarChangeForm(request.POST, request.FILES)
         if form.is_valid():
-            # assign profile form fields
-            profile = user.profile
-            profile.avatar = form.cleaned_data["avatar"]
-            profile.save()
+            # modify profile image or create it
+            if user.profile.image:
+                user.profile.image.file = form.cleaned_data["avatar"]
+                user.profile.image.save()
+            else:
+                image = Image.objects.create(
+                    owner=user,
+                    original_filename=user.username,
+                    file=form.cleaned_data["avatar"],
+                )
+                user.profile.image = image
+                user.profile.save()
             return HttpResponseRedirect(
                 reverse("avatar_display") + "?refresh=True",
             )
@@ -168,7 +182,9 @@ def profile_update_delete(request):
         user.email = ""
         user.save()
         profile = user.profile
-        profile.avatar = None
+        if profile.image:
+            profile.image.delete()
+            profile.image = None
         profile.bio = ""
         profile.save()
         EmailAddress.objects.filter(user_id=user.uuid).delete()

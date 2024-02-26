@@ -3,11 +3,9 @@ import uuid
 from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth.models import AbstractUser, Permission
 from django.contrib.contenttypes.models import ContentType
-from django.core.files import File
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from filer.fields.image import FilerImageField
-from filer.models import Image
 
 
 class User(AbstractUser):
@@ -70,6 +68,8 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, primary_key=True, editable=False
     )
+    # next field is used to upload images, then file is passed to image field
+    # TODO upload file without ModelForm
     avatar = models.ImageField(
         _("Avatar"),
         max_length=200,
@@ -88,26 +88,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
-
-    def save(self, *args, **kwargs):
-        # save and eventually upload avatar
-        super(Profile, self).save(*args, **kwargs)
-        if self.avatar:
-            # image is saved on the front end, passed to filer image and deleted
-            with open(self.avatar.path, "rb") as f:
-                file_obj = File(f)
-                if self.image:
-                    self.image.file = file_obj
-                    self.image.save()
-                else:
-                    image = Image.objects.create(
-                        owner=self.user,
-                        original_filename=self.user.username,
-                        file=file_obj,
-                    )
-                    self.image = image
-                self.avatar = None
-                super(Profile, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = _("Profile")
