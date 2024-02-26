@@ -68,14 +68,9 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, primary_key=True, editable=False
     )
-    # next field is used to upload images, then file is passed to image field
-    # TODO upload file without ModelForm
-    avatar = models.ImageField(
-        _("Avatar"),
-        max_length=200,
-        null=True,
-        upload_to="uploads/images/users/",
-    )
+    # "avatar" field is just used to upload and validate images,
+    # then file is saved as "image" field
+    avatar = models.ImageField(null=True)
     image = FilerImageField(
         null=True, blank=True, related_name="profile_image", on_delete=models.SET_NULL
     )
