@@ -3,7 +3,7 @@
 <a class="btn btn-outline-secondary me-2"
    title="{% trans 'Set language' %}"
    script="on click hide me then show #language-selector">
-  <i class="fa fa-language fa-lg"></i>
+  <i class="bi-translate" style="font-size: 1rem;"></i>
 </a>
 <form id="language-selector" class="row me-1" action="{% url 'set_language' %}" method="POST" style="display: none">
   {% csrf_token %}
