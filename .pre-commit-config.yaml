@@ -37,7 +37,7 @@ repos:
         args:
           - --tabwidth=2
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.24.0
+    rev: v1.25.0
     hooks:
       - id: ggshield
         language_version: python3
