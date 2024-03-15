@@ -44,6 +44,14 @@
                   <a class="dropdown-item" href="{{ page.url }}">{{ page.title }}</a>
                 {% endfor %}
               {% endif %}
+              {% if perms.pages.add_shotgun %}
+                <hr>
+                <a class="dropdown-item"
+                   hx-get="{% url 'pages:shotgun_create' %}"
+                   hx-target="#content"
+                   hx-push-url="true">{% trans 'Add Shot article' %}
+                </a>
+              {% endif %}
             </div>
           </li>
           {% if user.is_authenticated %}
