@@ -69,6 +69,7 @@ INSTALLED_APPS = [
     "neapolitan",
     # local
     "users.apps.UsersConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
