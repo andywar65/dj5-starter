@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     "tinymce",
     # local
     "users.apps.UsersConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
