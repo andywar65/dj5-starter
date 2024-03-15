@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     "template_partials",
     # local
     "users.apps.UsersConfig",
+    "pages.apps.PagesConfig",
 ]
 
 MIDDLEWARE = [
