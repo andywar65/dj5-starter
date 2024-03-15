@@ -25,6 +25,7 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path, re_path
 from django.utils.translation import gettext_lazy as _
 
+from pages.views import ShotgunArchiveIndexView
 from users.views import (
     ContactFormView,
     HTMXLoginView,
@@ -88,6 +89,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
     path("", home, name="home"),
+    path("", ShotgunArchiveIndexView.as_view(), name="shotgun_index"),
 )
 
 urlpatterns += [
