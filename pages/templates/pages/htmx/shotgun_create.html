@@ -1,0 +1,18 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<div class="card mx-auto" style="max-width: 480px;">
+  <div class="card-header">
+    <h3>{% trans "Add shot article" %}</h3>
+  </div>
+  <div class="card-body">
+    <form
+      hx-post="{% url 'pages:shotgun_create' %}"
+      hx-target="#content"
+      hx-encoding="multipart/form-data"
+      hx-push-url="true">
+      {{ form|crispy }}
+      <button class="btn btn-primary" type="submit">{% trans "Add article" %}</button>
+    </form>
+  </div>
+</div>

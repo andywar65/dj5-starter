@@ -40,7 +40,7 @@ from users.views import (
     profile_update_delete,
 )
 
-from .views import home, nav_bar, search_box, search_results
+from .views import nav_bar, search_box, search_results
 
 SECRET_ADMIN = settings.ADMIN_URL_SUFFIX
 
@@ -90,8 +90,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
-    path("", home, name="home"),
-    path("", ShotgunArchiveIndexView.as_view(), name="shotgun_index"),
+    path("", ShotgunArchiveIndexView.as_view(), name="home"),
 )
 
 urlpatterns += [

@@ -1,0 +1,11 @@
+{% load i18n %}
+
+{% if shots %}
+  {% for shot in shots %}
+    <div class="card mx-auto" style="margin-bottom: 20px;{{ shot.get_card_width }}">
+      {% include "pages/includes/shotgun_card.html" %}
+    </div>
+  {% endfor %}
+{% else %}
+  <p>{% translate "No articles available" %}</p>
+{% endif %}
