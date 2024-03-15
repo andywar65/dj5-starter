@@ -88,7 +88,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
-    path("", ShotgunArchiveIndexView.as_view(), name="shotgun_index"),
+    path("", ShotgunArchiveIndexView.as_view(), name="home"),
     re_path(r"^(?P<url>.*/)$", fp_views.flatpage),
 )
 
