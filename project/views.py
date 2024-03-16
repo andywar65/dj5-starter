@@ -7,6 +7,8 @@ from django.template.response import TemplateResponse
 from django.urls import reverse
 from neapolitan.views import CRUDView
 
+from pages.models import Shotgun
+
 
 def check_htmx_request(request):
     """Helper function"""
@@ -58,6 +60,13 @@ def search_results(request):
         if flatpages:
             flatpages = flatpages.order_by("-rank")
             success = True
+        # search in shotgun articles, no language required
+        v = SearchVector("title", "body")
+        shots = Shotgun.objects.annotate(rank=SearchRank(v, q))
+        shots = shots.filter(rank__gt=0.01)
+        if shots:
+            shots = shots.order_by("-rank")
+            success = True
 
         return TemplateResponse(
             request,
@@ -65,6 +74,7 @@ def search_results(request):
             {
                 "search": request.GET["q"],
                 "flatpages": flatpages,
+                "shots": shots,
                 "success": success,
             },
         )
