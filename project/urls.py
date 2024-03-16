@@ -88,7 +88,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path("", ShotgunArchiveIndexView.as_view(), name="home"),
-    path("shot/", include("pages.urls", namespace="pages")),
+    path(_("articles/"), include("pages.urls", namespace="pages")),
     path(_("search/"), search_results, name="search_results"),
 )
 
