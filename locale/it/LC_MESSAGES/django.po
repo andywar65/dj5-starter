@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-16 09:36+0100\n"
-"PO-Revision-Date: 2024-02-16 09:42+0100\n"
+"POT-Creation-Date: 2024-03-16 13:21+0100\n"
+"PO-Revision-Date: 2024-03-16 13:28+0100\n"
 "Last-Translator: andywar65 <andy.war1965@gmail.com>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -16,13 +16,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
-#: .\project\settings\base.py:168
+#: .\pages\forms.py:7 .\pages\models.py:10 .\users\models.py:131
+msgid "Title"
+msgstr "Titolo"
+
+#: .\pages\forms.py:8 .\pages\models.py:12 .\users\models.py:104
+msgid "Text"
+msgstr "Testo"
+
+#: .\pages\forms.py:11
+msgid "Image caption"
+msgstr "Didascalia"
+
+#: .\pages\models.py:10
+msgid "The title of the article"
+msgstr "Titolo dell'articolo"
+
+#: .\pages\models.py:14
+msgid "Date"
+msgstr "Data"
+
+#: .\pages\models.py:19
+msgid "Shotgun article"
+msgstr "Articolo"
+
+#: .\pages\models.py:20
+msgid "Shotgun articles"
+msgstr "Articoli"
+
+#: .\pages\models.py:37
+msgid "Article"
+msgstr "Articolo"
+
+#: .\pages\models.py:40
+msgid "Description"
+msgstr "Descrizione"
+
+#: .\pages\models.py:41
+msgid "Used in captions"
+msgstr "Usato nelle didascalie"
+
+#: .\pages\models.py:49
+msgid "Position"
+msgstr "Posizione"
+
+#: .\pages\models.py:52
+msgid "Shotgun image"
+msgstr "Immagine dell'articolo"
+
+#: .\pages\models.py:53
+msgid "Shotgun images"
+msgstr "Immagini degli articoli"
+
+#: .\pages\templates\pages\htmx\shotgun_create.html:6
+#: .\pages\templates\pages\htmx\shotgun_create.html:15
+#: .\project\templates\navbar.html:57
+msgid "Add article"
+msgstr "Aggiungi articolo"
+
+#: .\pages\templates\pages\includes\shotgun_card.html:32
+msgid "Modify"
+msgstr "Modifica"
+
+#: .\pages\templates\pages\includes\shotgun_list.html:10
+msgid "No articles available"
+msgstr "Nessun articolo"
+
+#: .\project\settings\base.py:170
 msgid "Italian"
 msgstr "Italiano"
 
-#: .\project\settings\base.py:169
+#: .\project\settings\base.py:171
 msgid "English"
 msgstr "Inglese"
 
@@ -76,7 +142,7 @@ msgid "Change Profile"
 msgstr "Cambia il profilo"
 
 #: .\project\templates\account\htmx\account_profile.html:17
-#: .\users\views.py:198
+#: .\users\views.py:213
 msgid "Profile has been successfully modified!"
 msgstr "Il profilo è stato aggiornato con successo!"
 
@@ -130,10 +196,8 @@ msgid "Modify Avatar"
 msgstr "Modifica l'immagine del profilo"
 
 #: .\project\templates\account\htmx\avatar_update.html:17
-#, fuzzy
-#| msgid "Change Avatar"
 msgid "Change Image"
-msgstr "Cambia l'immagine del profilo"
+msgstr "Cambia l'immagine"
 
 #: .\project\templates\account\htmx\avatar_update.html:29
 msgid ""
@@ -153,7 +217,7 @@ msgid "Delete"
 msgstr "Elimina"
 
 #: .\project\templates\account\htmx\contact.html:6
-#: .\project\templates\navbar.html:84
+#: .\project\templates\navbar.html:92
 msgid "Contact"
 msgstr "Contatto"
 
@@ -376,7 +440,7 @@ msgstr "Invia password"
 
 #: .\project\templates\account\htmx\signup.html:6
 #: .\project\templates\account\htmx\signup.html:27
-#: .\project\templates\navbar.html:115
+#: .\project\templates\navbar.html:123
 #: .\project\templates\socialaccount\signup.html:8
 #: .\project\templates\socialaccount\signup.html:20
 msgid "Sign Up"
@@ -471,11 +535,19 @@ msgstr ""
 msgid "Search"
 msgstr "Cerca"
 
-#: .\project\templates\htmx\search_results.html:36
+#: .\project\templates\htmx\search_results.html:12
+msgid "Articles"
+msgstr ""
+
+#: .\project\templates\htmx\search_results.html:26
+msgid "Documents"
+msgstr ""
+
+#: .\project\templates\htmx\search_results.html:41
 msgid "Null search"
 msgstr "Nessun risultato"
 
-#: .\project\templates\htmx\search_results.html:39
+#: .\project\templates\htmx\search_results.html:44
 msgid "We didn't find elements that satisfy your search"
 msgstr "Non abbiamo trovato elementi che soddisfino la tua ricerca"
 
@@ -492,19 +564,19 @@ msgstr "Seleziona lingua"
 msgid "Docs"
 msgstr "Documenti"
 
-#: .\project\templates\navbar.html:79 .\users\models.py:97
+#: .\project\templates\navbar.html:87 .\users\models.py:88
 msgid "Profile"
 msgstr "Profilo"
 
-#: .\project\templates\navbar.html:89
+#: .\project\templates\navbar.html:97
 msgid "Logout"
 msgstr "Esci"
 
-#: .\project\templates\navbar.html:92
+#: .\project\templates\navbar.html:100
 msgid "Go to Admin"
 msgstr "Vai all'amministrazione"
 
-#: .\project\templates\navbar.html:104 .\project\templates\navbar.html:110
+#: .\project\templates\navbar.html:112 .\project\templates\navbar.html:118
 msgid "Login"
 msgstr "Accedi"
 
@@ -565,7 +637,11 @@ msgstr ""
 "%(site_name)s. Come ultima operazione ti chiediamo di riempire il form qui "
 "sotto:"
 
-#: .\project\urls.py:89
+#: .\project\urls.py:91
+msgid "articles/"
+msgstr ""
+
+#: .\project\urls.py:92
 msgid "search/"
 msgstr "cerca/"
 
@@ -605,17 +681,13 @@ msgstr "Scrivi il soggetto"
 msgid "Write here the message"
 msgstr "Scrivi il messaggio"
 
-#: .\users\models.py:58 .\users\models.py:106
+#: .\users\models.py:58 .\users\models.py:97
 msgid "User"
 msgstr "Utente"
 
 #: .\users\models.py:59
 msgid "Users"
 msgstr "Utenti"
-
-#: .\users\models.py:72
-msgid "Avatar"
-msgstr "Immagine"
 
 #: .\users\models.py:79
 msgid "Anonymize"
@@ -625,59 +697,54 @@ msgstr "Anonimizza"
 msgid "Anonymize your account in public pages"
 msgstr "Anonimizza il tuo profilo nelle pagine pubbliche"
 
-#: .\users\models.py:98
+#: .\users\models.py:89
 msgid "Profiles"
 msgstr "Profili"
 
-#: .\users\models.py:110
+#: .\users\models.py:101
 msgid "Subject"
 msgstr "Soggetto"
 
-#: .\users\models.py:113
-msgid "Text"
-msgstr "Testo"
-
-#: .\users\models.py:117
+#: .\users\models.py:108
 #, python-format
 msgid "Message - %(id)d"
 msgstr "Messaggio - %(id)d"
 
-#: .\users\models.py:120
+#: .\users\models.py:111
 msgid "Message"
 msgstr "Messaggio"
 
-#: .\users\models.py:121
+#: .\users\models.py:112
 msgid "Messages"
 msgstr "Messaggi"
 
-#: .\users\models.py:125
+#: .\users\models.py:116
 msgid "Name"
 msgstr "Nome"
 
-#: .\users\models.py:134
+#: .\users\models.py:125
 msgid "Logo"
 msgstr "Logo"
 
-#: .\users\models.py:135
+#: .\users\models.py:126
 msgid "Logos"
 msgstr "Logo"
 
-#: .\users\models.py:140
-msgid "Title"
-msgstr "Titolo"
-
-#: .\users\models.py:144
+#: .\users\models.py:135
 msgid "Link"
 msgstr "Collegamento"
 
-#: .\users\models.py:149
+#: .\users\models.py:140
 msgid "Footer link"
 msgstr "Link a pie' di pagina"
 
-#: .\users\models.py:150
+#: .\users\models.py:141
 msgid "Footer links"
 msgstr "Link a pie' di pagina"
 
-#: .\users\views.py:246
+#: .\users\views.py:261
 msgid "From"
 msgstr "Da"
+
+#~ msgid "Avatar"
+#~ msgstr "Immagine"
