@@ -1,13 +1,12 @@
 from django.urls import path
 
-from .views import ShotgunCreateFormView, ShotgunDetailView
+from .views import ShotgunArchiveLimited, ShotgunCreateFormView
 
 app_name = "pages"
 urlpatterns = [
-    # path("shotgun/", ShotgunArchiveIndexView.as_view(), name="shotgun_index"),
     path(
         "<int:pk>/",
-        ShotgunDetailView.as_view(),
+        ShotgunArchiveLimited.as_view(),
         name="shotgun_detail",
     ),
     path(
