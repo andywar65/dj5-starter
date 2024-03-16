@@ -1,7 +1,10 @@
+from typing import Any
+
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.db.models.query import QuerySet
+from django.http.request import HttpRequest as HttpRequest
 from django.urls import reverse
 from django.utils.text import slugify
-from django.views.generic import DetailView
 from django.views.generic.dates import ArchiveIndexView
 from django.views.generic.edit import FormView
 from filer.models import Image
@@ -34,21 +37,25 @@ class ShotgunArchiveIndexView(ArchiveIndexView):
         if not self.request.htmx:
             return [self.template_name.replace("htmx/", "")]
         elif "page" in self.request.GET:
-            return ["pages/includes/infinite_shotgun.html"]
+            return ["pages/includes/shotgun_list.html"]
         else:
             return [self.template_name]
 
 
-class ShotgunDetailView(DetailView):
-    model = Shotgun
-    context_object_name = "shot"
-    template_name = "pages/htmx/shotgun_detail.html"
+class ShotgunArchiveLimited(ShotgunArchiveIndexView):
 
-    def get_template_names(self):
-        if not self.request.htmx:
-            return [self.template_name.replace("htmx/", "")]
-        else:
-            return [self.template_name]
+    def setup(self, request: HttpRequest, *args: Any, **kwargs: Any) -> None:
+        self.shot = Shotgun.objects.get(id=kwargs["pk"])
+        return super().setup(request, *args, **kwargs)
+
+    def get_queryset(self) -> QuerySet[Any]:
+        qs = Shotgun.objects.filter(date__lte=self.shot.date)
+        return qs
+
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context["shot"] = self.shot
+        return context
 
 
 class ShotgunCreateFormView(PermissionRequiredMixin, FormView):
@@ -83,4 +90,4 @@ class ShotgunCreateFormView(PermissionRequiredMixin, FormView):
         return super(ShotgunCreateFormView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse("shotgun_index")
+        return reverse("home")
