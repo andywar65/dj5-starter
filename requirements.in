@@ -14,3 +14,10 @@ django-filer
 django-crispy-forms
 crispy-bootstrap5
 kolo
+django-geojson
+jsonfield
+django-leaflet
+ezdxf
+django-colorfield
+pyproj
+shapely
