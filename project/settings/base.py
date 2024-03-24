@@ -66,8 +66,10 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "filer",
     "tinymce",
+    "leaflet",
     # local
     "users.apps.UsersConfig",
+    "djeocadengine.apps.DjeocadengineConfig",
 ]
 
 MIDDLEWARE = [
