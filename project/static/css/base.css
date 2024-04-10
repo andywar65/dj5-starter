@@ -51,10 +51,10 @@ main > .container {
   cursor: pointer;
 }
 
-.link-primary {
+.link {
     cursor: pointer;
 }
 
-a.link-primary:hover, a.link-primary:focus {
+a.link:hover, a.link:focus {
     cursor: pointer;
 }
