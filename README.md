@@ -17,7 +17,7 @@ A starter project for Django 5 with allauth (formerly [starter-fullstack](https:
 - User model with profile extension
 - Model translation ready
 - Django Filer ready
-- FlatPages with tinymce editor
+- FlatPages with tinymce editor (start url with "/en/" if language is english, "/it/" if it's italian)
 - Interactive search bar with Hyperscript
 - Styled with Bootstrap 5
 - Some interaction with HTMX, avoiding full page reload

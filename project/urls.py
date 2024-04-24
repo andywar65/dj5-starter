@@ -88,8 +88,11 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
     path("", home, name="home"),
-    re_path(r"^(?P<url>.*/)$", fp_views.flatpage),
 )
+
+urlpatterns += [
+    re_path(r"^(?P<url>.*/)$", fp_views.flatpage),
+]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
