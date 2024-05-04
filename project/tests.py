@@ -84,13 +84,13 @@ class SearchTest(TestCase):
         FlatPage.objects.create(
             id=1,
             title="Flat Page",
-            url="/docs/flat-page/",
+            url="/en/docs/flat-page/",
             content="foo",
         )
         FlatPage.objects.create(
             id=2,
             title="Pagina piatta",
-            url="/documenti/pagina-piatta/",
+            url="/it/documenti/pagina-piatta/",
             content="bar",
         )
         User.objects.create_superuser("boss", "boss@example.com", pword)
