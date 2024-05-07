@@ -66,7 +66,7 @@ INSTALLED_APPS = [
     "easy_thumbnails",
     "filer",
     "tinymce",
-    "neapolitan",
+    "neapolitan_htmx",
     # local
     "users.apps.UsersConfig",
 ]
