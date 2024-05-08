@@ -21,11 +21,12 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 from filer.models import Image
+from neapolitan_htmx.views import CRUDView
 
 from project.views import check_htmx_request
 
 from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm
-from .models import UserMessage
+from .models import FooterLink, UserMessage
 
 
 class HxTemplateMixin:
@@ -271,3 +272,11 @@ class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):
 
     def get_success_url(self):
         return reverse("account_contact") + "?submitted=True"
+
+
+class FooterLinkView(CRUDView):
+    model = FooterLink
+    fields = [
+        "title",
+        "link",
+    ]

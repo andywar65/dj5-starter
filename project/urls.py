@@ -27,6 +27,7 @@ from django.utils.translation import gettext_lazy as _
 
 from users.views import (
     ContactFormView,
+    FooterLinkView,
     HTMXLoginView,
     HTMXLogoutView,
     HTMXSignupView,
@@ -84,6 +85,8 @@ urlpatterns = [
     path("nav-bar/", nav_bar, name="nav_bar"),
     path("search-box/", search_box, name="search_box"),
 ]
+
+urlpatterns += FooterLinkView.get_urls()
 
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
