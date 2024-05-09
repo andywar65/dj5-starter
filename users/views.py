@@ -12,7 +12,7 @@ from allauth.socialaccount.models import SocialAccount
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
-from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
@@ -274,7 +274,7 @@ class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):
         return reverse("account_contact") + "?submitted=True"
 
 
-class FooterLinkView(CRUDView):
+class FooterLinkView(LoginRequiredMixin, CRUDView):
     model = FooterLink
     fields = [
         "title",
