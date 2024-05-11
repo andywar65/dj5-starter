@@ -21,8 +21,8 @@ A starter project for Django 5 with allauth (formerly [starter-fullstack](https:
 - Interactive search bar with Hyperscript
 - Styled with Bootstrap 5
 - Some interaction with HTMX, avoiding full page reload
+- Incorporating Neapolitan with HTMX behaviour (use project.HxCRUDView)
 ## Tests
 Unittests, coverage 96%, test avatar CRUD cycle
 ## Working on:
-- Tailwind for CSS
 - Hyperscript for local interactions

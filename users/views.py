@@ -12,7 +12,7 @@ from allauth.socialaccount.models import SocialAccount
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.core.mail import EmailMessage
 from django.http import HttpResponseRedirect
@@ -22,10 +22,10 @@ from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 from filer.models import Image
 
-from project.views import HxCRUDView, check_htmx_request
+from project.views import check_htmx_request
 
 from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm
-from .models import FooterLink, UserMessage
+from .models import UserMessage
 
 
 class HxTemplateMixin:
@@ -271,11 +271,3 @@ class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):
 
     def get_success_url(self):
         return reverse("account_contact") + "?submitted=True"
-
-
-class FooterLinkView(LoginRequiredMixin, HxCRUDView):
-    model = FooterLink
-    fields = [
-        "title",
-        "link",
-    ]
