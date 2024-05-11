@@ -1,0 +1,9 @@
+
+<dl>
+  {% for field, val in object %}
+    <div class="row">
+      <dt class="col">{{ field|capfirst }}:</dt>
+      <dd class="col">{{ val }}</dd>
+    </div>
+  {% endfor %}
+</dl>

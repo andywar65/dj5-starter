@@ -1,0 +1,21 @@
+{% load neapolitan_htmx %}
+{% load i18n %}
+
+<div class="card mx-auto" style="max-width: 960px;">
+  <div class="card-header">
+    <h3>{{ object_verbose_name_plural|capfirst }}</h3>
+    <a class="link link-success"
+       hx-get="{{ create_view_url }}"
+       hx-target="#content"
+       hx-push-url="true">
+      {% trans 'Add a new'%} {{ object_verbose_name }}
+    </a>
+  </div>
+  <div class="class-body">
+    {% if object_list %}
+      {% object_list_htmx object_list view %}
+    {% else %}
+      <p class="mt-8">{% blocktrans %}There are no {{ object_verbose_name_plural }}. Create one now?{% endblocktrans %}</p>
+    {% endif %}
+  </div>
+</div>

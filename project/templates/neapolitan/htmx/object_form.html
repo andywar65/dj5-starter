@@ -1,0 +1,27 @@
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+<div class="card mx-auto" style="max-width: 480px;">
+  <div class="card-header">
+    <h3>{% if object %}{% trans 'Edit'%} {{object_verbose_name}}{% else %}{% trans 'Create'%} {{object_verbose_name}}{% endif %}</h3>
+  </div>
+  <div class="card-body">
+    <form>
+      {{ form|crispy }}
+      <button type="submit"
+              class="btn btn-primary"
+              hx-post="{% if object %}{{ update_view_url }}{% else %}{{ create_view_url }}{% endif %}"
+              {% if form.is_multipart %}hx-encoding="multipart/form-data"{% endif %}
+              hx-target="#content"
+              hx-push-url="true">
+        {% trans 'Save'%}
+      </button>
+      <button class="btn-close"
+              title="{% trans 'Dismiss' %}"
+              hx-get="{% if object %}{{detail_view_url}}{% else %}{{list_view_url}}{% endif %}"
+              hx-target="#content"
+              hx-push-url="true">
+      </button>
+    </form>
+  </div>
+</div>
