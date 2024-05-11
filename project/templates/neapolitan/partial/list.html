@@ -1,0 +1,26 @@
+{% load i18n %}
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      {% for header in headers %}
+        <th scope="col">{{ header|capfirst }}</th>
+      {% endfor %}
+      <th scope="col">
+        <span>{% trans 'Actions'%}</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for object in object_list %}
+      <tr>
+        {% for field in object.fields %}
+          <td>{{ field }}</td>
+        {% endfor %}
+        <td>
+          {{ object.actions }}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
