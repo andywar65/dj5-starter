@@ -1,8 +1,11 @@
 from django import forms
 from django.contrib.flatpages.models import FlatPage
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.core.exceptions import ImproperlyConfigured
 from django.http import Http404
 from django.template.response import TemplateResponse
+from django.urls import reverse
+from neapolitan.views import CRUDView
 
 
 def check_htmx_request(request):
@@ -73,3 +76,65 @@ def search_results(request):
                 "success": success,
             },
         )
+
+
+class HxCRUDView(CRUDView):
+
+    def get_context_data(self, **kwargs):
+        kwargs["view"] = self
+        kwargs["object_verbose_name"] = self.model._meta.verbose_name
+        kwargs["object_verbose_name_plural"] = self.model._meta.verbose_name_plural
+        kwargs["create_view_url"] = reverse(f"{self.url_base}-create")
+        # add list view url
+        kwargs["list_view_url"] = reverse(f"{self.url_base}-list")
+
+        if getattr(self, "object", None) is not None:
+            kwargs["object"] = self.object
+            # add detail view url
+            kwargs["detail_view_url"] = reverse(
+                f"{self.url_base}-detail", kwargs={"pk": self.object.id}
+            )
+            context_object_name = self.get_context_object_name()
+            if context_object_name:
+                kwargs[context_object_name] = self.object
+
+        if getattr(self, "object_list", None) is not None:
+            kwargs["object_list"] = self.object_list
+            context_object_name = self.get_context_object_name(is_list=True)
+            if context_object_name:
+                kwargs[context_object_name] = self.object_list
+
+        return kwargs
+
+    def get_template_names(self):
+        """
+        Returns a list of template names to use when rendering the response.
+
+        If `.template_name` is not specified, uses the
+        "{app_label}/{model_name}{template_name_suffix}.html" model template
+        pattern, with the fallback to the
+        "neapolitan/object{template_name_suffix}.html" default templates.
+        """
+        if self.template_name is not None:
+            return [self.template_name]
+
+        if self.model is not None and self.template_name_suffix is not None:
+            # check if request has a HTMX header, pick partial template
+            if self.request.htmx:
+                return [
+                    f"{self.model._meta.app_label}/"
+                    f"{self.model._meta.object_name.lower()}"
+                    f"{self.template_name_suffix}.html",
+                    f"neapolitan/htmx/object{self.template_name_suffix}.html",
+                ]
+            return [
+                f"{self.model._meta.app_label}/"
+                f"{self.model._meta.object_name.lower()}"
+                f"{self.template_name_suffix}.html",
+                f"neapolitan/object{self.template_name_suffix}.html",
+            ]
+        msg = (
+            "'%s' must either define 'template_name' or 'model' and "
+            "'template_name_suffix', or override 'get_template_names()'"
+        )
+        raise ImproperlyConfigured(msg % self.__class__.__name__)

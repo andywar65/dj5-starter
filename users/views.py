@@ -21,9 +21,8 @@ from django.urls import reverse
 from django.utils.translation import gettext as _
 from django.views.generic.edit import FormView
 from filer.models import Image
-from neapolitan_htmx.views import CRUDView
 
-from project.views import check_htmx_request
+from project.views import HxCRUDView, check_htmx_request
 
 from .forms import AvatarChangeForm, ContactForm, ProfileChangeForm
 from .models import FooterLink, UserMessage
@@ -274,7 +273,7 @@ class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):
         return reverse("account_contact") + "?submitted=True"
 
 
-class FooterLinkView(LoginRequiredMixin, CRUDView):
+class FooterLinkView(LoginRequiredMixin, HxCRUDView):
     model = FooterLink
     fields = [
         "title",
