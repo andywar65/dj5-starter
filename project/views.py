@@ -42,9 +42,9 @@ class ValidateForm(forms.Form):
 
 def search_results(request):
     success = False
-    template_name = "htmx/search_results.html"
-    if not request.htmx:
-        template_name = template_name.replace("htmx/", "")
+    template_name = "search_results.html"
+    if request.htmx:
+        template_name += "#content"
     form = ValidateForm(request.GET)
     if form.is_valid():
         q = SearchQuery(request.GET["q"])

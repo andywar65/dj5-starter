@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load partials %}
 
+{% partialdef content %}
+  {% include "htmx/search_results.html" %}
+{% endpartialdef %}
 {% block content %}
-  {% include 'htmx/search_results.html' %}
-{% endblock content %}
+  {% partial content %}
+{% endblock %}
