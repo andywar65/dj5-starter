@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     "filer",
     "tinymce",
     "neapolitan",
+    "template_partials",
     # local
     "users.apps.UsersConfig",
 ]

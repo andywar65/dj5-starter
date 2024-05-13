@@ -125,7 +125,7 @@ class HxCRUDView(CRUDView):
                     f"{self.model._meta.app_label}/"
                     f"{self.model._meta.object_name.lower()}"
                     f"{self.template_name_suffix}.html",
-                    f"neapolitan/htmx/object{self.template_name_suffix}.html",
+                    f"neapolitan/object{self.template_name_suffix}.html#content",
                 ]
             return [
                 f"{self.model._meta.app_label}/"
