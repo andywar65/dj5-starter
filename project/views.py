@@ -16,9 +16,9 @@ def check_htmx_request(request):
 
 
 def home(request):
-    template_name = "htmx/home.html"
-    if not request.htmx:
-        template_name = template_name.replace("htmx/", "")
+    template_name = "home.html"
+    if request.htmx:
+        template_name += "#content"
     context = {}
     return TemplateResponse(request, template_name, context)
 
