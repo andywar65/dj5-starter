@@ -16,7 +16,7 @@ chardet==5.2.0
     # via reportlab
 charset-normalizer==3.3.2
     # via requests
-coverage==7.5.0
+coverage==7.5.1
     # via -r requirements.in
 crispy-bootstrap5==2024.2
     # via -r requirements.in
@@ -28,7 +28,7 @@ dj-database-url==2.1.0
     # via environs
 dj-email-url==1.0.6
     # via environs
-django==5.0.4
+django==5.0.6
     # via
     #   -r requirements.in
     #   crispy-bootstrap5
@@ -45,7 +45,7 @@ django==5.0.4
     #   django-tinymce
     #   easy-thumbnails
     #   neapolitan
-django-allauth[socialaccount]==0.62.1
+django-allauth[socialaccount]==0.63.0
     # via -r requirements.in
 django-cache-url==3.4.5
     # via environs
@@ -77,11 +77,11 @@ environs[django]==11.0.0
     # via -r requirements.in
 factory-boy==3.3.0
     # via -r requirements.in
-faker==25.0.1
+faker==25.2.0
     # via factory-boy
 idna==3.7
     # via requests
-lxml==5.2.1
+lxml==5.2.2
     # via svglib
 marshmallow==3.21.2
     # via environs
@@ -96,11 +96,11 @@ pillow==10.3.0
     #   -r requirements.in
     #   easy-thumbnails
     #   reportlab
-psycopg[binary,pool]==3.1.18
+psycopg[binary,pool]==3.1.19
     # via -r requirements.in
-psycopg-binary==3.1.18
+psycopg-binary==3.1.19
     # via psycopg
-psycopg-pool==3.2.1
+psycopg-pool==3.2.2
     # via psycopg
 pycparser==2.22
     # via cffi

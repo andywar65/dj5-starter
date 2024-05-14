@@ -7,7 +7,7 @@ A starter project for Django 5 with allauth (formerly [starter-fullstack](https:
 ## Stack
 - Postgres
 - Python 3.12
-- Django 5.0.4
+- Django 5.0.6
 - Bootstrap 5
 - HTMX
 - (check requirements.txt for actual installs)
