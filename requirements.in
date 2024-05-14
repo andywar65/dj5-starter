@@ -1,6 +1,6 @@
 django>=5.0,<6.0
 psycopg[binary,pool]
-django-allauth
+django-allauth[socialaccount]
 django-htmx
 django-modeltranslation
 environs[django]
@@ -13,6 +13,5 @@ easy-thumbnails
 django-filer
 django-crispy-forms
 crispy-bootstrap5
-kolo
 neapolitan
 django-template-partials
