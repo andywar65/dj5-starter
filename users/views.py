@@ -223,10 +223,9 @@ def profile_update_delete(request):
                 "anonymize": user.profile.anonymize,
             }
         )
+    template_name = "account/account_profile.html"
     if request.htmx:
-        template_name = "account/account_profile.html#content"
-    else:
-        template_name = "account/account_profile.html"
+        template_name += "#content"
     context = {"form": form, "avatar_form": avatar_form}
     if request.method == "GET" and "refresh" in request.GET:
         return TemplateResponse(
