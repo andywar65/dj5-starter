@@ -23,6 +23,6 @@ A starter project for Django 5 with allauth (formerly [starter-fullstack](https:
 - Some interaction with HTMX, avoiding full page reload
 - Incorporating Neapolitan with HTMX behaviour (use project.HxCRUDView)
 ## Tests
-Unittests, coverage 96%, test avatar CRUD cycle
+Unittests, coverage 92%, test avatar CRUD cycle, neapolitan custom view
 ## Working on:
 - Hyperscript for local interactions
