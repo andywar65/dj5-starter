@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% load partials %}
 
+{% partialdef content %}
+  {% include "account/htmx/login.html" %}
+{% endpartialdef %}
 {% block content %}
-  {% include 'account/htmx/login.html' %}
+  {% partial content %}
 {% endblock %}

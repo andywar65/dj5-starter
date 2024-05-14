@@ -32,16 +32,15 @@ class HxTemplateMixin:
     """Switches template depending on request.htmx"""
 
     def get_template_names(self):
-        if not self.request.htmx:
-            return [self.template_name.replace("htmx/", "")]
-        else:
-            return [self.template_name]
+        if self.request.htmx:
+            return [self.template_name + "#content"]
+        return [self.template_name]
 
 
 class TestedPasswordChangeView(
     PermissionRequiredMixin, HxTemplateMixin, PasswordChangeView
 ):
-    template_name = "account/htmx/password_change.html"
+    template_name = "account/password_change.html"
     permission_required = "users.change_profile"
 
 
@@ -57,7 +56,7 @@ class TestedPasswordResetView(
     HxTemplateMixin,
     PasswordResetView,
 ):
-    template_name = "account/htmx/password_reset.html"
+    template_name = "account/password_reset.html"
 
     def setup(self, request, *args, **kwargs):
         super(TestedPasswordResetView, self).setup(request, *args, **kwargs)
@@ -75,15 +74,15 @@ class TestedEmailView(
 
 
 class HTMXLoginView(HxTemplateMixin, LoginView):
-    template_name = "account/htmx/login.html"
+    template_name = "account/login.html"
 
 
 class HTMXLogoutView(HxTemplateMixin, LogoutView):
-    template_name = "account/htmx/logout.html"
+    template_name = "account/logout.html"
 
 
 class HTMXSignupView(HxTemplateMixin, SignupView):
-    template_name = "account/htmx/signup.html"
+    template_name = "account/signup.html"
 
 
 @permission_required("users.change_profile")
@@ -225,7 +224,7 @@ def profile_update_delete(request):
             }
         )
     if request.htmx:
-        template_name = "account/htmx/account_profile.html"
+        template_name = "account/account_profile.html#content"
     else:
         template_name = "account/account_profile.html"
     context = {"form": form, "avatar_form": avatar_form}
@@ -241,7 +240,7 @@ def profile_update_delete(request):
 
 class ContactFormView(PermissionRequiredMixin, HxTemplateMixin, FormView):
     form_class = ContactForm
-    template_name = "account/htmx/contact.html"
+    template_name = "account/contact.html"
     permission_required = "users.change_profile"
 
     def get_context_data(self, **kwargs):

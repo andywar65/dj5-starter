@@ -1,5 +1,9 @@
 {% extends "base.html" %}
+{% load partials %}
 
-{% block menucont %}
+{% partialdef content %}
   {% include "account/htmx/contact.html" %}
+{% endpartialdef %}
+{% block content %}
+  {% partial content %}
 {% endblock %}
