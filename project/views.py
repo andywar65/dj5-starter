@@ -16,9 +16,9 @@ def check_htmx_request(request):
 
 
 def home(request):
-    template_name = "htmx/home.html"
-    if not request.htmx:
-        template_name = template_name.replace("htmx/", "")
+    template_name = "home.html"
+    if request.htmx:
+        template_name += "#content"
     context = {}
     return TemplateResponse(request, template_name, context)
 
@@ -42,9 +42,9 @@ class ValidateForm(forms.Form):
 
 def search_results(request):
     success = False
-    template_name = "htmx/search_results.html"
-    if not request.htmx:
-        template_name = template_name.replace("htmx/", "")
+    template_name = "search_results.html"
+    if request.htmx:
+        template_name += "#content"
     form = ValidateForm(request.GET)
     if form.is_valid():
         q = SearchQuery(request.GET["q"])
@@ -125,7 +125,7 @@ class HxCRUDView(CRUDView):
                     f"{self.model._meta.app_label}/"
                     f"{self.model._meta.object_name.lower()}"
                     f"{self.template_name_suffix}.html",
-                    f"neapolitan/htmx/object{self.template_name_suffix}.html",
+                    f"neapolitan/object{self.template_name_suffix}.html#content",
                 ]
             return [
                 f"{self.model._meta.app_label}/"

@@ -46,6 +46,7 @@ django==5.0.4
     #   django-htmx
     #   django-modeltranslation
     #   django-polymorphic
+    #   django-template-partials
     #   django-tinymce
     #   easy-thumbnails
     #   neapolitan
@@ -69,6 +70,8 @@ django-modeltranslation==0.18.11
     # via -r requirements.in
 django-polymorphic==3.1.0
     # via django-filer
+django-template-partials==24.2
+    # via -r requirements.in
 django-tinymce==4.0.0
     # via -r requirements.in
 easy-thumbnails[svg]==2.8.5
