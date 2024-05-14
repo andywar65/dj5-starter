@@ -118,8 +118,8 @@ class SearchTest(TestCase):
         print("\n-Test search no success")
 
     def test_search_results_view_context_posts(self):
-        page = FlatPage.objects.filter(title="Flat Page")
-        response = self.client.get(reverse("search_results") + "?lang=en&q=foo")
+        page = FlatPage.objects.filter(title="Pagina piatta")
+        response = self.client.get(reverse("search_results") + "?lang=it&q=bar")
         # workaround found in
         # https://stackoverflow.com/questions/17685023/
         # how-do-i-test-django-querysets-are-equal
