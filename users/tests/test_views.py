@@ -18,9 +18,7 @@ class FooterLinkView(HxCRUDView):
     fields = ["title", "link"]
 
 
-urlpatterns = [
-    *FooterLinkView.get_urls(),
-]
+urlpatterns = FooterLinkView.get_urls()
 
 
 @override_settings(USE_I18N=False)
@@ -178,6 +176,7 @@ class UserViewsTest(TestCase):
         print("\n-Test delete account template")
 
 
+@override_settings(ROOT_URLCONF="users.tests.test_views")
 class NeapolitanTest(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -193,6 +192,15 @@ class NeapolitanTest(TestCase):
             link="https://digitalkomix.com",
         )
 
-    def test_HxCRUD_view(self):
-        response = self.client.get("/footerlink/")
-        self.assertEqual(response.status_code, 200)
+    def test_HxCRUD_view_status(self):
+        # HTMX header to pick up partial template
+        response = self.client.get("/footerlink/new/", headers={"HX-Request": "true"})
+        self.assertContains(response, 'hx-get="/footerlink/"')
+        print("\n-Test list url in template")
+        self.assertTemplateUsed(response, "neapolitan/object_form.html#content")
+        print("\n-Test partial template")
+        response = self.client.get(
+            "/footerlink/1/edit/", headers={"HX-Request": "true"}
+        )
+        self.assertContains(response, 'hx-get="/footerlink/1/"')
+        print("\n-Test detail url in template")
