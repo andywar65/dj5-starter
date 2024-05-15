@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
 {% load partials %}
+{% load i18n %}
 
-{% partialdef content %}
-  {% include "htmx/home.html" %}
-{% endpartialdef %}
 {% block content %}
   {% partial content %}
 {% endblock %}
+
+{% partialdef content %}
+  <div class="card mx-auto" style="max-width: 960px;">
+    <div class="card-header">
+      <h1>{% trans "Welcome to dj5-starter" %}</h1>
+    </div>
+    <div class="card-body">
+      {% blocktrans %}
+        dj5-starter is a Django 5.0 starter kit.
+      {% endblocktrans %}
+    </div>
+  </div>
+{% endpartialdef %}
