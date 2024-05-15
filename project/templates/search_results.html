@@ -16,21 +16,17 @@
       </div>
       <div class="card-body">
         {% if flatpages %}
-          <table class="table">
+          <table class="table table-hover">
             <tbody>
               {% for page in flatpages %}
                 <tr>
                   <td>
-                    <div class="row">
-                      <div class="col col-xl-4 col-lg-4 col-md-4 col-12">
-                        <a class="link-primary" href="{{ page.url }}">
-                          <h4>{{ page.title }}</h4>
-                        </a>
-                      </div>
-                      <div class="col">
-                        <p>{{ page.content|truncatewords:10|safe }}</p>
-                      </div>
-                    </div>
+                    <a class="link link-primary" href="{{ page.url }}">
+                      {{ page.title }}
+                    </a>
+                  </td>
+                  <td>
+                    {{ page.content|truncatewords:10|safe }}
                   </td>
                 </tr>
               {% endfor %}
