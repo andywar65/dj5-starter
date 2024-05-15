@@ -6,7 +6,7 @@
     <!-- Avatar exists, show the modify link -->
     {% include "account/htmx/avatar_snippet.html" %}
     <a id="avatar-update-link"
-       class="link-primary"
+       class="link link-primary"
        {% if invalid_form %}style="display: none"{% endif %}
        script="on click hide me then show #avatar-update-form">
       {% trans "Modify Avatar" %}

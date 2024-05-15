@@ -1,9 +1,69 @@
 {% extends "base.html" %}
 {% load partials %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load thumbnail %}
 
-{% partialdef content %}
-  {% include "account/htmx/account_profile.html" %}
-{% endpartialdef %}
 {% block content %}
   {% partial content %}
 {% endblock %}
+
+{% partialdef content %}
+  <div class="card mx-auto" style="max-width: 480px;">
+    <div class="card-header">
+      <h3>{% trans "Change Profile" %}</h3>
+    </div>
+    <div class="card-body">
+      {% if messages %}
+        {% include "messages.html" %}
+      {% endif %}
+      {% if submitted %}
+        <div class="row alert alert-success" role="alert" id="success_box">
+          <div class="col col-10">
+            <p>{% trans 'Profile has been successfully modified!' %}</p>
+          </div>
+          <div class="col text-end">
+            <button aria-label="Close" class="btn-close" script="on click hide #success_box"></button>
+          </div>
+        </div>
+      {% endif %}
+      <div id="avatar_display">
+        {% include "account/htmx/avatar_display.html" %}
+      </div>
+      <form>
+        {{ form|crispy }}
+        <button class="btn btn-primary"
+                type="submit"
+                hx-post="{% url 'account_profile' %}"
+                hx-target="#content">
+          {% trans "Change Profile" %}
+        </button>
+        <a class="btn btn-secondary"
+           hx-get="{% url 'password_change' %}"
+           hx-target="#content"
+           hx-push-url="true">{% trans "Change Password?" %}
+        </a>
+      </form>
+      <hr>
+      <a class="btn btn-success"
+         href="{% url 'socialaccount_connections' %}">{% trans "Connect social" %}
+      </a>
+      <a class="btn btn-danger"
+         hx-delete="{% url 'account_profile' %}"
+         hx-target="#content"
+         hx-confirm="{% trans 'Are you sure you want to delete your account?' %}"
+      >{% trans "Delete** Account" %}
+      </a>
+      <p class="mt-2"><small>{% trans "*Required fields" %}</small></p>
+      <p class="mt-2">
+        <small>
+          {% blocktrans with request.site.name as site_name %}
+            **WARNING! Account will not be deleted, but set to 'inactive'.
+            All user info except username will be completely deleted.
+            Contact {{ site_name}} if you want to recover your original account.
+          {% endblocktrans %}
+        </small>
+      </p>
+    </div>
+  </div>
+{% endpartialdef %}
