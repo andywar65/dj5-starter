@@ -1,9 +1,25 @@
 {% extends "base.html" %}
 {% load partials %}
+{% load neapolitan %}
+{% load i18n %}
 
-{% partialdef content %}
-  {% include "neapolitan/htmx/object_detail.html" %}
-{% endpartialdef %}
 {% block content %}
   {% partial content %}
 {% endblock %}
+
+{% partialdef content %}
+  <div class="card mx-auto" style="max-width: 960px;">
+    <div class="card-header">
+      <h3>{{ object }}</h3>
+    </div>
+    <div class="card-body">
+      {% object_detail object view.fields %}
+      <a class="link link-primary"
+         hx-get="{{ list_view_url }}"
+         hx-target="#content"
+         hx-push-url="true">
+        {% trans "Back to list"%}
+      </a>
+    </div>
+  </div>
+{% endpartialdef %}

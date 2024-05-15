@@ -1,9 +1,27 @@
 {% extends "base.html" %}
 {% load partials %}
+{% load crispy_forms_tags %}
+{% load i18n %}
 
-{% partialdef content %}
-  {% include "neapolitan/htmx/object_confirm_delete.html" %}
-{% endpartialdef %}
 {% block content %}
   {% partial content %}
 {% endblock %}
+
+{% partialdef content %}
+  <div class="card mx-auto" style="max-width: 480px;">
+    <div class="card-body">
+      <p class="card-text">{% trans 'Are you sure you want to delete following'%} {{ object_verbose_name }}?</p>
+      <p class="card-text"><strong>{{ object }}</strong></p>
+      <form>
+        {{ form|crispy }}
+        <button type="submit"
+                class="btn btn-danger"
+                hx-post="{{ delete_view_url }}"
+                hx-target="#content"
+                hx-push-url="true">
+          {% trans 'Delete'%}
+        </button>
+      </form>
+    </div>
+  </div>
+{% endpartialdef %}
