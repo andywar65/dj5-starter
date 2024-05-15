@@ -49,7 +49,7 @@ class ProjectViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         print("\n-Test home status 200")
 
-        self.assertTemplateUsed(response, "htmx/home.html")
+        self.assertTemplateUsed(response, "home.html#content")
         print("\n-Test home template")
 
     def test_navbar_view(self):

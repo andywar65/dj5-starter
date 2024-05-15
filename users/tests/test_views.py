@@ -7,9 +7,20 @@ from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase, override_settings
 from django.urls import reverse
 
-from users.models import User
+from project.views import HxCRUDView
+from users.models import FooterLink, User
 
 pword = settings.DJANGO_SUPERUSER_PASSWORD
+
+
+class FooterLinkView(HxCRUDView):
+    model = FooterLink
+    fields = ["title", "link"]
+
+
+urlpatterns = [
+    *FooterLinkView.get_urls(),
+]
 
 
 @override_settings(USE_I18N=False)
@@ -165,3 +176,23 @@ class UserViewsTest(TestCase):
         print("\n--Test delete account profile success")
         self.assertTemplateUsed(response, "account/htmx/account_delete.html")
         print("\n-Test delete account template")
+
+
+class NeapolitanTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        print("\nTest neapolitan view")
+        FooterLink.objects.create(
+            id=1,
+            title="GitHub",
+            link="https://github.com/andywar65",
+        )
+        FooterLink.objects.create(
+            id=2,
+            title="digitalkOmiX",
+            link="https://digitalkomix.com",
+        )
+
+    def test_HxCRUD_view(self):
+        response = self.client.get("/footerlink/")
+        self.assertEqual(response.status_code, 200)
