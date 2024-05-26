@@ -99,6 +99,16 @@ class UserViewsTest(TestCase):
         with open(img_path, "rb") as f:
             content = f.read()
 
+        response = self.client.get(
+            reverse("avatar_display"),
+            {
+                "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
+            },
+            headers={"HX-Request": "true"},
+        )
+        self.assertEqual(response.status_code, 200)
+        print("\n--Test Avatar display status")
+
         response = self.client.post(
             reverse("avatar_display"),
             {
@@ -114,6 +124,16 @@ class UserViewsTest(TestCase):
             target_status_code=200,
         )
         print("\n--Test Add Avatar redirect")
+
+        response = self.client.get(
+            reverse("avatar_update"),
+            {
+                "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
+            },
+            headers={"HX-Request": "true"},
+        )
+        self.assertEqual(response.status_code, 200)
+        print("\n--Test Avatar update status")
 
         response = self.client.post(
             reverse("avatar_update"),
