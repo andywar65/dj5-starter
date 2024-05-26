@@ -115,6 +115,22 @@ class UserViewsTest(TestCase):
         )
         print("\n--Test Add Avatar redirect")
 
+        response = self.client.post(
+            reverse("avatar_update"),
+            {
+                "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
+            },
+            headers={"HX-Request": "true"},
+            follow=True,
+        )
+        self.assertRedirects(
+            response,
+            reverse("avatar_display") + "?refresh=True",
+            status_code=302,
+            target_status_code=200,
+        )
+        print("\n--Test Change Avatar redirect")
+
         response = self.client.delete(
             reverse("avatar_update"),
             headers={"HX-Request": "true"},
