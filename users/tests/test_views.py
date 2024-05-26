@@ -112,6 +112,16 @@ class UserViewsTest(TestCase):
         response = self.client.post(
             reverse("avatar_display"),
             {
+                "avatar": "foo",
+            },
+            headers={"HX-Request": "true"},
+        )
+        self.assertEqual(response.status_code, 200)
+        print("\n--Test Add Avatar not valid")
+
+        response = self.client.post(
+            reverse("avatar_display"),
+            {
                 "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
             },
             headers={"HX-Request": "true"},
@@ -134,6 +144,16 @@ class UserViewsTest(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         print("\n--Test Avatar update status")
+
+        response = self.client.post(
+            reverse("avatar_update"),
+            {
+                "avatar": "foo",
+            },
+            headers={"HX-Request": "true"},
+        )
+        self.assertEqual(response.status_code, 200)
+        print("\n--Test change Avatar not valid")
 
         response = self.client.post(
             reverse("avatar_update"),
