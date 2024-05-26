@@ -84,7 +84,10 @@ class UserViewsTest(TestCase):
         print("\n-Test User Views logged in")
         self.client.login(username="boss", password=pword)
 
-        response = self.client.get(reverse("account_profile"))
+        response = self.client.get(
+            reverse("account_profile"),
+            headers={"HX-Request": "true"},
+        )
         self.assertEqual(response.status_code, 200)
         print("\n--Test Account Profile success")
 
