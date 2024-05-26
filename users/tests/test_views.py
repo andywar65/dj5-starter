@@ -221,6 +221,25 @@ class UserViewsTest(TestCase):
     def test_delete_account_profile(self):
         print("\n-Test delete account profile")
         self.client.login(username="boss", password=pword)
+        img_path = Path(settings.PROJECT_DIR).joinpath("static/tests/image.jpg")
+        with open(img_path, "rb") as f:
+            content = f.read()
+
+        response = self.client.post(
+            reverse("avatar_update"),
+            {
+                "avatar": SimpleUploadedFile("image.jpg", content, "image/jpg"),
+            },
+            headers={"HX-Request": "true"},
+            follow=True,
+        )
+        self.assertRedirects(
+            response,
+            reverse("avatar_display") + "?refresh=True",
+            status_code=302,
+            target_status_code=200,
+        )
+        print("\n--Test Change Avatar no image redirect")
 
         response = self.client.delete(
             reverse("account_profile"),
