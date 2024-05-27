@@ -68,8 +68,12 @@ INSTALLED_APPS = [
     "tinymce",
     "neapolitan",
     "template_partials",
+    "colorfield",
+    "djgeojson",
+    "leaflet",
     # local
     "users.apps.UsersConfig",
+    "djeocadengine.apps.DjeocadengineConfig",
 ]
 
 MIDDLEWARE = [
@@ -149,6 +153,20 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+LEAFLET_CONFIG = {
+    "DEFAULT_CENTER": (41.8988, 12.5451),
+    "DEFAULT_ZOOM": 10,
+    "RESET_VIEW": False,
+}
+
+CAD_BLOCK_BLACKLIST = [
+    "*Model_Space",
+    "DynamicInputDot",
+]
+CAD_LAYER_BLACKLIST = [
+    "Defpoints",
+]
 
 
 # Internationalization
