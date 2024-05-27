@@ -44,6 +44,11 @@
                   <a class="dropdown-item" href="{{ page.url }}">{{ page.title }}</a>
                 {% endfor %}
               {% endif %}
+              <hr>
+              <a class="dropdown-item"
+                 href="{% url 'djeocadengine:base_list' %}">
+                {% trans 'GeoCAD' %}
+              </a>
             </div>
           </li>
           {% if user.is_authenticated %}
