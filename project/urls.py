@@ -88,6 +88,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     path(_("search/"), search_results, name="search_results"),
     path("", home, name="home"),
+    path(_("geocad/"), include("djeocadengine.urls", namespace="djeocadengine")),
 )
 
 urlpatterns += [
