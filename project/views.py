@@ -62,13 +62,10 @@ def search_results(request):
             success = True
 
         # search in projects
-        if "lang" not in request.GET:
-            v = SearchVector("title", "intro", "body", "site")
+        if request.LANGUAGE_CODE == "it":
+            v = SearchVector("title_it", "intro_it", "body_it", "site")
         else:
-            if request.GET["lang"] == "it":
-                v = SearchVector("title_it", "intro_it", "body_it", "site")
-            else:
-                v = SearchVector("title_de", "intro_de", "body_de", "site")
+            v = SearchVector("title_de", "intro_de", "body_de", "site")
 
         projects = Project.objects.annotate(rank=SearchRank(v, q))
         projects = projects.filter(rank__gt=0.01)
@@ -81,9 +78,9 @@ def search_results(request):
             "success": success,
         }
         if flatpages:
-            context["flatpages":flatpages]
+            context["flatpages"] = flatpages
         if projects:
-            context["progs":projects]
+            context["progs"] = projects
         return TemplateResponse(
             request,
             template_name,
