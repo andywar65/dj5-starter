@@ -1,7 +1,7 @@
 {% load i18n %}
 
 <li class="list-group-item">
-  <i class="fa fa-calendar-o" aria-hidden="true"></i>
+  <i class="bi-calendar" aria-hidden="true"></i>
   <a class="link-primary"
      hx-get="{% url 'portfolio:year' year=prog.date.year %}"
      hx-target="#content"
@@ -19,11 +19,11 @@
   {% endif %}
 </li>
 {% if prog.site %}
-  <li class="list-group-item"><i class="fa fa-map-marker" aria-hidden="true"></i>
+  <li class="list-group-item"><i class="bi-geo-alt" aria-hidden="true"></i>
     {{ prog.site }}</li>
 {% endif %}
 <li class="list-group-item">
-  <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+  <i class="bi-folder" aria-hidden="true"></i>
   {% for type in prog.type.all %}
     <a class="link-primary"
        hx-get="{% url 'portfolio:project_category' %}?type={{ type.id }}"
@@ -34,10 +34,10 @@
   {% endfor %}
 </li>
 <li class="list-group-item">
-  <i class="fa fa-wrench" aria-hidden="true"></i>
+  <i class="bi-wrench" aria-hidden="true"></i>
   <em>{{ prog.get_activities }}</em>
 </li>
 <li class="list-group-item">
-  <i class="fa fa-user" aria-hidden="true"></i>
+  <i class="bi-person" aria-hidden="true"></i>
   {{ prog.get_clients }}
 </li>
