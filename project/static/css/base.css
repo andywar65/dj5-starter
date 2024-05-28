@@ -52,13 +52,6 @@ main > .container {
   cursor: pointer;
 }
 
-.link {
-    cursor: pointer;
-}
-
-a.link:hover, a.link:focus {
-    cursor: pointer;
-}
 
 /*------------------------------------
 - COLOR primary
@@ -206,8 +199,10 @@ a.text-primary:hover, a.text-primary:focus {
 
 .link-primary {
     color: #774e24 !important;
+    cursor: pointer;
 }
 
 a.link-primary:hover, a.link-primary:focus {
     color: #4f3418 !important;
+    cursor: pointer;
 }
