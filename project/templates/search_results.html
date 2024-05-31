@@ -20,7 +20,7 @@
           {% for shot in shots %}
             <ul>
               <li>
-                <span><a class="link-primary"
+                <span><a class="link link-primary"
                          hx-get="{% url 'pages:shotgun_detail' pk=shot.id %}"
                          hx-target="#content"
                          hx-push-url="true">{{ shot.title }}</a>
