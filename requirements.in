@@ -15,11 +15,9 @@ django-crispy-forms
 crispy-bootstrap5
 neapolitan
 django-template-partials
-django-geojson
-jsonfield
-django-leaflet
 ezdxf
 django-colorfield
 pyproj
 shapely
 nh3
+django-geojson @ git+https://github.com/andywar65/django-geojson@oserror

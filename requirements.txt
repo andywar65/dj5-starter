@@ -42,13 +42,11 @@ django==5.0.6
     #   django-filter
     #   django-geojson
     #   django-htmx
-    #   django-leaflet
     #   django-modeltranslation
     #   django-polymorphic
     #   django-template-partials
     #   django-tinymce
     #   easy-thumbnails
-    #   jsonfield
     #   neapolitan
 django-allauth[socialaccount]==0.63.0
     # via -r requirements.in
@@ -66,11 +64,9 @@ django-filer==3.1.1
     # via -r requirements.in
 django-filter==24.2
     # via neapolitan
-django-geojson==4.1.0
+django-geojson @ git+https://github.com/andywar65/django-geojson@oserror
     # via -r requirements.in
 django-htmx==1.17.3
-    # via -r requirements.in
-django-leaflet==0.30.0
     # via -r requirements.in
 django-modeltranslation==0.18.11
     # via -r requirements.in
@@ -96,8 +92,6 @@ fonttools==4.52.1
     # via ezdxf
 idna==3.7
     # via requests
-jsonfield==3.1.0
-    # via -r requirements.in
 lxml==5.2.2
     # via svglib
 marshmallow==3.21.2
