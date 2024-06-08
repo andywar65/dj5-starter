@@ -70,7 +70,6 @@ INSTALLED_APPS = [
     "template_partials",
     "colorfield",
     "djgeojson",
-    "leaflet",
     # local
     "users.apps.UsersConfig",
     "djeocadengine.apps.DjeocadengineConfig",
