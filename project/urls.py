@@ -41,6 +41,8 @@ from users.views import (
 
 from .views import home, nav_bar, search_box, search_results
 
+SECRET_ADMIN = settings.ADMIN_URL_SUFFIX
+
 # from django.views.generic import RedirectView
 
 
@@ -49,7 +51,7 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path(f"admin{SECRET_ADMIN}/", admin.site.urls),
     path("i18n/", include("django.conf.urls.i18n")),
     path("accounts/login/", HTMXLoginView.as_view(), name="account_login"),
     path("accounts/logout/", HTMXLogoutView.as_view(), name="account_logout"),

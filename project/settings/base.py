@@ -150,6 +150,8 @@ SOCIALACCOUNT_QUERY_EMAIL = True
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+ADMIN_URL_SUFFIX = env.str("ADMIN_URL_SUFFIX", default="")
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
