@@ -82,6 +82,7 @@ urlpatterns = [
     path("tinymce/", include("tinymce.urls")),
     path("nav-bar/", nav_bar, name="nav_bar"),
     path("search-box/", search_box, name="search_box"),
+    path("3D/", include("djaframe.urls", namespace="djaframe")),
 ]
 
 urlpatterns += i18n_patterns(

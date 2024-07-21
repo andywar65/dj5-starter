@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     # local
     "users.apps.UsersConfig",
     "portfolio.apps.PortfolioConfig",
+    "djaframe.apps.DjaframeConfig",
 ]
 
 MIDDLEWARE = [

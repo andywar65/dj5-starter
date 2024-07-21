@@ -18,3 +18,5 @@ django-template-partials
 django-geojson
 jsonfield
 django-leaflet
+django-cors-headers
+ezdxf
