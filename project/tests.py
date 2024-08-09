@@ -129,8 +129,9 @@ class SearchTest(TestCase):
         print("\n-Test search equal querysets")
 
     def test_super_user_change_flatpage(self):
+        SECRET_ADMIN = settings.ADMIN_URL_SUFFIX
         self.client.login(username="boss", password=pword)
         # just for coverage
-        response = self.client.get("/admin/flatpages/flatpage/1/change/")
+        response = self.client.get(f"/admin{SECRET_ADMIN}/flatpages/flatpage/1/change/")
         self.assertEqual(response.status_code, 200)
         print("\n-Super can change FlatPage")

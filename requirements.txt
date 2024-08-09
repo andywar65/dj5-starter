@@ -8,27 +8,27 @@ asgiref==3.8.1
     # via
     #   django
     #   django-htmx
-certifi==2024.2.2
+certifi==2024.7.4
     # via requests
-cffi==1.16.0
+cffi==1.17.0
     # via cryptography
 chardet==5.2.0
     # via reportlab
 charset-normalizer==3.3.2
     # via requests
-coverage==7.5.1
+coverage==7.6.1
     # via -r requirements.in
 crispy-bootstrap5==2024.2
     # via -r requirements.in
-cryptography==42.0.7
+cryptography==43.0.0
     # via pyjwt
 cssselect2==0.7.0
     # via svglib
-dj-database-url==2.1.0
+dj-database-url==2.2.0
     # via environs
 dj-email-url==1.0.6
     # via environs
-django==5.0.6
+django==5.0.8
     # via
     #   -r requirements.in
     #   crispy-bootstrap5
@@ -45,31 +45,31 @@ django==5.0.6
     #   django-tinymce
     #   easy-thumbnails
     #   neapolitan
-django-allauth[socialaccount]==0.63.0
+django-allauth[socialaccount]==64.0.0
     # via -r requirements.in
 django-cache-url==3.4.5
     # via environs
-django-crispy-forms==2.1
+django-crispy-forms==2.3
     # via
     #   -r requirements.in
     #   crispy-bootstrap5
-django-debug-toolbar==4.3.0
+django-debug-toolbar==4.4.6
     # via -r requirements.in
-django-filer==3.1.1
+django-filer==3.1.4
     # via -r requirements.in
-django-filter==24.2
+django-filter==24.3
     # via neapolitan
-django-htmx==1.17.3
+django-htmx==1.19.0
     # via -r requirements.in
-django-modeltranslation==0.18.11
+django-modeltranslation==0.19.6
     # via -r requirements.in
 django-polymorphic==3.1.0
     # via django-filer
 django-template-partials==24.2
     # via -r requirements.in
-django-tinymce==4.0.0
+django-tinymce==4.1.0
     # via -r requirements.in
-easy-thumbnails[svg]==2.8.5
+easy-thumbnails[svg]==2.9
     # via
     #   -r requirements.in
     #   django-filer
@@ -77,34 +77,34 @@ environs[django]==11.0.0
     # via -r requirements.in
 factory-boy==3.3.0
     # via -r requirements.in
-faker==25.2.0
+faker==26.3.0
     # via factory-boy
 idna==3.7
     # via requests
 lxml==5.2.2
     # via svglib
-marshmallow==3.21.2
+marshmallow==3.21.3
     # via environs
-neapolitan==24.4
+neapolitan==24.6
     # via -r requirements.in
 oauthlib==3.2.2
     # via requests-oauthlib
-packaging==24.0
+packaging==24.1
     # via marshmallow
-pillow==10.3.0
+pillow==10.4.0
     # via
     #   -r requirements.in
     #   easy-thumbnails
     #   reportlab
-psycopg[binary,pool]==3.1.19
+psycopg[binary,pool]==3.2.1
     # via -r requirements.in
-psycopg-binary==3.1.19
+psycopg-binary==3.2.1
     # via psycopg
 psycopg-pool==3.2.2
     # via psycopg
 pycparser==2.22
     # via cffi
-pyjwt[crypto]==2.8.0
+pyjwt[crypto]==2.9.0
     # via
     #   django-allauth
     #   pyjwt
@@ -112,11 +112,11 @@ python-dateutil==2.9.0.post0
     # via faker
 python-dotenv==1.0.1
     # via environs
-reportlab==4.2.0
+reportlab==4.2.2
     # via
     #   easy-thumbnails
     #   svglib
-requests==2.31.0
+requests==2.32.3
     # via
     #   django-allauth
     #   requests-oauthlib
@@ -124,7 +124,7 @@ requests-oauthlib==2.0.0
     # via django-allauth
 six==1.16.0
     # via python-dateutil
-sqlparse==0.5.0
+sqlparse==0.5.1
     # via
     #   django
     #   django-debug-toolbar
@@ -134,17 +134,16 @@ tinycss2==1.3.0
     # via
     #   cssselect2
     #   svglib
-typing-extensions==4.11.0
+typing-extensions==4.12.2
     # via
     #   dj-database-url
-    #   django-modeltranslation
     #   psycopg
     #   psycopg-pool
 tzdata==2024.1
     # via
     #   django
     #   psycopg
-urllib3==2.2.1
+urllib3==2.2.2
     # via requests
 webencodings==0.5.1
     # via
