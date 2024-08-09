@@ -12,7 +12,7 @@ repos:
       - id: check-yaml
       - id: check-added-large-files
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: 1.19.0
+    rev: 1.20.0
     hooks:
       - id: django-upgrade
         args: [--target-version, "5.0"]
@@ -27,7 +27,7 @@ repos:
       - id: isort
         name: isort (python)
   - repo: https://github.com/pycqa/flake8
-    rev: 7.1.0
+    rev: 7.1.1
     hooks:
       - id: flake8
   - repo: https://github.com/rtts/djhtml
@@ -37,7 +37,7 @@ repos:
         args:
           - --tabwidth=2
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.29.0
+    rev: v1.30.2
     hooks:
       - id: ggshield
         language_version: python3
