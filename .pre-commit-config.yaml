@@ -31,13 +31,13 @@ repos:
     hooks:
       - id: flake8
   - repo: https://github.com/rtts/djhtml
-    rev: 3.0.6
+    rev: 3.0.7
     hooks:
       - id: djhtml
         args:
           - --tabwidth=2
   - repo: https://github.com/gitguardian/ggshield
-    rev: v1.32.1
+    rev: v1.32.2
     hooks:
       - id: ggshield
         language_version: python3
