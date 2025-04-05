@@ -10,8 +10,8 @@ Stack
 -----
 
 -  Postgres
--  Python 3.12
--  Django 5.0.8
+-  Python 3.13.1
+-  Django 5.2
 -  Bootstrap 5
 -  HTMX
 -  (check requirements.txt for actual installs)
