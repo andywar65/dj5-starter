@@ -3,3 +3,58 @@ target-version = ['py312']
 
 [tool.isort]
 profile = "black"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "project.settings.test"
+python_files = ["test_*.py", "tests.py"]
+
+[project]
+name = "dj5-starter"
+version = "0.1.0"
+authors = [
+  { name="andywar65", email="andy.war1965@gmail.com" },
+]
+description = "A two part Django app for syncing files from cloud to local computer"
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Operating System :: OS Independent",
+    "Framework :: Django",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "django>=4.2.18",
+    "django-htmx",
+    "django-modeltranslation",
+    "environs",
+    "dj-database-url",
+    "dj-email-url",
+    "django-filer",
+    "factory_boy",
+    "django-tinymce",
+    "easy-thumbnails",
+    "django-crispy-forms",
+    "crispy-bootstrap5",
+    "neapolitan",
+    "django-template-partials",
+    "django-allauth[socialaccount]",
+    "psycopg2-binary",
+]
+
+[project.urls]
+Repository = "https://github.com/andywar65/dj5-starter"
+
+[dependency-groups]
+dev = [
+    "coverage",
+    "setuptools",
+    "django-debug-toolbar",
+    "django-pytest>=0.2.0",
+    "pytest>=8.3.5",
+]
