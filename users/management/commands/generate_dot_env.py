@@ -18,13 +18,11 @@ class Command(BaseCommand):
 
         create_item()
 
-        self.stdout.write(
-            """Done.\n
+        self.stdout.write("""Done.\n
             Remember that this is a dummy installation, it works on a Sqlite database.\n
             Create a Postgres database, update dotenv file\n
             (update db.url and media/static roots) then migrate.
-            """
-        )
+            """)
 
 
 def create_item():
