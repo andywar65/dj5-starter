@@ -18,7 +18,7 @@ version = "0.1.0"
 authors = [
   { name="andywar65", email="andy.war1965@gmail.com" },
 ]
-description = "A two part Django app for syncing files from cloud to local computer"
+description = "A Django starter kit with allauth and HTMX"
 readme = "README.md"
 license = {file = "LICENSE"}
 classifiers = [
@@ -27,7 +27,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.13",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "django>=4.2.18",
     "django-htmx",
