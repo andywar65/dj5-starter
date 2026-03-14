@@ -27,9 +27,9 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.13",
 ]
-requires-python = ">=3.10"
+requires-python = ">=3.14"
 dependencies = [
-    "django>=4.2.18",
+    "django>=6.0",
     "django-htmx",
     "django-modeltranslation",
     "environs",
