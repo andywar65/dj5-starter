@@ -42,7 +42,6 @@ dependencies = [
     "django-crispy-forms",
     "crispy-bootstrap5",
     "neapolitan",
-    "django-template-partials",
     "django-allauth[socialaccount]",
     "psycopg2-binary",
 ]
