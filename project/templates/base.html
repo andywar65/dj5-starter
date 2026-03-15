@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <title>{{ request.site.name }}</title>
     {% block extra-head %}
-      <meta property="og:url" content="{% url 'home' %}">
+      <meta property="og:url" content="https://{{ request.site.domain }}{% url 'home' %}">
       <meta property="og:title" content="{{ request.site.name }} - Home">
-      <meta property="og:image" content="{{ logo.image.url|default:'' }}">
+      <meta property="og:image" content="https://{{ request.site.domain }}{{ logo.image.url|default:'' }}">
       <meta property="og:site_name" content="{{ request.site.name }}">
     {% endblock extra-head %}
     <meta name="google-site-verification" content="" />
