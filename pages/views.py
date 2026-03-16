@@ -1,6 +1,7 @@
 from typing import Any
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.conf import settings
 from django.db.models.query import QuerySet
 from django.http.request import HttpRequest as HttpRequest
 from django.urls import reverse
@@ -40,6 +41,11 @@ class ShotgunArchiveIndexView(ArchiveIndexView):
             return ["pages/includes/shotgun_list.html"]
         else:
             return [self.template_name]
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["SECRET_ADMIN"] = settings.ADMIN_URL_SUFFIX
+        return context
 
 
 class ShotgunArchiveLimited(ShotgunArchiveIndexView):
